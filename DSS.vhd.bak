@@ -1,0 +1,35 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+LIBRARY lpm;
+USE lpm.lpm_components.all;
+
+
+
+
+ENTITY DSS IS
+	PORT
+	(
+		datain	:	IN	STD_LOGIC_VECTOR(8 downto 0);
+		clkin		:	IN	STD_LOGIC;
+		dataout	: 	OUT	STD_LOGIC_VECTOR(7 downto 0)
+		
+	);
+	END ENTITY DSS;
+	
+	ARCHITECTURE mycomp OF DSS IS
+	BEGIN
+	
+		myFF : lpm_FF
+			GENERIC MAP
+			(
+				LPM_WIDTH =>1,
+				LPM_FFTYPE => "DFF"
+			)
+			PORT MAP
+			(
+				DATA => datain,
+				CLOCK => clkin,
+				Q => dataout 
+			);
+	END mycomp1_imp;

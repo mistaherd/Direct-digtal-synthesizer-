@@ -1,0 +1,41 @@
+--this has been genearted from python
+DEPTH = 32; -- The size of memory in words 
+WIDTH = 5; -- The size of data in bits 
+ADDRESS_RADIX = HEX; -- The radix for address values 
+DATA_RADIX = BIN; -- The radix for data values 
+CONTENT -- start of (address : data pairs) 
+BEGIN
+
+00 : 00000000;
+01 : 00000110;
+02 : 00001101;
+03 : 00010011;
+04 : 00011001;
+05 : 00011111;
+06 : 00100110;
+07 : 00101100;
+08 : 00110010;
+09 : 00111000;
+0a : 00111110;
+0b : 01000101;
+0c : 01001011;
+0d : 01010001;
+0e : 01010111;
+0f : 01011100;
+10 : 01100010;
+11 : 01101000;
+12 : 01101110;
+13 : 01110011;
+14 : 01111001;
+15 : 01111111;
+16 : 10000100;
+17 : 10001001;
+18 : 10001111;
+19 : 10010100;
+1a : 10011001;
+1b : 10011110;
+1c : 10100011;
+1d : 10101000;
+1e : 10101100;
+1f : 10110001;
+End;

@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1
+Edss
+Z0 w1701949601
+Z1 DPx3 lpm 14 lpm_components 0 22 aHRA3clF>2DcWDhgFTAbM3
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\MWT2\DSS\simulation\modelsim
+Z6 8C:/MWT2/DSS/DSS.vhd
+Z7 FC:/MWT2/DSS/DSS.vhd
+l0
+L11
+V24SUc_jzECVXSzf<zn@bn1
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1701949867.745000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/MWT2/DSS/DSS.vhd|
+Z11 !s107 C:/MWT2/DSS/DSS.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+!s100 >A8jmUSe<[iAiMSA5Yn[@2
+!i10b 1
+Amycomp
+R1
+R2
+R3
+R4
+DEx4 work 3 dss 0 22 24SUc_jzECVXSzf<zn@bn1
+l29
+L24
+V7nPnzaO_FJk0fD8LbWJ]i1
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 c:5>i_5b9@Ii`jABEF@b52
+!i10b 1
+Edss_tb
+Z14 w1701786488
+R1
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z16 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
+R2
+R3
+R4
+R5
+Z17 8C:/MWT2/DSS/DSS_TB.vhd
+Z18 FC:/MWT2/DSS/DSS_TB.vhd
+l0
+L10
+VM6m58n4fc=0h>AGZO_ElQ1
+!s100 ScKQoW2D1Yn_CmEaoi`b=2
+R8
+32
+!i10b 1
+Z19 !s108 1701949868.185000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/MWT2/DSS/DSS_TB.vhd|
+Z21 !s107 C:/MWT2/DSS/DSS_TB.vhd|
+R12
+R13
+Adss_tb_arch
+R1
+R15
+R16
+R2
+R3
+R4
+Z22 DEx4 work 6 dss_tb 0 22 M6m58n4fc=0h>AGZO_ElQ1
+l26
+L13
+V_TMZmeGVTIJj_AW@_YML12
+!s100 fY[EaTjOVK;1hbOF2F7C=2
+R8
+32
+!i10b 1
+R19
+R20
+R21
+R12
+R13
+Elpmrom
+Z23 w1701700273
+R3
+R4
+R5
+Z24 8C:/MWT2/DSS/LPMROM.vhd
+Z25 FC:/MWT2/DSS/LPMROM.vhd
+l0
+L42
+V:FoR]JN]E[z@=YiCUi@C:0
+R8
+32
+Z26 !s108 1701949868.025000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/MWT2/DSS/LPMROM.vhd|
+Z28 !s107 C:/MWT2/DSS/LPMROM.vhd|
+R12
+R13
+!s100 ]H^fHKD^mCT50i_@8>HCm1
+!i10b 1
+Asyn
+R3
+R4
+DEx4 work 6 lpmrom 0 22 :FoR]JN]E[z@=YiCUi@C:0
+l82
+L52
+Vzlm4FJQX@o^6GDTI84HLY1
+!s100 e?LTQP;gKDHeMlGC=QfkJ3
+R8
+32
+R26
+R27
+R28
+R12
+R13
+!i10b 1

@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DSS">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DSS|LPM_ADD_SUB:myADD" CBX_FILE_NAME="add_sub_kge.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DSS|LPM_ROM:MyROM|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_2b01.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

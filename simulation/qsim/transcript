@@ -1,0 +1,52 @@
+# do DSS.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DSS
+# 
+# Top level modules:
+# 	DSS
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DSS_vlg_sample_tst
+# -- Compiling module DSS_vlg_check_tst
+# -- Compiling module DSS_vlg_vec_tst
+# 
+# Top level modules:
+# 	DSS_vlg_vec_tst
+# vsim -L cycloneiii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.DSS_vlg_vec_tst 
+# Loading work.DSS_vlg_vec_tst
+# Loading work.DSS
+# Loading cycloneiii_ver.cycloneiii_io_obuf
+# Loading cycloneiii_ver.cycloneiii_io_ibuf
+# Loading cycloneiii_ver.cycloneiii_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneiii_ver.cycloneiii_ram_block
+# Loading cycloneiii_ver.cycloneiii_ram_register
+# Loading cycloneiii_ver.cycloneiii_ram_pulse_generator
+# Loading work.DSS_vlg_sample_tst
+# Loading work.DSS_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ERROR! Vector Mismatch for output port dataout[0] :: @time = 10000.000 ps
+#      Expected value = 00000000
+#      Real value = 10000011
+# ERROR! Vector Mismatch for output port dataout[1] :: @time = 10000.000 ps
+#      Expected value = 00000000
+#      Real value = 10000011
+# ERROR! Vector Mismatch for output port dataout[7] :: @time = 10000.000 ps
+#      Expected value = 00000000
+#      Real value = 10000011
+# ERROR! Vector Mismatch for output port testout[1] :: @time = 10000.000 ps
+#      Expected value = 00000
+#      Real value = 01010
+# ERROR! Vector Mismatch for output port testout[3] :: @time = 10000.000 ps
+#      Expected value = 00000
+#      Real value = 01010
+# ERROR! Vector Mismatch for output port testout[2] :: @time = 12000.000 ps
+#      Expected value = 00000
+#      Real value = 01100
+# ERROR! Vector Mismatch for output port testout[4] :: @time = 16000.000 ps
+#      Expected value = 00000
+#      Real value = 10000
+#           7 mismatched vectors : Simulation failed !
+# ** Note: $finish    : DSS.vt(386)
+#    Time: 30 ns  Iteration: 0  Instance: /DSS_vlg_vec_tst/tb_out
