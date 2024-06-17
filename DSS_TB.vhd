@@ -11,9 +11,9 @@ ENTITY DSS_TB  IS
 END ; 
  
 ARCHITECTURE DSS_TB_arch OF DSS_TB IS
-  SIGNAL clkin   :  STD_LOGIC  ; 
-  SIGNAL datain   :  std_logic_vector (4 downto 0)  ; 
-  SIGNAL dataout   :  std_logic_vector (7 downto 0)  ; 
+  SIGNAL clkin		:  STD_LOGIC; 
+  SIGNAL datain	:  std_logic_vector (4 downto 0)  ; 
+  SIGNAL dataout	:  std_logic_vector (7 downto 0)  ; 
   SIGNAL testout	:	std_logic_vector(4 downto 0);
   COMPONENT DSS  
     PORT ( 
@@ -22,7 +22,7 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
       dataout  : out std_logic_vector (7 downto 0) ; 
 		testout	: out std_logic_vector(4 downto 0));
   END COMPONENT ; 
-  constant clk_period : time :=20 ns;
+  constant clk_period : time :=10 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
@@ -34,18 +34,19 @@ BEGIN
    begin
 		clkin <= '0';
 		wait for clk_period/2;
-		clkin <= '1';
+		c\lkin <= '1';
 		wait for clk_period/2;
    end process;
  
 -- "Constant Pattern"
 -- Start Time = 0 ns, End Time = 1 us, Period = 0 ns
-  Process
+  stimulus_process: Process
 	Begin
 	 datain  <= "00010"  ;
 	wait for   clk_period ;
 
-	wait;
+	wait for 30 ns;
+	finish;
  End Process;
 
 
