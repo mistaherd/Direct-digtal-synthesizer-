@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "12/05/2023 15:04:40"
+// DATE "06/15/2024 20:50:08"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -38,6 +38,28 @@ input 	clkin;
 output 	[7:0] dataout;
 output 	[4:0] testout;
 
+// Design Ports Information
+// dataout[0]	=>  Location: PIN_F7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[1]	=>  Location: PIN_A8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[2]	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[3]	=>  Location: PIN_B8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[4]	=>  Location: PIN_C8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[5]	=>  Location: PIN_F6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[6]	=>  Location: PIN_D8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// dataout[7]	=>  Location: PIN_B7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// testout[0]	=>  Location: PIN_B9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// testout[1]	=>  Location: PIN_E8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// testout[2]	=>  Location: PIN_A9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// testout[3]	=>  Location: PIN_D9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// testout[4]	=>  Location: PIN_F8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clkin	=>  Location: PIN_E2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// datain[0]	=>  Location: PIN_E9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// datain[1]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// datain[2]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// datain[3]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// datain[4]	=>  Location: PIN_C9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
 wire gnd;
 wire vcc;
 wire unknown;
@@ -49,6 +71,9 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
+wire \datain[0]~input_o ;
+wire \datain[1]~input_o ;
+wire \datain[2]~input_o ;
 wire \dataout[0]~output_o ;
 wire \dataout[1]~output_o ;
 wire \dataout[2]~output_o ;
@@ -63,12 +88,10 @@ wire \testout[2]~output_o ;
 wire \testout[3]~output_o ;
 wire \testout[4]~output_o ;
 wire \clkin~input_o ;
-wire \datain[0]~input_o ;
+wire \clkin~inputclkctrl_outclk ;
 wire \myFF|dffs[0]~5_combout ;
-wire \datain[1]~input_o ;
 wire \myFF|dffs[0]~6 ;
 wire \myFF|dffs[1]~7_combout ;
-wire \datain[2]~input_o ;
 wire \myFF|dffs[1]~8 ;
 wire \myFF|dffs[2]~9_combout ;
 wire \datain[3]~input_o ;
@@ -80,31 +103,48 @@ wire \myFF|dffs[4]~13_combout ;
 wire [4:0] \myFF|dffs ;
 wire [7:0] \MyROM|srom|rom_block|auto_generated|q_a ;
 
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a1_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a2_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a3_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a4_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a5_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a6_PORTADATAOUT_bus ;
-wire [0:0] \MyROM|srom|rom_block|auto_generated|ram_block1a7_PORTADATAOUT_bus ;
+wire [17:0] \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 
 assign \MyROM|srom|rom_block|auto_generated|q_a [0] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
+assign \MyROM|srom|rom_block|auto_generated|q_a [1] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [1];
+assign \MyROM|srom|rom_block|auto_generated|q_a [2] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [2];
+assign \MyROM|srom|rom_block|auto_generated|q_a [3] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [3];
+assign \MyROM|srom|rom_block|auto_generated|q_a [4] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [4];
+assign \MyROM|srom|rom_block|auto_generated|q_a [5] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [5];
+assign \MyROM|srom|rom_block|auto_generated|q_a [6] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [6];
+assign \MyROM|srom|rom_block|auto_generated|q_a [7] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [7];
 
-assign \MyROM|srom|rom_block|auto_generated|q_a [1] = \MyROM|srom|rom_block|auto_generated|ram_block1a1_PORTADATAOUT_bus [0];
+// Location: IOIBUF_X18_Y24_N22
+cycloneiii_io_ibuf \datain[0]~input (
+	.i(datain[0]),
+	.ibar(gnd),
+	.o(\datain[0]~input_o ));
+// synopsys translate_off
+defparam \datain[0]~input .bus_hold = "false";
+defparam \datain[0]~input .simulate_z_as = "z";
+// synopsys translate_on
 
-assign \MyROM|srom|rom_block|auto_generated|q_a [2] = \MyROM|srom|rom_block|auto_generated|ram_block1a2_PORTADATAOUT_bus [0];
+// Location: IOIBUF_X21_Y24_N1
+cycloneiii_io_ibuf \datain[1]~input (
+	.i(datain[1]),
+	.ibar(gnd),
+	.o(\datain[1]~input_o ));
+// synopsys translate_off
+defparam \datain[1]~input .bus_hold = "false";
+defparam \datain[1]~input .simulate_z_as = "z";
+// synopsys translate_on
 
-assign \MyROM|srom|rom_block|auto_generated|q_a [3] = \MyROM|srom|rom_block|auto_generated|ram_block1a3_PORTADATAOUT_bus [0];
+// Location: IOIBUF_X21_Y24_N8
+cycloneiii_io_ibuf \datain[2]~input (
+	.i(datain[2]),
+	.ibar(gnd),
+	.o(\datain[2]~input_o ));
+// synopsys translate_off
+defparam \datain[2]~input .bus_hold = "false";
+defparam \datain[2]~input .simulate_z_as = "z";
+// synopsys translate_on
 
-assign \MyROM|srom|rom_block|auto_generated|q_a [4] = \MyROM|srom|rom_block|auto_generated|ram_block1a4_PORTADATAOUT_bus [0];
-
-assign \MyROM|srom|rom_block|auto_generated|q_a [5] = \MyROM|srom|rom_block|auto_generated|ram_block1a5_PORTADATAOUT_bus [0];
-
-assign \MyROM|srom|rom_block|auto_generated|q_a [6] = \MyROM|srom|rom_block|auto_generated|ram_block1a6_PORTADATAOUT_bus [0];
-
-assign \MyROM|srom|rom_block|auto_generated|q_a [7] = \MyROM|srom|rom_block|auto_generated|ram_block1a7_PORTADATAOUT_bus [0];
-
+// Location: IOOBUF_X11_Y24_N23
 cycloneiii_io_obuf \dataout[0]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [0]),
 	.oe(vcc),
@@ -117,6 +157,7 @@ defparam \dataout[0]~output .bus_hold = "false";
 defparam \dataout[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X16_Y24_N16
 cycloneiii_io_obuf \dataout[1]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [1]),
 	.oe(vcc),
@@ -129,6 +170,7 @@ defparam \dataout[1]~output .bus_hold = "false";
 defparam \dataout[1]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X11_Y24_N2
 cycloneiii_io_obuf \dataout[2]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [2]),
 	.oe(vcc),
@@ -141,6 +183,7 @@ defparam \dataout[2]~output .bus_hold = "false";
 defparam \dataout[2]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X16_Y24_N23
 cycloneiii_io_obuf \dataout[3]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [3]),
 	.oe(vcc),
@@ -153,6 +196,7 @@ defparam \dataout[3]~output .bus_hold = "false";
 defparam \dataout[3]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X13_Y24_N2
 cycloneiii_io_obuf \dataout[4]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [4]),
 	.oe(vcc),
@@ -165,6 +209,7 @@ defparam \dataout[4]~output .bus_hold = "false";
 defparam \dataout[4]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X11_Y24_N16
 cycloneiii_io_obuf \dataout[5]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [5]),
 	.oe(vcc),
@@ -177,6 +222,7 @@ defparam \dataout[5]~output .bus_hold = "false";
 defparam \dataout[5]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X13_Y24_N9
 cycloneiii_io_obuf \dataout[6]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [6]),
 	.oe(vcc),
@@ -189,6 +235,7 @@ defparam \dataout[6]~output .bus_hold = "false";
 defparam \dataout[6]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X11_Y24_N9
 cycloneiii_io_obuf \dataout[7]~output (
 	.i(\MyROM|srom|rom_block|auto_generated|q_a [7]),
 	.oe(vcc),
@@ -201,6 +248,7 @@ defparam \dataout[7]~output .bus_hold = "false";
 defparam \dataout[7]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X16_Y24_N9
 cycloneiii_io_obuf \testout[0]~output (
 	.i(\myFF|dffs [0]),
 	.oe(vcc),
@@ -213,6 +261,7 @@ defparam \testout[0]~output .bus_hold = "false";
 defparam \testout[0]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X13_Y24_N16
 cycloneiii_io_obuf \testout[1]~output (
 	.i(\myFF|dffs [1]),
 	.oe(vcc),
@@ -225,6 +274,7 @@ defparam \testout[1]~output .bus_hold = "false";
 defparam \testout[1]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X16_Y24_N2
 cycloneiii_io_obuf \testout[2]~output (
 	.i(\myFF|dffs [2]),
 	.oe(vcc),
@@ -237,6 +287,7 @@ defparam \testout[2]~output .bus_hold = "false";
 defparam \testout[2]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X18_Y24_N16
 cycloneiii_io_obuf \testout[3]~output (
 	.i(\myFF|dffs [3]),
 	.oe(vcc),
@@ -249,6 +300,7 @@ defparam \testout[3]~output .bus_hold = "false";
 defparam \testout[3]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOOBUF_X13_Y24_N23
 cycloneiii_io_obuf \testout[4]~output (
 	.i(\myFF|dffs [4]),
 	.oe(vcc),
@@ -261,6 +313,7 @@ defparam \testout[4]~output .bus_hold = "false";
 defparam \testout[4]~output .open_drain_output = "false";
 // synopsys translate_on
 
+// Location: IOIBUF_X0_Y11_N1
 cycloneiii_io_ibuf \clkin~input (
 	.i(clkin),
 	.ibar(gnd),
@@ -270,22 +323,27 @@ defparam \clkin~input .bus_hold = "false";
 defparam \clkin~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cycloneiii_io_ibuf \datain[0]~input (
-	.i(datain[0]),
-	.ibar(gnd),
-	.o(\datain[0]~input_o ));
+// Location: CLKCTRL_G4
+cycloneiii_clkctrl \clkin~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clkin~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clkin~inputclkctrl_outclk ));
 // synopsys translate_off
-defparam \datain[0]~input .bus_hold = "false";
-defparam \datain[0]~input .simulate_z_as = "z";
+defparam \clkin~inputclkctrl .clock_type = "global clock";
+defparam \clkin~inputclkctrl .ena_register_mode = "none";
 // synopsys translate_on
 
+// Location: LCCOMB_X17_Y23_N0
 cycloneiii_lcell_comb \myFF|dffs[0]~5 (
 // Equation(s):
-// \myFF|dffs[0]~5_combout  = (\myFF|dffs [0] & (\datain[0]~input_o  $ (VCC))) # (!\myFF|dffs [0] & (\datain[0]~input_o  & VCC))
-// \myFF|dffs[0]~6  = CARRY((\myFF|dffs [0] & \datain[0]~input_o ))
+// \myFF|dffs[0]~5_combout  = (\datain[0]~input_o  & (\myFF|dffs [0] $ (VCC))) # (!\datain[0]~input_o  & (\myFF|dffs [0] & VCC))
+// \myFF|dffs[0]~6  = CARRY((\datain[0]~input_o  & \myFF|dffs [0]))
 
-	.dataa(\myFF|dffs [0]),
-	.datab(\datain[0]~input_o ),
+	.dataa(\datain[0]~input_o ),
+	.datab(\myFF|dffs [0]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(gnd),
@@ -296,8 +354,9 @@ defparam \myFF|dffs[0]~5 .lut_mask = 16'h6688;
 defparam \myFF|dffs[0]~5 .sum_lutc_input = "datac";
 // synopsys translate_on
 
+// Location: FF_X17_Y23_N1
 dffeas \myFF|dffs[0] (
-	.clk(\clkin~input_o ),
+	.clk(\clkin~inputclkctrl_outclk ),
 	.d(\myFF|dffs[0]~5_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -314,23 +373,15 @@ defparam \myFF|dffs[0] .is_wysiwyg = "true";
 defparam \myFF|dffs[0] .power_up = "low";
 // synopsys translate_on
 
-cycloneiii_io_ibuf \datain[1]~input (
-	.i(datain[1]),
-	.ibar(gnd),
-	.o(\datain[1]~input_o ));
-// synopsys translate_off
-defparam \datain[1]~input .bus_hold = "false";
-defparam \datain[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
+// Location: LCCOMB_X17_Y23_N2
 cycloneiii_lcell_comb \myFF|dffs[1]~7 (
 // Equation(s):
-// \myFF|dffs[1]~7_combout  = (\myFF|dffs [1] & ((\datain[1]~input_o  & (\myFF|dffs[0]~6  & VCC)) # (!\datain[1]~input_o  & (!\myFF|dffs[0]~6 )))) # (!\myFF|dffs [1] & ((\datain[1]~input_o  & (!\myFF|dffs[0]~6 )) # (!\datain[1]~input_o  & ((\myFF|dffs[0]~6 ) 
-// # (GND)))))
-// \myFF|dffs[1]~8  = CARRY((\myFF|dffs [1] & (!\datain[1]~input_o  & !\myFF|dffs[0]~6 )) # (!\myFF|dffs [1] & ((!\myFF|dffs[0]~6 ) # (!\datain[1]~input_o ))))
+// \myFF|dffs[1]~7_combout  = (\datain[1]~input_o  & ((\myFF|dffs [1] & (\myFF|dffs[0]~6  & VCC)) # (!\myFF|dffs [1] & (!\myFF|dffs[0]~6 )))) # (!\datain[1]~input_o  & ((\myFF|dffs [1] & (!\myFF|dffs[0]~6 )) # (!\myFF|dffs [1] & ((\myFF|dffs[0]~6 ) # 
+// (GND)))))
+// \myFF|dffs[1]~8  = CARRY((\datain[1]~input_o  & (!\myFF|dffs [1] & !\myFF|dffs[0]~6 )) # (!\datain[1]~input_o  & ((!\myFF|dffs[0]~6 ) # (!\myFF|dffs [1]))))
 
-	.dataa(\myFF|dffs [1]),
-	.datab(\datain[1]~input_o ),
+	.dataa(\datain[1]~input_o ),
+	.datab(\myFF|dffs [1]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\myFF|dffs[0]~6 ),
@@ -341,8 +392,9 @@ defparam \myFF|dffs[1]~7 .lut_mask = 16'h9617;
 defparam \myFF|dffs[1]~7 .sum_lutc_input = "cin";
 // synopsys translate_on
 
+// Location: FF_X17_Y23_N3
 dffeas \myFF|dffs[1] (
-	.clk(\clkin~input_o ),
+	.clk(\clkin~inputclkctrl_outclk ),
 	.d(\myFF|dffs[1]~7_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -359,22 +411,14 @@ defparam \myFF|dffs[1] .is_wysiwyg = "true";
 defparam \myFF|dffs[1] .power_up = "low";
 // synopsys translate_on
 
-cycloneiii_io_ibuf \datain[2]~input (
-	.i(datain[2]),
-	.ibar(gnd),
-	.o(\datain[2]~input_o ));
-// synopsys translate_off
-defparam \datain[2]~input .bus_hold = "false";
-defparam \datain[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
+// Location: LCCOMB_X17_Y23_N4
 cycloneiii_lcell_comb \myFF|dffs[2]~9 (
 // Equation(s):
-// \myFF|dffs[2]~9_combout  = ((\myFF|dffs [2] $ (\datain[2]~input_o  $ (!\myFF|dffs[1]~8 )))) # (GND)
-// \myFF|dffs[2]~10  = CARRY((\myFF|dffs [2] & ((\datain[2]~input_o ) # (!\myFF|dffs[1]~8 ))) # (!\myFF|dffs [2] & (\datain[2]~input_o  & !\myFF|dffs[1]~8 )))
+// \myFF|dffs[2]~9_combout  = ((\datain[2]~input_o  $ (\myFF|dffs [2] $ (!\myFF|dffs[1]~8 )))) # (GND)
+// \myFF|dffs[2]~10  = CARRY((\datain[2]~input_o  & ((\myFF|dffs [2]) # (!\myFF|dffs[1]~8 ))) # (!\datain[2]~input_o  & (\myFF|dffs [2] & !\myFF|dffs[1]~8 )))
 
-	.dataa(\myFF|dffs [2]),
-	.datab(\datain[2]~input_o ),
+	.dataa(\datain[2]~input_o ),
+	.datab(\myFF|dffs [2]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(\myFF|dffs[1]~8 ),
@@ -385,8 +429,9 @@ defparam \myFF|dffs[2]~9 .lut_mask = 16'h698E;
 defparam \myFF|dffs[2]~9 .sum_lutc_input = "cin";
 // synopsys translate_on
 
+// Location: FF_X17_Y23_N5
 dffeas \myFF|dffs[2] (
-	.clk(\clkin~input_o ),
+	.clk(\clkin~inputclkctrl_outclk ),
 	.d(\myFF|dffs[2]~9_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -403,6 +448,7 @@ defparam \myFF|dffs[2] .is_wysiwyg = "true";
 defparam \myFF|dffs[2] .power_up = "low";
 // synopsys translate_on
 
+// Location: IOIBUF_X21_Y24_N15
 cycloneiii_io_ibuf \datain[3]~input (
 	.i(datain[3]),
 	.ibar(gnd),
@@ -412,6 +458,7 @@ defparam \datain[3]~input .bus_hold = "false";
 defparam \datain[3]~input .simulate_z_as = "z";
 // synopsys translate_on
 
+// Location: LCCOMB_X17_Y23_N6
 cycloneiii_lcell_comb \myFF|dffs[3]~11 (
 // Equation(s):
 // \myFF|dffs[3]~11_combout  = (\myFF|dffs [3] & ((\datain[3]~input_o  & (\myFF|dffs[2]~10  & VCC)) # (!\datain[3]~input_o  & (!\myFF|dffs[2]~10 )))) # (!\myFF|dffs [3] & ((\datain[3]~input_o  & (!\myFF|dffs[2]~10 )) # (!\datain[3]~input_o  & 
@@ -430,8 +477,9 @@ defparam \myFF|dffs[3]~11 .lut_mask = 16'h9617;
 defparam \myFF|dffs[3]~11 .sum_lutc_input = "cin";
 // synopsys translate_on
 
+// Location: FF_X17_Y23_N7
 dffeas \myFF|dffs[3] (
-	.clk(\clkin~input_o ),
+	.clk(\clkin~inputclkctrl_outclk ),
 	.d(\myFF|dffs[3]~11_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -448,6 +496,7 @@ defparam \myFF|dffs[3] .is_wysiwyg = "true";
 defparam \myFF|dffs[3] .power_up = "low";
 // synopsys translate_on
 
+// Location: IOIBUF_X18_Y24_N8
 cycloneiii_io_ibuf \datain[4]~input (
 	.i(datain[4]),
 	.ibar(gnd),
@@ -457,24 +506,26 @@ defparam \datain[4]~input .bus_hold = "false";
 defparam \datain[4]~input .simulate_z_as = "z";
 // synopsys translate_on
 
+// Location: LCCOMB_X17_Y23_N8
 cycloneiii_lcell_comb \myFF|dffs[4]~13 (
 // Equation(s):
-// \myFF|dffs[4]~13_combout  = \myFF|dffs [4] $ (\datain[4]~input_o  $ (!\myFF|dffs[3]~12 ))
+// \myFF|dffs[4]~13_combout  = \myFF|dffs [4] $ (\myFF|dffs[3]~12  $ (!\datain[4]~input_o ))
 
-	.dataa(\myFF|dffs [4]),
-	.datab(\datain[4]~input_o ),
+	.dataa(gnd),
+	.datab(\myFF|dffs [4]),
 	.datac(gnd),
-	.datad(gnd),
+	.datad(\datain[4]~input_o ),
 	.cin(\myFF|dffs[3]~12 ),
 	.combout(\myFF|dffs[4]~13_combout ),
 	.cout());
 // synopsys translate_off
-defparam \myFF|dffs[4]~13 .lut_mask = 16'h6969;
+defparam \myFF|dffs[4]~13 .lut_mask = 16'h3CC3;
 defparam \myFF|dffs[4]~13 .sum_lutc_input = "cin";
 // synopsys translate_on
 
+// Location: FF_X17_Y23_N9
 dffeas \myFF|dffs[4] (
-	.clk(\clkin~input_o ),
+	.clk(\clkin~inputclkctrl_outclk ),
 	.d(\myFF|dffs[4]~13_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -491,6 +542,7 @@ defparam \myFF|dffs[4] .is_wysiwyg = "true";
 defparam \myFF|dffs[4] .power_up = "low";
 // synopsys translate_on
 
+// Location: M9K_X15_Y23_N0
 cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a0 (
 	.portawe(vcc),
 	.portare(vcc),
@@ -498,7 +550,7 @@ cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a0 (
 	.portbwe(gnd),
 	.portbre(vcc),
 	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
+	.clk0(\clkin~inputclkctrl_outclk ),
 	.clk1(gnd),
 	.ena0(vcc),
 	.ena1(vcc),
@@ -506,10 +558,10 @@ cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a0 (
 	.ena3(vcc),
 	.clr0(gnd),
 	.clr1(gnd),
-	.portadatain(1'b0),
+	.portadatain(18'b000000000000000000),
 	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
 	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
+	.portbdatain(18'b000000000000000000),
 	.portbaddr(5'b00000),
 	.portbbyteenamasks(1'b1),
 	.devclrn(devclrn),
@@ -528,7 +580,7 @@ defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_address_width
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_width = 1;
+defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_width = 18;
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_first_address = 0;
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_last_address = 31;
@@ -537,366 +589,9 @@ defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_logical_ram_w
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_with_nbe_read";
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_write_enable_clock = "none";
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_b_data_width = 1;
+defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_b_data_width = 18;
 defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .mem_init0 = 32'h23F147E2;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a1 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a1_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_first_bit_number = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a1 .mem_init0 = 32'h5FFE3FFC;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a2 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a2_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_first_bit_number = 2;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a2 .mem_init0 = 32'h40008000;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a3 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a3_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_first_bit_number = 3;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a3 .mem_init0 = 32'h40008000;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a4 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a4_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_first_bit_number = 4;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a4 .mem_init0 = 32'h40008000;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a5 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a5_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_first_bit_number = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a5 .mem_init0 = 32'h00000000;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a6 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a6_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_first_bit_number = 6;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a6 .mem_init0 = 32'h00000000;
-// synopsys translate_on
-
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a7 (
-	.portawe(vcc),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\clkin~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.portadatain(1'b0),
-	.portaaddr({\myFF|dffs [4],\myFF|dffs [3],\myFF|dffs [2],\myFF|dffs [1],\myFF|dffs [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(5'b00000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a7_PORTADATAOUT_bus ),
-	.portbdataout());
-// synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_first_bit_number = 7;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .port_b_data_width = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a7 .mem_init0 = 32'h7FFFFFFE;
+defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .mem_init0 = 576'h00000009E0020400820020800820020C00830020C00830020C00830020800820020800810027000810020800820020800830020C00830020C00830020C0082002080082002040000;
 // synopsys translate_on
 
 assign dataout[0] = \dataout[0]~output_o ;

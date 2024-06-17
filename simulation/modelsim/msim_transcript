@@ -56,10 +56,10 @@
 # 
 #           File in use by: User  Hostname: DESKTOP-GC5G1UN  ProcessID: 14496
 # 
-#           Attempting to use alternate WLF file "./wlftzek91d".
+#           Attempting to use alternate WLF file "./wlft16izd4".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftzek91d
+#           Using alternate file: ./wlft16izd4
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
