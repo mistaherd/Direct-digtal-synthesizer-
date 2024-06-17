@@ -16,8 +16,6 @@ ENTITY DSS IS
 		
 		dataout	: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
 		testout	:	OUT	STD_LOGIC_VECTOR(4 downto 0)
-		
-		
 	);
 	END ENTITY DSS;
 	
@@ -34,7 +32,7 @@ ENTITY DSS IS
 				LPM_WIDTH =>5
 				
 			)
-			PORT MAP
+		PORT MAP
 			(
 				dataa => datain,
 				datab => out_DFF,
@@ -42,19 +40,19 @@ ENTITY DSS IS
 			);
 	
 		myFF : lpm_FF
-			GENERIC MAP
+		GENERIC MAP
 			(
 				LPM_WIDTH =>5,
 				LPM_FFTYPE => "DFF"
 			)
 		
-			PORT MAP
+		PORT MAP
 			(
 				DATA => out_ADD,
 				CLOCK => clkin,
 				Q => out_DFF
-				);
-				testout<=out_DFF;
+			);
+		testout<=out_DFF;
 		MyROM : lpm_rom
 			GENERIC MAP
 			(
