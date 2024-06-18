@@ -40,14 +40,14 @@ BEGIN
  
 -- "Constant Pattern"
 -- Start Time = 0 ns, End Time = 1 us, Period = 0 ns
-  stimulus_process: Process
-	Begin
-	 datain  <= "00010"  ;
-	wait for   clk_period ;
+	stimulus_process: Process
+		Begin
+			datain  <= "00010"  ;
+			wait for	clk_period ;
 
-	wait for 30 ns;
-	finish;
- End Process;
+			wait for 30 ns;
+			finish;
+		End Process;
 
 
 -- "Clock Pattern" : dutyCycle = 50
