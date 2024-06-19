@@ -23,7 +23,14 @@ ENTITY DSS IS
 	SIGNAL out_ADD	: STD_LOGIC_VECTOR (4 DOWNTO 0);
 	
 	SIGNAL out_DFF	: STD_LOGIC_VECTOR (4 DOWNTO 0);
-	
+	COMPONENT LPMROM
+	  PORT (
+				address : in std_logic_vector(4 downto 0);  -- Adjust address width as needed
+				clock   : in std_logic;
+				q       : out std_logic_vector(7 downto 0)  -- Adjust data width as needed
+				);
+	end COMPONENT;
+
 	BEGIN
 		
 		myADD :lpm_ADD_SUB

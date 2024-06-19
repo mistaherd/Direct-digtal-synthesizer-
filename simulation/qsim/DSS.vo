@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "06/19/2024 02:18:55"
+// DATE "06/19/2024 15:40:45"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -100,19 +100,19 @@ wire \myFF|dffs[3]~11_combout ;
 wire \datain[4]~input_o ;
 wire \myFF|dffs[3]~12 ;
 wire \myFF|dffs[4]~13_combout ;
+wire [7:0] \MyROM|altsyncram_component|auto_generated|q_a ;
 wire [4:0] \myFF|dffs ;
-wire [7:0] \MyROM|srom|rom_block|auto_generated|q_a ;
 
-wire [17:0] \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
+wire [17:0] \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 
-assign \MyROM|srom|rom_block|auto_generated|q_a [0] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
-assign \MyROM|srom|rom_block|auto_generated|q_a [1] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [1];
-assign \MyROM|srom|rom_block|auto_generated|q_a [2] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [2];
-assign \MyROM|srom|rom_block|auto_generated|q_a [3] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [3];
-assign \MyROM|srom|rom_block|auto_generated|q_a [4] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [4];
-assign \MyROM|srom|rom_block|auto_generated|q_a [5] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [5];
-assign \MyROM|srom|rom_block|auto_generated|q_a [6] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [6];
-assign \MyROM|srom|rom_block|auto_generated|q_a [7] = \MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus [7];
+assign \MyROM|altsyncram_component|auto_generated|q_a [0] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
+assign \MyROM|altsyncram_component|auto_generated|q_a [1] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [1];
+assign \MyROM|altsyncram_component|auto_generated|q_a [2] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [2];
+assign \MyROM|altsyncram_component|auto_generated|q_a [3] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [3];
+assign \MyROM|altsyncram_component|auto_generated|q_a [4] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [4];
+assign \MyROM|altsyncram_component|auto_generated|q_a [5] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [5];
+assign \MyROM|altsyncram_component|auto_generated|q_a [6] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [6];
+assign \MyROM|altsyncram_component|auto_generated|q_a [7] = \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [7];
 
 // Location: IOIBUF_X18_Y24_N22
 cycloneiii_io_ibuf \datain[0]~input (
@@ -146,7 +146,7 @@ defparam \datain[2]~input .simulate_z_as = "z";
 
 // Location: IOOBUF_X11_Y24_N23
 cycloneiii_io_obuf \dataout[0]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [0]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [0]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -159,7 +159,7 @@ defparam \dataout[0]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X16_Y24_N16
 cycloneiii_io_obuf \dataout[1]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [1]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [1]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -172,7 +172,7 @@ defparam \dataout[1]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X11_Y24_N2
 cycloneiii_io_obuf \dataout[2]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [2]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [2]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -185,7 +185,7 @@ defparam \dataout[2]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X16_Y24_N23
 cycloneiii_io_obuf \dataout[3]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [3]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [3]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -198,7 +198,7 @@ defparam \dataout[3]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X13_Y24_N2
 cycloneiii_io_obuf \dataout[4]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [4]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [4]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -211,7 +211,7 @@ defparam \dataout[4]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X11_Y24_N16
 cycloneiii_io_obuf \dataout[5]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [5]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [5]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -224,7 +224,7 @@ defparam \dataout[5]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X13_Y24_N9
 cycloneiii_io_obuf \dataout[6]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [6]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [6]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -237,7 +237,7 @@ defparam \dataout[6]~output .open_drain_output = "false";
 
 // Location: IOOBUF_X11_Y24_N9
 cycloneiii_io_obuf \dataout[7]~output (
-	.i(\MyROM|srom|rom_block|auto_generated|q_a [7]),
+	.i(\MyROM|altsyncram_component|auto_generated|q_a [7]),
 	.oe(vcc),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
@@ -543,7 +543,7 @@ defparam \myFF|dffs[4] .power_up = "low";
 // synopsys translate_on
 
 // Location: M9K_X15_Y23_N0
-cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a0 (
+cycloneiii_ram_block \MyROM|altsyncram_component|auto_generated|ram_block1a0 (
 	.portawe(vcc),
 	.portare(vcc),
 	.portaaddrstall(gnd),
@@ -566,32 +566,32 @@ cycloneiii_ram_block \MyROM|srom|rom_block|auto_generated|ram_block1a0 (
 	.portbbyteenamasks(1'b1),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.portadataout(\MyROM|srom|rom_block|auto_generated|ram_block1a0_PORTADATAOUT_bus ),
+	.portadataout(\MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ),
 	.portbdataout());
 // synopsys translate_off
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .init_file = "coswavesoted";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .init_file_layout = "port_a";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .logical_ram_name = "lpm_rom:MyROM|altrom:srom|altsyncram:rom_block|altsyncram_2b01:auto_generated|ALTSYNCRAM";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .operation_mode = "rom";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_address_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_out_clock = "clock0";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_data_width = 18;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_first_address = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_last_address = 31;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 32;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_logical_ram_width = 8;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_with_nbe_read";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_a_write_enable_clock = "none";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_b_address_width = 5;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .port_b_data_width = 18;
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .ram_block_type = "M9K";
-defparam \MyROM|srom|rom_block|auto_generated|ram_block1a0 .mem_init0 = 576'h00000009E0020400820020800820020C00830020C00830020C00830020800820020800810027000810020800820020800830020C00830020C00830020C0082002080082002040000;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .init_file = "coswavesoted.mif";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .init_file_layout = "port_a";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated|ALTSYNCRAM";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "rom";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_width = 5;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_out_clock = "clock0";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_data_width = 18;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_address = 0;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_last_address = 31;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 32;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_logical_ram_width = 8;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_with_nbe_read";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_write_enable_clock = "none";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 5;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 18;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M9K";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h0000000FD003E800F7003D400F3003C800F1003C400F1003CC00F4003D800F9003F000FE0000800040001C000A00030000D0003C000F0003C000E00034000B0002400060000C0000;
 // synopsys translate_on
 
 assign dataout[0] = \dataout[0]~output_o ;

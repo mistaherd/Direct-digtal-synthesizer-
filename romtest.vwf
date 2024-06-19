@@ -192,6 +192,66 @@ SIGNAL("clkin")
 	PARENT = "";
 }
 
+SIGNAL("testout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 5;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("testout[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "testout";
+}
+
+SIGNAL("testout[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "testout";
+}
+
+SIGNAL("testout[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "testout";
+}
+
+SIGNAL("testout[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "testout";
+}
+
+SIGNAL("testout[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "testout";
+}
+
 TRANSITION_LIST("datain[4]")
 {
 	NODE
@@ -320,6 +380,51 @@ TRANSITION_LIST("clkin")
 			LEVEL 0 FOR 1.0;
 			LEVEL 1 FOR 1.0;
 		}
+	}
+}
+
+TRANSITION_LIST("testout[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("testout[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("testout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("testout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("testout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -480,6 +585,66 @@ DISPLAY_LINE
 	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 0;
+	CHILDREN = 17, 18, 19, 20, 21;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 17;
+	TREE_LEVEL = 1;
+	PARENT = 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 1;
+	PARENT = 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 1;
+	PARENT = 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 1;
+	PARENT = 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "testout[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 1;
+	PARENT = 16;
 }
 
 TIME_BAR

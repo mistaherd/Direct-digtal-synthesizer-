@@ -1,18 +1,16 @@
 import numpy as np
 
 N=2**5
-t=np.linspace(0,1,N-1)
-fs=20
+t=np.linspace(0,1,N)
+fs=1
 output= np.sin(2*np.pi*fs*t)
 output=np.round(np.sin(2*np.pi*fs*t)*15).astype(np.uint8)
-
-
-
+print(output)
 with open("C:\MWT2\DSS\coswavesoted.mif",'w') as file:
-    file.write("--this has been genearted from python\n")
+    file.write("--This has been generated from python\n")
     file.write("DEPTH = 32; -- The size of memory in words \nWIDTH = 8; -- The size of data in bits \nADDRESS_RADIX = HEX; -- The radix for address values \nDATA_RADIX = BIN; -- The radix for data values \nCONTENT -- start of (address : data pairs) ")
     file.write("\nBEGIN\n")
-    for i in range(len(output)):
+    for i in range(0,len(output)):
         message =hex(i)[2:]
         if len(hex(i)[2:])<2:
             message ='0'+hex(i)[2:]

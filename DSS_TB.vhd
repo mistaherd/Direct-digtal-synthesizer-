@@ -34,7 +34,7 @@ BEGIN
    begin
 		clkin <= '0';
 		wait for clk_period/2;
-		c\lkin <= '1';
+		clkin <= '1';
 		wait for clk_period/2;
    end process;
  
@@ -43,10 +43,9 @@ BEGIN
 	stimulus_process: Process
 		Begin
 			datain  <= "00010"  ;
-			wait for	clk_period ;
+			--wait for	clk_period ;
 
 			wait for 30 ns;
-			finish;
 		End Process;
 
 

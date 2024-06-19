@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dC:\MWT2\DSS\simulation\modelsim
 Edss
-Z1 w1718632240
+Z1 w1718807705
 Z2 DPx3 lpm 14 lpm_components 0 22 aHRA3clF>2DcWDhgFTAbM3
 Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
@@ -17,7 +17,7 @@ L11
 VQ8VgVPcG>f8JoB8^2cVB;3
 Z9 OV;C;10.1d;51
 31
-Z10 !s108 1718632846.840000
+Z10 !s108 1718808451.083000
 Z11 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/DSS.vhd|
 Z12 !s107 C:/MWT2/DSS/DSS.vhd|
 Z13 o-93 -work work -O0
@@ -30,9 +30,9 @@ R3
 R4
 R5
 DEx4 work 3 dss 0 22 Q8VgVPcG>f8JoB8^2cVB;3
-l27
+l34
 L22
-V<;9A@8M5V=@ZMKn^e`aah3
+VCCzVJ?0d<<VAl=j99L^g?3
 R9
 31
 R10
@@ -40,7 +40,7 @@ R11
 R12
 R13
 R14
-!s100 _ggbaSYP@in;Wz9kjVUAT2
+!s100 clAPWk:_Bb4lJ81llLn5:2
 !i10b 1
 Edss_tb
 Z15 w1701565473
@@ -60,7 +60,7 @@ V57hahn=mS4Eo;S6Ujbma;0
 R9
 31
 !i10b 1
-Z20 !s108 1718632847.085000
+Z20 !s108 1718808451.346000
 Z21 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd|
 Z22 !s107 C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd|
 R13
@@ -85,3 +85,38 @@ R21
 R22
 R13
 R14
+Elpmrom
+Z23 w1718805113
+R4
+R5
+R6
+Z24 8C:/MWT2/DSS/LPMROM.vhd
+Z25 FC:/MWT2/DSS/LPMROM.vhd
+l0
+L42
+VAVBfB_>o_2b^dCDE;o3Lo2
+R9
+31
+Z26 !s108 1718808451.223000
+Z27 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/LPMROM.vhd|
+Z28 !s107 C:/MWT2/DSS/LPMROM.vhd|
+R13
+R14
+!s100 ]H^fHKD^mCT50i_@8>HCm1
+!i10b 1
+Asyn
+R4
+R5
+DEx4 work 6 lpmrom 0 22 AVBfB_>o_2b^dCDE;o3Lo2
+l82
+L52
+Vi6XK`cB4JNXTQSMA<E`4l0
+R9
+31
+R26
+R27
+R28
+R13
+R14
+!s100 e?LTQP;gKDHeMlGC=QfkJ3
+!i10b 1
