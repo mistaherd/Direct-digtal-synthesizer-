@@ -53,21 +53,12 @@ ENTITY DSS IS
 				Q => out_DFF
 			);
 		testout<=out_DFF;
-		MyROM : lpm_rom
-			GENERIC MAP
-			(
-				LPM_WIDTH =>8,
-				LPM_WIDTHAD =>5,
-				--LPM_File =>"rommemoryex1"
-				LPM_File =>"coswavesoted"
-			)
+		MyROM : LPMROM
 			PORT MAP
 			(
-			ADDRESS => out_DFF,
-			inclock => clkin,
-			outclock =>clkin,
-			
-			Q =>dataout
+			address => out_DFF,
+			clock => clkin,
+			q =>dataout
 			);
 	END mycomp;
  

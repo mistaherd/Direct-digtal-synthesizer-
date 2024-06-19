@@ -92,64 +92,94 @@ SIGNAL("datain[0]")
 	PARENT = "datain";
 }
 
-SIGNAL("testout")
+SIGNAL("dataout")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 5;
+	WIDTH = 8;
 	LSB_INDEX = 0;
 	DIRECTION = OUTPUT;
 	PARENT = "";
 }
 
-SIGNAL("testout[4]")
+SIGNAL("dataout[7]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "testout";
+	PARENT = "dataout";
 }
 
-SIGNAL("testout[3]")
+SIGNAL("dataout[6]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "testout";
+	PARENT = "dataout";
 }
 
-SIGNAL("testout[2]")
+SIGNAL("dataout[5]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "testout";
+	PARENT = "dataout";
 }
 
-SIGNAL("testout[1]")
+SIGNAL("dataout[4]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "testout";
+	PARENT = "dataout";
 }
 
-SIGNAL("testout[0]")
+SIGNAL("dataout[3]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
 	WIDTH = 1;
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
-	PARENT = "testout";
+	PARENT = "dataout";
+}
+
+SIGNAL("dataout[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "dataout";
+}
+
+SIGNAL("dataout[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "dataout";
+}
+
+SIGNAL("dataout[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "dataout";
 }
 
 SIGNAL("clkin")
@@ -207,53 +237,75 @@ TRANSITION_LIST("datain[0]")
 	}
 }
 
-TRANSITION_LIST("testout[4]")
+TRANSITION_LIST("dataout[7]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9.0;
-		LEVEL 0 FOR 21.0;
+		LEVEL X FOR 30.0;
 	}
 }
 
-TRANSITION_LIST("testout[3]")
+TRANSITION_LIST("dataout[6]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9.0;
-		LEVEL 0 FOR 21.0;
+		LEVEL X FOR 30.0;
 	}
 }
 
-TRANSITION_LIST("testout[2]")
+TRANSITION_LIST("dataout[5]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9.0;
-		LEVEL 0 FOR 21.0;
+		LEVEL X FOR 30.0;
 	}
 }
 
-TRANSITION_LIST("testout[1]")
+TRANSITION_LIST("dataout[4]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9.0;
-		LEVEL 0 FOR 21.0;
+		LEVEL X FOR 30.0;
 	}
 }
 
-TRANSITION_LIST("testout[0]")
+TRANSITION_LIST("dataout[3]")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9.0;
-		LEVEL 0 FOR 21.0;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("dataout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("dataout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("dataout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -342,17 +394,17 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout";
+	CHANNEL = "dataout";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 0;
-	CHILDREN = 8, 9, 10, 11, 12;
+	CHILDREN = 8, 9, 10, 11, 12, 13, 14, 15;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout[4]";
+	CHANNEL = "dataout[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
@@ -362,7 +414,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout[3]";
+	CHANNEL = "dataout[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
@@ -372,7 +424,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout[2]";
+	CHANNEL = "dataout[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;
@@ -382,7 +434,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout[1]";
+	CHANNEL = "dataout[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 11;
@@ -392,10 +444,40 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "testout[0]";
+	CHANNEL = "dataout[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "dataout[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "dataout[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 7;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "dataout[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
 	PARENT = 7;
 }
