@@ -65,10 +65,10 @@
 # 
 #           File in use by: User  Hostname: DESKTOP-GC5G1UN  ProcessID: 14496
 # 
-#           Attempting to use alternate WLF file "./wlft2etgza".
+#           Attempting to use alternate WLF file "./wlft5f0ffj".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft2etgza
+#           Using alternate file: ./wlft5f0ffj
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -81,4 +81,36 @@
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
-# Load canceled
+# Break key hit 
+# Break in Block IFG52 at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/vhdl/src/altera_mf/altera_mf.vhd line 42997
+# Simulation Breakpoint: Break in Block IFG52 at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/vhdl/src/altera_mf/altera_mf.vhd line 42997
+# MACRO ./DSS_run_msim_rtl_vhdl.do PAUSED at line 18
+restart -f
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# Break key hit 
+# Simulation stop requested.
+restart -f
+run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+restart
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+run
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputofrom.txt
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputofrom.lst

@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "06/19/2024 15:40:45"
+// DATE "06/20/2024 19:55:12"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -100,8 +100,8 @@ wire \myFF|dffs[3]~11_combout ;
 wire \datain[4]~input_o ;
 wire \myFF|dffs[3]~12 ;
 wire \myFF|dffs[4]~13_combout ;
-wire [7:0] \MyROM|altsyncram_component|auto_generated|q_a ;
 wire [4:0] \myFF|dffs ;
+wire [7:0] \MyROM|altsyncram_component|auto_generated|q_a ;
 
 wire [17:0] \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 

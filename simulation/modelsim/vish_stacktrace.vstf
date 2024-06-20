@@ -1,0 +1,18 @@
+# Current time Thu Jun 20 19:52:56 2024
+# ModelSim Stack Trace
+# Program = vish
+# Id = "10.1d"
+# Version = "2012.11"
+# Date = "Nov  2 2012"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 102923d0. Traceback:
+# Current time Thu Jun 20 20:02:09 2024
+# ModelSim Stack Trace
+# Program = vish
+# Id = "10.1d"
+# Version = "2012.11"
+# Date = "Nov  2 2012"
+# Platform = win32pe
+
+Exception c0000005 has occurred at address 774841c3. Traceback:
