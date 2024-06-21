@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pylab as plt
 fname="outputofrom.lst"
 with open(fname, 'r') as file:
@@ -18,7 +19,15 @@ def reverse_two_complement(bin_string):
     flipped_binary = bin(decimal ^ (2 ** (len(bin_string)) - 1))[2:].zfill(len(bin_string))  # Flip bits
     return flipped_binary
 output_lut=[int(output_lut[i],2) if output_lut[i][0]=="0" else int(reverse_two_complement(output_lut[i]),2)*-1 for i in range(len(output_lut))]
-plt.plot(time_bins,output_lut)
-plt.xlabel("time in nano seconds")
-plt.ylabel("ampltiude")
+# plt.plot(time_bins,output_lut)
+# plt.xlabel("time in nano seconds")
+# plt.ylabel("Amplitude ")
+# plt.show()
+yf=np.fft.fft(output_lut)
+xf=np.fft.fftfreq(len(output_lut),1/2**5)
+plt.stem(xf[:len(xf)//2],2.0/len(output_lut) *np.abs(yf[:len(yf)//2]))
+plt.xlabel('Frequency (Hz)')
+plt.ylabel('Magnitude')
+plt.grid()
+
 plt.show()
