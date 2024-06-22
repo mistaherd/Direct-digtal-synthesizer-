@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pylab as plt
-fname="outputofrom.lst"
+fname="outputfrom_halfwave.lst"
 with open(fname, 'r') as file:
     lines = file.readlines()  # Read all lines into a list
     items = [line.strip() for line in lines]  # Remove newline characters and

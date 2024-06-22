@@ -65,10 +65,10 @@
 # 
 #           File in use by: User  Hostname: DESKTOP-GC5G1UN  ProcessID: 14496
 # 
-#           Attempting to use alternate WLF file "./wlftefxqzr".
+#           Attempting to use alternate WLF file "./wlftaiqdxi".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftefxqzr
+#           Using alternate file: ./wlftaiqdxi
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -103,7 +103,21 @@ vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
 # -- Loading package LPM_COMPONENTS
 # -- Compiling entity DSS_TB
 # -- Compiling architecture DSS_TB_arch of DSS_TB
+# Break key hit 
+# Break in Process line__3681 at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd line 3681
+# Simulation Breakpoint: Break in Process line__3681 at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/vhdl/src/220model/220model.vhd line 3681
+# MACRO ./DSS_run_msim_rtl_vhdl.do PAUSED at line 18
 run
+# Break key hit 
+# Break key hit 
+# Load canceled
+run
+# Break key hit 
+run -all
+run
+# Break key hit 
+run -all
+# Break key hit 
 restart -f
 # Loading work.dss_tb(dss_tb_arch)
 run
@@ -113,3 +127,13 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+restart -f
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_halfwave
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_halfwave.lst
