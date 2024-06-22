@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "06/20/2024 19:55:12"
+// DATE "06/22/2024 16:25:42"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -591,7 +591,7 @@ defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_write_e
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 5;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 18;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M9K";
-defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h0000000FD003E800F7003D400F3003C800F1003C400F1003CC00F4003D800F9003F000FE0000800040001C000A00030000D0003C000F0003C000E00034000B0002400060000C0000;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h0003C000F0003C000F0003C000E00038000E00038000D00034000D00030000C0002C000B00028000A000240008000200007000180006000140004000100003000080001000040000;
 // synopsys translate_on
 
 assign dataout[0] = \dataout[0]~output_o ;

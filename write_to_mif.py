@@ -14,12 +14,18 @@ def sine_wave_cycle_logic(choice:int):
         fs=1
         output= np.sin(2*np.pi*fs*t)
         output=np.round(output*15).astype(np.uint8)[:32]
+    elif choice==2:
+        N=2**7
+        t=np.linspace(0,1,N)
+        fs=1
+        output= np.sin(2*np.pi*fs*t)
+        output=np.round(output*15).astype(np.uint8)[:32]
     else:
         print("0: full cycle sine wave \n1: half cycle sine wave")
         return None
 
     return output
-output=sine_wave_cycle_logic(1)
+output=sine_wave_cycle_logic(2)
 print(output)
 with open("C:\MWT2\DSS\coswavesoted.mif",'w') as file:
     file.write("--This has been generated from python\n")

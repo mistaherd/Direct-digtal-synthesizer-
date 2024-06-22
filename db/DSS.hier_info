@@ -5,6 +5,9 @@ datain[2] => LPM_ADD_SUB:myADD.DATAA[2]
 datain[3] => LPM_ADD_SUB:myADD.DATAA[3]
 datain[4] => LPM_ADD_SUB:myADD.DATAA[4]
 clkin => LPM_FF:myFF.CLOCK
+clkin => LPM_FF:FF1.DATA[0]
+clkin => LPM_FF:FF1.CLOCK
+clkin => LPM_FF:FF2.CLOCK
 clkin => LPMROM:MyROM.clock
 dataout[0] <= LPMROM:MyROM.q[0]
 dataout[1] <= LPMROM:MyROM.q[1]
@@ -91,6 +94,32 @@ q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
 q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DSS|LPM_FF:FF1
+data[0] => dffs[0].DATAIN
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DSS|LPM_FF:FF2
+data[0] => dffs[0].DATAIN
+clock => dffs[0].CLK
+enable => dffs[0].ENA
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPMROM:MyROM

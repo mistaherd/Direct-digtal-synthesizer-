@@ -137,3 +137,72 @@ run
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
 write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_halfwave
 write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_halfwave.lst
+vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_textio
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package LPM_COMPONENTS
+# -- Compiling entity DSS_TB
+# -- Compiling architecture DSS_TB_arch of DSS_TB
+vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_textio
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package LPM_COMPONENTS
+# -- Compiling entity DSS_TB
+# -- Compiling architecture DSS_TB_arch of DSS_TB
+vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_textio
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package LPM_COMPONENTS
+# -- Compiling entity DSS_TB
+# -- Compiling architecture DSS_TB_arch of DSS_TB
+restart -f
+# Loading work.dss_tb(dss_tb_arch)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+run
+restart -f
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_quaterwave.lst
+restart -f
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+restart -f
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+write list -window .main_pane.list.interior.cs.body C:/Users/User/Downloads/outputfrom_quaterwave.lst
