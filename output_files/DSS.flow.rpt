@@ -1,5 +1,5 @@
 Flow report for DSS
-Sat Jun 22 16:52:11 2024
+Thu Jun 27 01:02:34 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Flow Failed - Sat Jun 22 16:52:11 2024          ;
+; Flow Status                        ; Flow Failed - Thu Jun 27 01:02:34 2024          ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DSS                                             ;
 ; Top-level Entity Name              ; DSS                                             ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/22/2024 16:52:11 ;
+; Start date & time ; 06/27/2024 01:02:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DSS                 ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                          ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+--------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 88491852537674.171907153001092 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 88491852537674.171944655015336 ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                             ; --            ; --          ; DSS_tb         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; On                             ; --            ; --          ; eda_simulation ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; DSS_tb                         ; --            ; --          ; eda_simulation ;
@@ -99,8 +99,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 4609 MB             ; 00:00:02                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4609 MB             ; 00:00:04                           ;
+; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

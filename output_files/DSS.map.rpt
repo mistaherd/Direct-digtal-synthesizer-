@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSS
-Sat Jun 22 16:52:11 2024
+Thu Jun 27 01:02:34 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Jun 22 16:52:11 2024               ;
+; Analysis & Synthesis Status        ; Failed - Thu Jun 27 01:02:34 2024               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DSS                                             ;
 ; Top-level Entity Name              ; DSS                                             ;
@@ -156,7 +156,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jun 22 16:52:10 2024
+    Info: Processing started: Thu Jun 27 01:02:28 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSS -c DSS
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file dss.vhd
@@ -168,11 +168,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file lpmrom.
 Info (12021): Found 2 design units, including 1 entities, in source file dss_tb.vhd
     Info (12022): Found design unit 1: DSS_TB-DSS_TB_arch
     Info (12023): Found entity 1: DSS_TB
-Error (10382): VHDL error at DSS.vhd(100): index of object of array type STD_LOGIC_2D must have 2 dimensions File: C:/MWT2/DSS/DSS.vhd Line: 100
+Error (10476): VHDL error at DSS.vhd(102): type of identifier "in_mux_arry" does not agree with its usage as "STD_LOGIC_2D" type File: C:/MWT2/DSS/DSS.vhd Line: 102
 Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
     Error: Peak virtual memory: 4609 megabytes
-    Error: Processing ended: Sat Jun 22 16:52:12 2024
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+    Error: Processing ended: Thu Jun 27 01:02:34 2024
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:04
 
 

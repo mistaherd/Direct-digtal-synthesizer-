@@ -17,14 +17,15 @@ ENTITY DSS IS
 	END ENTITY DSS;
 	
 	ARCHITECTURE mycomp OF DSS IS
-	SIGNAL out_ADD : STD_LOGIC_VECTOR (4 DOWNTO 0);
+	SIGNAL out_ADD : STD_LOGIC_VECTOR (4 downto 0);
 	
-	SIGNAL out_DFF : STD_LOGIC_VECTOR (4 DOWNTO 0);
+	SIGNAL out_DFF : STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF1: STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL out_DFF2: STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL clkdata : STD_LOGIC_VECTOR(0 downto 0);
-	SIGNAL out_AND : STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL in_AND	: STD_LOGIC_VECTOR (5 downto 0);
+	SIGNAL out_MUX : STD_LOGIC_VECTOR (4 downto 0);
+	type array2d is array(1 downto 0) of std_logic_vector(4 downto 0);
+	SIGNAL in_mux_arry : array2d;
 	COMPONENT LPMROM
 	  PORT (
 				address : in std_logic_vector(4 downto 0);  -- Adjust address width as needed
@@ -87,27 +88,26 @@ ENTITY DSS IS
 			CLOCK =>clkin,
 			Q=>out_DFF2
 		);
-		in_AND <=out_DFF &out_DFF2;
-		in_AND(5 downto 1) <= (others => out_DFF2(0));
-		myAND : lpm_and
+		in_mux_arry(0) <= (others => '0');
+		in_mux_arry(1) <=out_DFF;
+		MYMuX:lpm_MUX
 		GENERIC MAP
 		(
-			LPM_WIDTH=>5,
-			LPM_SIZE=>5
+			LPM_WIDTH =>1,
+			LPM_SIZE =>5,
+			LPM_WIDTHS=>2
 		)
 		PORT MAP
 		(
-			data(0) =>in_AND(0),
-			data(1) =>in_AND(1),
-			data(2) =>in_AND(2),
-			data(3) =>in_AND(3),
-			data(4) =>in_AND(4),
-			result =>out_AND
+			Data=>in_mux_arry,
+			Sel=>out_DFF2,
+			Result=>out_MUX
 		);
+		
 		MyROM : LPMROM
 			PORT MAP
 			(
-			address => out_AND,
+			address => out_MUX,
 			clock => clkin,
 			q =>dataout
 			);

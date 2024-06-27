@@ -1,14 +1,14 @@
-Fitter Status : Successful - Sat Jun 22 16:25:32 2024
+Fitter Status : Successful - Sat Jun 22 22:22:53 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : DSS
 Top-level Entity Name : DSS
 Family : Cyclone III
 Device : EP3C5F256C6
 Timing Models : Final
-Total logic elements : 5 / 5,136 ( < 1 % )
-    Total combinational functions : 5 / 5,136 ( < 1 % )
-    Dedicated logic registers : 5 / 5,136 ( < 1 % )
-Total registers : 5
+Total logic elements : 12 / 5,136 ( < 1 % )
+    Total combinational functions : 10 / 5,136 ( < 1 % )
+    Dedicated logic registers : 7 / 5,136 ( < 1 % )
+Total registers : 7
 Total pins : 19 / 183 ( 10 % )
 Total virtual pins : 0
 Total memory bits : 256 / 423,936 ( < 1 % )

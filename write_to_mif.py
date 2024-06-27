@@ -25,7 +25,7 @@ def sine_wave_cycle_logic(choice:int):
         return None
 
     return output
-output=sine_wave_cycle_logic(2)
+output=sine_wave_cycle_logic(0)
 print(output)
 with open("C:\MWT2\DSS\coswavesoted.mif",'w') as file:
     file.write("--This has been generated from python\n")

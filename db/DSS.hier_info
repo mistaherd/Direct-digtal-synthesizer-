@@ -119,7 +119,7 @@ aload => ~NO_FANOUT~
 sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sload => ~NO_FANOUT~
-q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPMROM:MyROM
