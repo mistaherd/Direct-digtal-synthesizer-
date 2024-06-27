@@ -4,7 +4,7 @@ USE ieee.std_logic_arith.all;
 
 LIBRARY lpm;
 USE lpm.lpm_components.all;
-
+USE lpm.lpm_components.std_logic_2D;
 ENTITY DSS IS
 	PORT
 	(
@@ -24,8 +24,8 @@ ENTITY DSS IS
 	SIGNAL out_DFF2: STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL clkdata : STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL out_MUX : STD_LOGIC_VECTOR (4 downto 0);
-	type array2d is array(1 downto 0) of std_logic_vector(4 downto 0);
-	SIGNAL in_mux_arry : array2d;
+	SIGNAL in_Mux :STD_LOGIC_VECTOR(7 downto 0);
+	 
 	COMPONENT LPMROM
 	  PORT (
 				address : in std_logic_vector(4 downto 0);  -- Adjust address width as needed
@@ -88,28 +88,29 @@ ENTITY DSS IS
 			CLOCK =>clkin,
 			Q=>out_DFF2
 		);
-		in_mux_arry(0) <= (others => '0');
-		in_mux_arry(1) <=out_DFF;
-		MYMuX:lpm_MUX
-		GENERIC MAP
-		(
-			LPM_WIDTH =>1,
-			LPM_SIZE =>5,
-			LPM_WIDTHS=>2
-		)
-		PORT MAP
-		(
-			Data=>in_mux_arry,
-			Sel=>out_DFF2,
-			Result=>out_MUX
-		);
 		
 		MyROM : LPMROM
 			PORT MAP
 			(
-			address => out_MUX,
+			address => out_DFF,
 			clock => clkin,
-			q =>dataout
+			q =>in_Mux
 			);
+		MyMux:lpm_MUX
+		GENERIC MAP
+		(
+			LPM_WIDTH=>8,
+			LPM_SIZE=>256,
+			LPM_WIDTHS=>1
+		)
+		PORT MAP
+		(
+			data(0,0 to 7)=>in_Mux(0),
+			data(1,0 to 7)=>in_Mux,
+			sel=>out_DFF2(0),
+			result=>dataout
+		);
+		
+		--out_MUX <= out_DFF when out_DFF2(0) = '1' else ;
 	END mycomp;
  

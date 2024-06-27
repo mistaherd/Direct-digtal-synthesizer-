@@ -65,10 +65,10 @@
 # 
 #           File in use by: User  Hostname: DESKTOP-GC5G1UN  ProcessID: 14496
 # 
-#           Attempting to use alternate WLF file "./wlft27wje5".
+#           Attempting to use alternate WLF file "./wlfttrjd8y".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlft27wje5
+#           Using alternate file: ./wlfttrjd8y
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
@@ -103,19 +103,18 @@ vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
 # -- Loading package LPM_COMPONENTS
 # -- Compiling entity DSS_TB
 # -- Compiling architecture DSS_TB_arch of DSS_TB
-vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package std_logic_textio
-# -- Loading package STD_LOGIC_UNSIGNED
-# -- Loading package LPM_COMPONENTS
-# -- Compiling entity DSS_TB
-# -- Compiling architecture DSS_TB_arch of DSS_TB
 restart -f
 # Loading work.dss_tb(dss_tb_arch)
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+run
+run
+restart -f
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V

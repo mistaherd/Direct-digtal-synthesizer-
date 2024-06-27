@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
-// DATE "06/22/2024 22:23:01"
+// DATE "06/27/2024 14:03:41"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -93,23 +93,23 @@ wire \clkin~inputclkctrl_outclk ;
 wire \myFF|dffs[0]~5_combout ;
 wire \FF1|dffs[0]~feeder_combout ;
 wire \FF2|dffs[0]~feeder_combout ;
-wire \out_AND[1]~0_combout ;
+wire \out_MUX[0]~0_combout ;
 wire \myFF|dffs[0]~6 ;
 wire \myFF|dffs[1]~7_combout ;
-wire \out_AND[2]~1_combout ;
+wire \out_MUX[1]~1_combout ;
 wire \myFF|dffs[1]~8 ;
 wire \myFF|dffs[2]~9_combout ;
-wire \out_AND[3]~2_combout ;
-wire \out_AND[4]~3_combout ;
+wire \out_MUX[2]~2_combout ;
+wire \out_MUX[3]~3_combout ;
 wire \datain[3]~input_o ;
 wire \myFF|dffs[2]~10 ;
 wire \myFF|dffs[3]~12 ;
 wire \myFF|dffs[4]~13_combout ;
-wire \out_AND[5]~4_combout ;
+wire \out_MUX[4]~4_combout ;
 wire \myFF|dffs[3]~11_combout ;
-wire [0:0] \FF2|dffs ;
 wire [4:0] \myFF|dffs ;
 wire [0:0] \FF1|dffs ;
+wire [0:0] \FF2|dffs ;
 wire [7:0] \MyROM|altsyncram_component|auto_generated|q_a ;
 
 wire [17:0] \MyROM|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
@@ -465,20 +465,20 @@ defparam \FF2|dffs[0] .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N26
-cycloneiii_lcell_comb \out_AND[1]~0 (
+cycloneiii_lcell_comb \out_MUX[0]~0 (
 // Equation(s):
-// \out_AND[1]~0_combout  = (\myFF|dffs [0] & \FF2|dffs [0])
+// \out_MUX[0]~0_combout  = (\myFF|dffs [0] & \FF2|dffs [0])
 
 	.dataa(gnd),
 	.datab(\myFF|dffs [0]),
 	.datac(gnd),
 	.datad(\FF2|dffs [0]),
 	.cin(gnd),
-	.combout(\out_AND[1]~0_combout ),
+	.combout(\out_MUX[0]~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \out_AND[1]~0 .lut_mask = 16'hCC00;
-defparam \out_AND[1]~0 .sum_lutc_input = "datac";
+defparam \out_MUX[0]~0 .lut_mask = 16'hCC00;
+defparam \out_MUX[0]~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N2
@@ -520,20 +520,20 @@ defparam \myFF|dffs[1] .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N28
-cycloneiii_lcell_comb \out_AND[2]~1 (
+cycloneiii_lcell_comb \out_MUX[1]~1 (
 // Equation(s):
-// \out_AND[2]~1_combout  = (\myFF|dffs [1] & \FF2|dffs [0])
+// \out_MUX[1]~1_combout  = (\myFF|dffs [1] & \FF2|dffs [0])
 
 	.dataa(gnd),
 	.datab(\myFF|dffs [1]),
 	.datac(gnd),
 	.datad(\FF2|dffs [0]),
 	.cin(gnd),
-	.combout(\out_AND[2]~1_combout ),
+	.combout(\out_MUX[1]~1_combout ),
 	.cout());
 // synopsys translate_off
-defparam \out_AND[2]~1 .lut_mask = 16'hCC00;
-defparam \out_AND[2]~1 .sum_lutc_input = "datac";
+defparam \out_MUX[1]~1 .lut_mask = 16'hCC00;
+defparam \out_MUX[1]~1 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N4
@@ -574,37 +574,37 @@ defparam \myFF|dffs[2] .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N14
-cycloneiii_lcell_comb \out_AND[3]~2 (
+cycloneiii_lcell_comb \out_MUX[2]~2 (
 // Equation(s):
-// \out_AND[3]~2_combout  = (\myFF|dffs [2] & \FF2|dffs [0])
+// \out_MUX[2]~2_combout  = (\myFF|dffs [2] & \FF2|dffs [0])
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\myFF|dffs [2]),
 	.datad(\FF2|dffs [0]),
 	.cin(gnd),
-	.combout(\out_AND[3]~2_combout ),
+	.combout(\out_MUX[2]~2_combout ),
 	.cout());
 // synopsys translate_off
-defparam \out_AND[3]~2 .lut_mask = 16'hF000;
-defparam \out_AND[3]~2 .sum_lutc_input = "datac";
+defparam \out_MUX[2]~2 .lut_mask = 16'hF000;
+defparam \out_MUX[2]~2 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N12
-cycloneiii_lcell_comb \out_AND[4]~3 (
+cycloneiii_lcell_comb \out_MUX[3]~3 (
 // Equation(s):
-// \out_AND[4]~3_combout  = (\myFF|dffs [3] & \FF2|dffs [0])
+// \out_MUX[3]~3_combout  = (\myFF|dffs [3] & \FF2|dffs [0])
 
 	.dataa(\myFF|dffs [3]),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(\FF2|dffs [0]),
 	.cin(gnd),
-	.combout(\out_AND[4]~3_combout ),
+	.combout(\out_MUX[3]~3_combout ),
 	.cout());
 // synopsys translate_off
-defparam \out_AND[4]~3 .lut_mask = 16'hAA00;
-defparam \out_AND[4]~3 .sum_lutc_input = "datac";
+defparam \out_MUX[3]~3 .lut_mask = 16'hAA00;
+defparam \out_MUX[3]~3 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: IOIBUF_X9_Y0_N22
@@ -673,20 +673,20 @@ defparam \myFF|dffs[4] .power_up = "low";
 // synopsys translate_on
 
 // Location: LCCOMB_X8_Y3_N22
-cycloneiii_lcell_comb \out_AND[5]~4 (
+cycloneiii_lcell_comb \out_MUX[4]~4 (
 // Equation(s):
-// \out_AND[5]~4_combout  = (\myFF|dffs [4] & \FF2|dffs [0])
+// \out_MUX[4]~4_combout  = (\myFF|dffs [4] & \FF2|dffs [0])
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(\myFF|dffs [4]),
 	.datad(\FF2|dffs [0]),
 	.cin(gnd),
-	.combout(\out_AND[5]~4_combout ),
+	.combout(\out_MUX[4]~4_combout ),
 	.cout());
 // synopsys translate_off
-defparam \out_AND[5]~4 .lut_mask = 16'hF000;
-defparam \out_AND[5]~4 .sum_lutc_input = "datac";
+defparam \out_MUX[4]~4 .lut_mask = 16'hF000;
+defparam \out_MUX[4]~4 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: M9K_X15_Y3_N0
@@ -706,7 +706,7 @@ cycloneiii_ram_block \MyROM|altsyncram_component|auto_generated|ram_block1a0 (
 	.clr0(gnd),
 	.clr1(gnd),
 	.portadatain(18'b000000000000000000),
-	.portaaddr({\out_AND[5]~4_combout ,\out_AND[4]~3_combout ,\out_AND[3]~2_combout ,\out_AND[2]~1_combout ,\out_AND[1]~0_combout }),
+	.portaaddr({\out_MUX[4]~4_combout ,\out_MUX[3]~3_combout ,\out_MUX[2]~2_combout ,\out_MUX[1]~1_combout ,\out_MUX[0]~0_combout }),
 	.portabyteenamasks(1'b1),
 	.portbdatain(18'b000000000000000000),
 	.portbaddr(5'b00000),
@@ -738,7 +738,7 @@ defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_write_e
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 5;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 18;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M9K";
-defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h0003C000F0003C000F0003C000E00038000E00038000D00034000D00030000C0002C000B00028000A000240008000200007000180006000140004000100003000080001000040000;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h0000400020001000050001C000800024000A0002C000C00034000E00038000F0003C000F0003C000F00038000E00034000D00030000B0002800080001C0006000100003000040000;
 // synopsys translate_on
 
 // Location: FF_X8_Y3_N7
