@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/27/2024 14:03:40"
+// Generated on "07/01/2024 22:09:57"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    DSS
 // 
@@ -28,16 +28,18 @@
 `timescale 1 ps/ 1 ps
 module DSS_vlg_sample_tst(
 	clkin,
-	datain,
+	datain0,
+	datain1,
 	sampler_tx
 );
 input  clkin;
-input [4:0] datain;
+input [4:0] datain0;
+input [4:0] datain1;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(clkin or datain)
+always @(clkin or datain0 or datain1)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -378,7 +380,8 @@ module DSS_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg clkin;
-reg [4:0] datain;
+reg [4:0] datain0;
+reg [4:0] datain1;
 // wires                                               
 wire [7:0] dataout;
 wire [4:0] testout;
@@ -389,7 +392,8 @@ wire sampler;
 DSS i1 (
 // port map - connection between master ports and signals/registers   
 	.clkin(clkin),
-	.datain(datain),
+	.datain0(datain0),
+	.datain1(datain1),
 	.dataout(dataout),
 	.testout(testout)
 );
@@ -401,35 +405,61 @@ begin
 	clkin = #1000 1'b1;
 	#1000;
 end 
-// datain[ 4 ]
+// datain0[ 4 ]
 initial
 begin
-	datain[4] = 1'b0;
+	datain0[4] = 1'b0;
 end 
-// datain[ 3 ]
+// datain0[ 3 ]
 initial
 begin
-	datain[3] = 1'b0;
+	datain0[3] = 1'b0;
 end 
-// datain[ 2 ]
+// datain0[ 2 ]
 initial
 begin
-	datain[2] = 1'b0;
+	datain0[2] = 1'b0;
 end 
-// datain[ 1 ]
+// datain0[ 1 ]
 initial
 begin
-	datain[1] = 1'b1;
+	datain0[1] = 1'b1;
 end 
-// datain[ 0 ]
+// datain0[ 0 ]
 initial
 begin
-	datain[0] = 1'b0;
+	datain0[0] = 1'b0;
+end 
+// datain1[ 4 ]
+initial
+begin
+	datain1[4] = 1'b0;
+end 
+// datain1[ 3 ]
+initial
+begin
+	datain1[3] = 1'b0;
+end 
+// datain1[ 2 ]
+initial
+begin
+	datain1[2] = 1'b0;
+end 
+// datain1[ 1 ]
+initial
+begin
+	datain1[1] = 1'b0;
+end 
+// datain1[ 0 ]
+initial
+begin
+	datain1[0] = 1'b0;
 end 
 
 DSS_vlg_sample_tst tb_sample (
 	.clkin(clkin),
-	.datain(datain),
+	.datain0(datain0),
+	.datain1(datain1),
 	.sampler_tx(sampler)
 );
 

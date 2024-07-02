@@ -1,4 +1,4 @@
-Fitter Status : Successful - Thu Jun 27 13:35:42 2024
+Fitter Status : Successful - Mon Jul 01 21:40:16 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : DSS
 Top-level Entity Name : DSS
@@ -9,7 +9,7 @@ Total logic elements : 12 / 5,136 ( < 1 % )
     Total combinational functions : 10 / 5,136 ( < 1 % )
     Dedicated logic registers : 7 / 5,136 ( < 1 % )
 Total registers : 7
-Total pins : 19 / 183 ( 10 % )
+Total pins : 24 / 183 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 256 / 423,936 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )

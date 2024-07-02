@@ -12,13 +12,15 @@ END ;
  
 ARCHITECTURE DSS_TB_arch OF DSS_TB IS
   SIGNAL clkin		:  STD_LOGIC; 
-  SIGNAL datain	:  std_logic_vector (4 downto 0)  ; 
-  SIGNAL dataout	:  std_logic_vector (7 downto 0)  ; 
+  SIGNAL datain0	:  std_logic_vector(4 downto 0);
+  SIGNAL datain1	:	std_logic_vector(4 downto 0);
+  SIGNAL dataout	:  std_logic_vector (7 downto 0); 
   SIGNAL testout	:	std_logic_vector(4 downto 0);
   COMPONENT DSS  
     PORT ( 
       clkin  : in STD_LOGIC ; 
-      datain  : in std_logic_vector (4 downto 0) ; 
+      datain0  : in std_logic_vector (4 downto 0);
+		datain1  : in std_logic_vector (4 downto 0);
       dataout  : out std_logic_vector (7 downto 0) ; 
 		testout	: out std_logic_vector(4 downto 0));
   END COMPONENT ; 
@@ -26,10 +28,12 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
-      clkin   => clkin  ,
-      datain   => datain  ,
-		testout => testout ,
-      dataout   => dataout   ); 
+      clkin		=>clkin,
+      datain0	=>datain0,
+		datain1	=>datain1,
+		testout => testout,
+      dataout   => dataout   
+		); 
  clk_process :process
    begin
 		clkin <= '0';
@@ -42,7 +46,8 @@ BEGIN
 -- Start Time = 0 ns, End Time = 1 us, Period = 0 ns
 	stimulus_process: Process
 		Begin
-			datain  <= "00010"  ;
+			datain0  <= "00010";
+			datain1	<=	"00000";
 			wait for	clk_period ;
 
 			wait;
