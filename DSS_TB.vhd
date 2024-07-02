@@ -24,7 +24,7 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
       dataout  : out std_logic_vector (7 downto 0) ; 
 		testout	: out std_logic_vector(4 downto 0));
   END COMPONENT ; 
-  constant clk_period : time :=5 ns;
+  constant clk_period : time :=10 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 

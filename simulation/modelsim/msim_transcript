@@ -26,6 +26,13 @@
 # -- Loading package std_logic_1164
 # -- Compiling entity LPMROM
 # -- Compiling architecture SYN of lpmrom
+# vcom -93 -work work {C:/MWT2/DSS/MUX.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MUX
+# -- Compiling architecture rtl of MUX
 # 
 # vcom -93 -work work {C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -50,37 +57,171 @@
 # Loading lpm.lpm_components
 # Loading work.dss_tb(dss_tb_arch)
 # Loading work.dss(mycomp)
+# ** Failure: (vsim-3817) Port "datain0" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 11
+# ** Failure: (vsim-3817) Port "datain1" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 12
+# ** Error: (vsim-3732) C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd(32): No default binding for component instance 'DUT'.
+# 
+#    The following component port is not on the entity:
+#           datain
+# 
+#         Region: /dss_tb/DUT
 # Loading ieee.std_logic_signed(body)
 # Loading lpm.lpm_add_sub(lpm_syn)
 # Loading lpm.lpm_add_sub_signed(lpm_syn)
 # Loading lpm.lpm_common_conversion(body)
 # Loading lpm.lpm_ff(lpm_syn)
+# Loading work.mux(rtl)
+# ** Fatal: Bad library format, library not compiled with ALTERA compiler.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/Mux_ASK File: C:/MWT2/DSS/DSS.vhd Line: 99
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./DSS_run_msim_rtl_vhdl.do PAUSED at line 14
+vsim work.dss_tb
+# vsim work.dss_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_components
+# Loading work.dss_tb(dss_tb_arch)
+# Loading work.dss(mycomp)
+# ** Failure: (vsim-3817) Port "datain0" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 11
+# ** Failure: (vsim-3817) Port "datain1" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 12
+# ** Error: (vsim-3732) C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd(32): No default binding for component instance 'DUT'.
+# 
+#    The following component port is not on the entity:
+#           datain
+# 
+#         Region: /dss_tb/DUT
+# Loading ieee.std_logic_signed(body)
+# Loading lpm.lpm_add_sub(lpm_syn)
+# Loading lpm.lpm_add_sub_signed(lpm_syn)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_ff(lpm_syn)
+# Loading work.mux(rtl)
+# ** Fatal: Bad library format, library not compiled with ALTERA compiler.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/Mux_ASK File: C:/MWT2/DSS/DSS.vhd Line: 99
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./DSS_run_msim_rtl_vhdl.do PAUSED at line 14
+vsim work.dss_tb(dss_tb_arch)
+# vsim work.dss_tb(dss_tb_arch) 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_components
+# Loading work.dss_tb(dss_tb_arch)
+# Loading work.dss(mycomp)
+# ** Failure: (vsim-3817) Port "datain0" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 11
+# ** Failure: (vsim-3817) Port "datain1" of entity "dss" is not in the component being instantiated.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT File: C:/MWT2/DSS/DSS.vhd Line: 12
+# ** Error: (vsim-3732) C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd(32): No default binding for component instance 'DUT'.
+# 
+#    The following component port is not on the entity:
+#           datain
+# 
+#         Region: /dss_tb/DUT
+# Loading ieee.std_logic_signed(body)
+# Loading lpm.lpm_add_sub(lpm_syn)
+# Loading lpm.lpm_add_sub_signed(lpm_syn)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_ff(lpm_syn)
+# Loading work.mux(rtl)
+# ** Fatal: Bad library format, library not compiled with ALTERA compiler.
+#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/Mux_ASK File: C:/MWT2/DSS/DSS.vhd Line: 99
+# FATAL ERROR while loading design
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./DSS_run_msim_rtl_vhdl.do PAUSED at line 14
+vsim work.dss
+# vsim work.dss 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading lpm.lpm_components
+# Loading work.dss(mycomp)
+# Loading ieee.std_logic_signed(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_add_sub(lpm_syn)
+# Loading lpm.lpm_add_sub_signed(lpm_syn)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_ff(lpm_syn)
+# Loading work.mux(rtl)
 # Loading work.lpmrom(syn)
 # Loading altera_mf.altera_common_conversion(body)
 # Loading altera_mf.altera_device_families(body)
 # Loading altera_mf.altsyncram(translated)
-# 
-# add wave *
+add wave -position end  sim:/dss/datain0
+add wave -position end  sim:/dss/datain1
+add wave -position end  sim:/dss/clkin
+add wave -position end  sim:/dss/dataout
+add wave -position end  sim:/dss/testout
+add wave -position end  sim:/dss/out_ADD
+add wave -position end  sim:/dss/out_DFF
+add wave -position end  sim:/dss/out_DFF1
+add wave -position end  sim:/dss/out_DFF2
+add wave -position end  sim:/dss/clkdata
+add wave -position end  sim:/dss/ROM_OUT
+add wave -position end  sim:/dss/in_mux1
+add wave -position end  sim:/dss/mux_sel
+add wave -position end  sim:/dss/mux_out
+add wave -position end  sim:/dss/shift_out
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: User  Hostname: DESKTOP-GC5G1UN  ProcessID: 14496
 # 
-#           Attempting to use alternate WLF file "./wlfttrjd8y".
+#           Attempting to use alternate WLF file "./wlftjmviyi".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlfttrjd8y
+#           Using alternate file: ./wlftjmviyi
 # 
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+add wave -position end  sim:/dss/datain0
+add wave -position end  sim:/dss/datain1
+add wave -position end  sim:/dss/clkin
+add wave -position end  sim:/dss/dataout
+add wave -position end  sim:/dss/testout
+add wave -position end  sim:/dss/out_ADD
+add wave -position end  sim:/dss/out_DFF
+add wave -position end  sim:/dss/out_DFF1
+add wave -position end  sim:/dss/out_DFF2
+add wave -position end  sim:/dss/clkdata
+add wave -position end  sim:/dss/ROM_OUT
+add wave -position end  sim:/dss/in_mux1
+add wave -position end  sim:/dss/mux_sel
+add wave -position end  sim:/dss/mux_out
+add wave -position end  sim:/dss/shift_out
+add wave -position end  sim:/dss/datain0
+add wave -position end  sim:/dss/datain0
+add wave -position end  sim:/dss/datain1
+add wave -position end  sim:/dss/clkin
+add wave -position end  sim:/dss/dataout
+add wave -position end  sim:/dss/testout
+add wave -position end  sim:/dss/out_ADD
+add wave -position end  sim:/dss/out_DFF
+add wave -position end  sim:/dss/out_DFF1
+add wave -position end  sim:/dss/out_DFF2
+add wave -position end  sim:/dss/clkdata
+add wave -position end  sim:/dss/ROM_OUT
+add wave -position end  sim:/dss/in_mux1
+add wave -position end  sim:/dss/mux_sel
+add wave -position end  sim:/dss/mux_out
+add wave -position end  sim:/dss/shift_out
 vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -103,22 +244,14 @@ vcom -reportprogress 300 -work work C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
 # -- Loading package LPM_COMPONENTS
 # -- Compiling entity DSS_TB
 # -- Compiling architecture DSS_TB_arch of DSS_TB
-restart -f
-# Loading work.dss_tb(dss_tb_arch)
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+#    Time: 0 ps  Iteration: 0  Instance: /dss/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+#    Time: 0 ps  Iteration: 0  Instance: /dss/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
-run
-run
-restart -f
-run
+#    Time: 0 ps  Iteration: 0  Instance: /dss/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+#    Time: 0 ps  Iteration: 2  Instance: /dss/myADD/L2/V
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /dss_tb/DUT/myADD/L2/V
+#    Time: 0 ps  Iteration: 2  Instance: /dss/myADD/L2/V

@@ -7,6 +7,7 @@ vmap work rtl_work
 
 vcom -93 -work work {C:/MWT2/DSS/DSS.vhd}
 vcom -93 -work work {C:/MWT2/DSS/LPMROM.vhd}
+vcom -93 -work work {C:/MWT2/DSS/MUX.vhd}
 
 vcom -93 -work work {C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd}
 

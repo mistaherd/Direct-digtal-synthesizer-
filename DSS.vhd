@@ -87,25 +87,14 @@ ENTITY DSS IS
 			CLOCK =>clkin,
 			Q=>out_DFF1
 		);
-		FF2:lpm_FF
-		GENERIC MAP
-		(
-			LPM_WIDTH =>1,
-			LPM_FFTYPE =>"DFF"
-		)
-		PORT MAP
-		(
-			DATA=>out_DFF1,
-			CLOCK =>clkin,
-			Q=>out_DFF2
-		);
+		
 		
 		Mux_ASK: MUX
 		PORT MAP
 		(
 			in_mux0 =>out_DFF,
 			in_mux1 =>datain1,
-			sel=>out_DFF2,
+			sel=>out_DFF1,
 			mux_out=>mux_out
 		);
 		MyROM : LPMROM
@@ -113,9 +102,9 @@ ENTITY DSS IS
 			(
 			address => mux_out,
 			clock => clkin,
-			q =>ROM_OUT
+			q =>dataout
 			);
-		dataout<=ROM_OUT;
+		
 		
 		
 	END mycomp;
