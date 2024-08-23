@@ -46,8 +46,6 @@ ENTITY DSS IS
 	end COMPONENT;
 
 	BEGIN
-		
-	
 		myADD :lpm_ADD_SUB
 		GENERIC MAP
 			(
@@ -87,8 +85,6 @@ ENTITY DSS IS
 			CLOCK =>clkin,
 			Q=>out_DFF1
 		);
-		
-		
 		Mux_ASK: MUX
 		PORT MAP
 		(
