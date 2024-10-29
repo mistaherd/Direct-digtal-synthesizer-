@@ -1,0 +1,9 @@
+# **************************************************
+# Quartus Prime Version 24.2.0
+# Process ID 1188
+# Start logging TCL commands
+# Sat Oct 5 15:50:20 2024
+# **************************************************
+project_open "C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.qpf" -revision DSS
+project_open "C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.qpf"
+project_close

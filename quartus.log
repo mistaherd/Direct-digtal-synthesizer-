@@ -1,0 +1,18 @@
+# **************************************************
+# Quartus Prime Version 24.2.0
+# Process ID 1188
+# Start logging UI actions
+# Sat Oct 5 15:50:20 2024
+# **************************************************
+[Sat Oct  5 15:50:31 2024] Window title: 'Quartus Prime' | QPushButton '&Yes' pressed!
+[Sat Oct  5 15:50:48 2024] Window title: 'Quartus Prime' | QPushButton '&No' pressed!
+[Sat Oct  5 15:50:58 2024] [Action triggered] Window title: 'Quartus Prime Pro Edition' | &File > 'Open P&roject...' was pressed
+[Sat Oct  5 15:51:03 2024] Window title: 'Quartus Prime' | QPushButton '&Yes' pressed!
+[Sat Oct  5 15:51:04 2024] Window title: 'Quartus Prime' | QPushButton '&Yes' pressed!
+[Sat Oct  5 15:51:18 2024] Window title: 'Quartus Prime' | QPushButton '&No' pressed!
+[Sat Oct  5 15:51:19 2024] [Action triggered] Window title: 'Quartus Prime Pro Edition - C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS - DSS [*]' | P&rocessing > 'Compilation Dashboard' was pressed
+[Sat Oct  5 16:34:52 2024] [Action triggered] Window title: 'Quartus Prime Pro Edition - C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS - DSS [*]' | &Tools > Netlist &Viewers > 'RTL Analyzer (Instrumented)' was pressed
+[Sat Oct  5 16:35:33 2024] [Action triggered] Window title: 'Quartus Prime Pro Edition - C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS - DSS [*]' | &Assignments > '&Device...' was pressed
+[Sat Oct  5 16:35:33 2024] Window title: 'Device' | 'Target device': QRadioButton '&Specific device selected in 'Available devices' list' was checked
+[Sat Oct  5 16:35:37 2024] Window title: 'Device' | 'm_family_cbox' combo box changed to: 'Cyclone 10 GX'
+[Sat Oct  5 16:35:38 2024] Window title: 'Device' | 'm_category_filter_cbox' combo box changed to: 'All'
