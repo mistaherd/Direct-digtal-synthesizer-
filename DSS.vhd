@@ -12,14 +12,15 @@ ENTITY DSS IS
 		clkin		:	IN	STD_LOGIC;
 		
 		dataout	: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		testout	:	OUT	STD_LOGIC_VECTOR(4 downto 0)
+		--testout	:	OUT	STD_LOGIC_VECTOR(4 downto 0)
+		testout	:	OUT	STD_LOGIC_VECTOR(0 downto 0)
 	);
 	END ENTITY DSS;
 	
 	ARCHITECTURE mycomp OF DSS IS
 	SIGNAL out_ADD : STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF : STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_DFF1: STD_LOGIC_VECTOR(0 downto 0);
+	SIGNAL out_DFF1: STD_LOGIC_VECTOR (0 downto 0);
 	
 	SIGNAL clkdata : STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL ROM_OUT : STD_LOGIC_VECTOR(7 downto 0);
@@ -58,7 +59,7 @@ ENTITY DSS IS
 				CLOCK => clkin,
 				Q => out_DFF
 			);
-		testout<=out_DFF;
+		--testout<=out_DFF;
 		clkdata(0)<=clkin;
 		FF1:lpm_FF
 		GENERIC MAP
@@ -66,6 +67,7 @@ ENTITY DSS IS
 			LPM_WIDTH =>1,
 			LPM_FFTYPE =>"DFF"
 		)
+		
 		PORT MAP
 		(
 			DATA=>clkdata,
@@ -74,7 +76,7 @@ ENTITY DSS IS
 		);
 	
 		
-		
+		testout<=out_DFF1;
 		MyROM : LPMROM
 			PORT MAP
 			(
@@ -82,12 +84,9 @@ ENTITY DSS IS
 			clock => clkin,
 			q =>ROM_OUT
 			);
-		Mux_ASK: MUX
-		if out_DFF1= '1' then
+		
+		dataout<=ROM_OUT when out_DFF1="1"else"00000000";
 			
-			dataout<=ROM_OUT;
-		
-		end if
-		
+	
 	END mycomp;
  

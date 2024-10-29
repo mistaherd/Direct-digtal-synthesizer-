@@ -7,7 +7,7 @@ vmap work gate_work
 
 vlog -vlog01compat -work work +incdir+. {DSS.vo}
 
-vcom -93 -work work {C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd}
 
 vsim -t 1ps -L altera_ver -L cycloneiii_ver -L gate_work -L work -voptargs="+acc"  DSS_tb
 

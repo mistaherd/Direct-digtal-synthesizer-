@@ -7,35 +7,35 @@ Slack : -1.756
 TNS   : -16.462
 
 Type  : Slow 1200mV 85C Model Hold 'clkin'
-Slack : 0.317
-TNS   : 0.000
+Slack : -0.120
+TNS   : -0.120
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -27.566
+TNS   : -28.566
 
 Type  : Slow 1200mV 0C Model Setup 'clkin'
 Slack : -1.484
 TNS   : -13.510
 
 Type  : Slow 1200mV 0C Model Hold 'clkin'
-Slack : 0.312
-TNS   : 0.000
+Slack : -0.100
+TNS   : -0.100
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -27.566
+TNS   : -28.566
 
 Type  : Fast 1200mV 0C Model Setup 'clkin'
 Slack : -0.324
 TNS   : -2.592
 
 Type  : Fast 1200mV 0C Model Hold 'clkin'
-Slack : 0.162
-TNS   : 0.000
+Slack : -0.055
+TNS   : -0.055
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -18.413
+TNS   : -19.489
 
 ------------------------------------------------------------

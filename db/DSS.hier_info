@@ -1,31 +1,22 @@
 |DSS
 datain[0] => LPM_ADD_SUB:myADD.DATAA[0]
-datain[0] => MUX:Mux_ASK.in_mux1[0]
 datain[1] => LPM_ADD_SUB:myADD.DATAA[1]
-datain[1] => MUX:Mux_ASK.in_mux1[1]
 datain[2] => LPM_ADD_SUB:myADD.DATAA[2]
-datain[2] => MUX:Mux_ASK.in_mux1[2]
 datain[3] => LPM_ADD_SUB:myADD.DATAA[3]
-datain[3] => MUX:Mux_ASK.in_mux1[3]
 datain[4] => LPM_ADD_SUB:myADD.DATAA[4]
-datain[4] => MUX:Mux_ASK.in_mux1[4]
 clkin => LPM_FF:myFF.CLOCK
 clkin => LPM_FF:FF1.DATA[0]
 clkin => LPM_FF:FF1.CLOCK
 clkin => LPMROM:MyROM.clock
-dataout[0] <= LPMROM:MyROM.q[0]
-dataout[1] <= LPMROM:MyROM.q[1]
-dataout[2] <= LPMROM:MyROM.q[2]
-dataout[3] <= LPMROM:MyROM.q[3]
-dataout[4] <= LPMROM:MyROM.q[4]
-dataout[5] <= LPMROM:MyROM.q[5]
-dataout[6] <= LPMROM:MyROM.q[6]
-dataout[7] <= LPMROM:MyROM.q[7]
-testout[0] <= LPM_FF:myFF.Q[0]
-testout[1] <= LPM_FF:myFF.Q[1]
-testout[2] <= LPM_FF:myFF.Q[2]
-testout[3] <= LPM_FF:myFF.Q[3]
-testout[4] <= LPM_FF:myFF.Q[4]
+dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+testout[0] <= LPM_FF:FF1.Q[0]
 
 
 |DSS|LPM_ADD_SUB:myADD
@@ -111,29 +102,6 @@ sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sload => ~NO_FANOUT~
 q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|MUX:Mux_ASK
-in_mux0[0] => mux_out.DATAB
-in_mux0[1] => mux_out.DATAB
-in_mux0[2] => mux_out.DATAB
-in_mux0[3] => mux_out.DATAB
-in_mux0[4] => mux_out.DATAB
-in_mux1[0] => mux_out.DATAA
-in_mux1[1] => mux_out.DATAA
-in_mux1[2] => mux_out.DATAA
-in_mux1[3] => mux_out.DATAA
-in_mux1[4] => mux_out.DATAA
-sel[0] => mux_out.OUTPUTSELECT
-sel[0] => mux_out.OUTPUTSELECT
-sel[0] => mux_out.OUTPUTSELECT
-sel[0] => mux_out.OUTPUTSELECT
-sel[0] => mux_out.OUTPUTSELECT
-mux_out[0] <= mux_out.DB_MAX_OUTPUT_PORT_TYPE
-mux_out[1] <= mux_out.DB_MAX_OUTPUT_PORT_TYPE
-mux_out[2] <= mux_out.DB_MAX_OUTPUT_PORT_TYPE
-mux_out[3] <= mux_out.DB_MAX_OUTPUT_PORT_TYPE
-mux_out[4] <= mux_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPMROM:MyROM
