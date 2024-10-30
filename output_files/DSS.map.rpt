@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSS
-Tue Oct 29 18:37:52 2024
+Wed Oct 30 02:13:59 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -20,10 +20,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  12. Parameter Settings for User Entity Instance: LPM_ADD_SUB:myADD
  13. Parameter Settings for User Entity Instance: LPM_FF:myFF
  14. Parameter Settings for User Entity Instance: LPM_FF:FF1
- 15. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 15. Parameter Settings for User Entity Instance: LPM_FF:FF2
+ 16. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -49,15 +50,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 29 18:37:52 2024      ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 30 02:13:58 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; DSS                                        ;
 ; Top-level Entity Name              ; DSS                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 14                                         ;
+; Total logic elements               ; 16                                         ;
 ;     Total combinational functions  ; 13                                         ;
-;     Dedicated logic registers      ; 6                                          ;
-; Total registers                    ; 6                                          ;
+;     Dedicated logic registers      ; 8                                          ;
+; Total registers                    ; 8                                          ;
 ; Total pins                         ; 15                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 256                                        ;
@@ -161,12 +162,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -205,7 +205,7 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 14          ;
+; Estimated Total logic elements              ; 16          ;
 ;                                             ;             ;
 ; Total combinational functions               ; 13          ;
 ; Logic element usage by number of LUT inputs ;             ;
@@ -217,16 +217,16 @@ applicable agreement for further details.
 ;     -- normal mode                          ; 9           ;
 ;     -- arithmetic mode                      ; 4           ;
 ;                                             ;             ;
-; Total registers                             ; 6           ;
-;     -- Dedicated logic registers            ; 6           ;
+; Total registers                             ; 8           ;
+;     -- Dedicated logic registers            ; 8           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 15          ;
 ; Total memory bits                           ; 256         ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clkin~input ;
-; Maximum fan-out                             ; 14          ;
-; Total fan-out                               ; 113         ;
+; Maximum fan-out                             ; 16          ;
+; Total fan-out                               ; 117         ;
 ; Average fan-out                             ; 1.98        ;
 +---------------------------------------------+-------------+
 
@@ -236,11 +236,12 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |DSS                                      ; 13 (8)            ; 6 (0)        ; 256         ; 0            ; 0       ; 0         ; 15   ; 0            ; |DSS                                                                             ; work         ;
+; |DSS                                      ; 13 (8)            ; 8 (1)        ; 256         ; 0            ; 0       ; 0         ; 15   ; 0            ; |DSS                                                                             ; work         ;
 ;    |LPMROM:MyROM|                         ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component                                ; work         ;
 ;          |altsyncram_jp91:auto_generated| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated ; work         ;
 ;    |lpm_ff:FF1|                           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:FF1                                                                  ; work         ;
+;    |lpm_ff:FF2|                           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:FF2                                                                  ; work         ;
 ;    |lpm_ff:myFF|                          ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:myFF                                                                 ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -269,7 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 6     ;
+; Total registers                              ; 8     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -337,6 +338,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LPM_FF:FF1 ;
++------------------------+-------------+------------------+
+; Parameter Name         ; Value       ; Type             ;
++------------------------+-------------+------------------+
+; LPM_WIDTH              ; 1           ; Signed Integer   ;
+; LPM_AVALUE             ; UNUSED      ; Untyped          ;
+; LPM_SVALUE             ; UNUSED      ; Untyped          ;
+; LPM_FFTYPE             ; DFF         ; Untyped          ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped          ;
+; CBXI_PARAMETER         ; NOTHING     ; Untyped          ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE   ;
++------------------------+-------------+------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_FF:FF2 ;
 +------------------------+-------------+------------------+
 ; Parameter Name         ; Value       ; Type             ;
 +------------------------+-------------+------------------+
@@ -450,7 +470,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Oct 29 18:37:47 2024
+    Info: Processing started: Wed Oct 30 02:13:56 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSS -c DSS
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file dss.vhd
@@ -523,15 +543,15 @@ Info (12128): Elaborating entity "altsyncram_jp91" for hierarchy "LPMROM:MyROM|a
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 14 logic cells
+    Info (21061): Implemented 16 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4672 megabytes
-    Info: Processing ended: Tue Oct 29 18:37:52 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Processing ended: Wed Oct 30 02:13:59 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
