@@ -1,6 +1,6 @@
 MIF/HEX Update report for DSS
-Wed Jun 19 00:36:44 2024
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed Oct 30 12:16:46 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
@@ -32,22 +32,24 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------+
-; MIF/HEX Update Summary                                    ;
-+-----------------------+-----------------------------------+
-; MIF/HEX Update Status ; Failed - Wed Jun 19 00:36:44 2024 ;
-; Revision Name         ; DSS                               ;
-; Top-level Entity Name ; DSS                               ;
-; Family                ; Cyclone III                       ;
-; Device                ; EP3C5F256C6                       ;
-+-----------------------+-----------------------------------+
++---------------------------------------------------------------+
+; MIF/HEX Update Summary                                        ;
++-----------------------+---------------------------------------+
+; MIF/HEX Update Status ; Successful - Wed Oct 30 12:16:46 2024 ;
+; Revision Name         ; DSS                                   ;
+; Top-level Entity Name ; DSS                                   ;
+; Family                ; Cyclone III                           ;
+; Device                ; EP3C5F256C6                           ;
++-----------------------+---------------------------------------+
 
 
-+--------------------------------+
-; MIF/HEX Update Processed Files ;
-+--------------------------------+
-; File Name                      ;
-+--------------------------------+
++-----------------------------------------------------------------------------+
+; MIF/HEX Update Processed Files                                              ;
++-----------------------------------------------------------------------------+
+; File Name                                                                   ;
++-----------------------------------------------------------------------------+
+; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/coswavesoted.mif ;
++-----------------------------------------------------------------------------+
 
 
 +-------------------------+
@@ -55,15 +57,15 @@ applicable agreement for further details.
 +-------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit MIF/HEX Update
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jun 19 00:36:42 2024
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Wed Oct 30 12:16:44 2024
 Info: Command: quartus_cdb DSS -c DSS --update_mif
-Warning (39023): Can't find Memory Initialization File coswavesoted -- skipped updates for this file
-Error (39022): Found no valid Memory Initialization File to process
-Error: Quartus II 64-Bit MIF/HEX Update was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4569 megabytes
-    Error: Processing ended: Wed Jun 19 00:36:44 2024
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Info (39024): Processed the following Memory Initialization File(s)
+    Info (39025): Processed Memory Initialization File C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/coswavesoted.mif
+Info: Quartus II 64-Bit MIF/HEX Update was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4634 megabytes
+    Info: Processing ended: Wed Oct 30 12:16:46 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

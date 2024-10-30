@@ -3,13 +3,15 @@ import numpy as np
 import matplotlib.pylab as plt
 # fname="outputofrom_fullwave.lst"
 # fname="outputfrom_halfwave.lst"
-fname="outputfrom_quaterwave.lst"
+# fname="outputfrom_quaterwave.lst"
+fname="part6.lst"
 with open(fname, 'r') as file:
     lines = file.readlines()  # Read all lines into a list
     items = [line.strip() for line in lines]  # Remove newline characters and
 output=[items[i].split() for i in range(len(items))]
 output=output[3:]
 header=["ps","Delta","clkin","datain","dataout","testout"]
+header.append("testout1")
 for i in range(len(output)):
     output[i][0]=int(output[i][0])*10**-3
 df =pd.DataFrame(data=output,columns=header,index=None)

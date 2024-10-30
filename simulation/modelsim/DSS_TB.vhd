@@ -14,21 +14,25 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
   SIGNAL clkin		:  STD_LOGIC; 
   SIGNAL datain	:  std_logic_vector (4 downto 0)  ; 
   SIGNAL dataout	:  std_logic_vector (7 downto 0)  ; 
-  SIGNAL testout	:	std_logic_vector(4 downto 0);
+  SIGNAL testout1	:	std_logic_vector(7 downto 0);
+  SIGNAL testout	:	std_logic_vector(0 downto 0);
   COMPONENT DSS  
     PORT ( 
-      clkin  : in STD_LOGIC ; 
+      clkin : in STD_LOGIC ; 
       datain  : in std_logic_vector (4 downto 0) ; 
-      dataout  : out std_logic_vector (7 downto 0) ; 
-		testout	: out std_logic_vector(4 downto 0));
+      dataout : out std_logic_vector (7 downto 0);
+      testout1  : out std_logic_vector(7 downto 0);
+      testout	: out std_logic_vector(0 downto 0));
+      
   END COMPONENT ; 
   constant clk_period : time :=5 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
-      clkin   => clkin  ,
-      datain   => datain  ,
-		testout => testout ,
+      clkin   => clkin ,
+      datain   => datain,
+      testout1 =>testout1,
+      testout => testout,
       dataout   => dataout   ); 
  clk_process :process
    begin
@@ -52,3 +56,4 @@ BEGIN
 -- "Clock Pattern" : dutyCycle = 50
 -- Start Time = 0 ns, End Time = 1 us, Period = 100 ns
 END;
+

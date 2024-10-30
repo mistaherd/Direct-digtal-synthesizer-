@@ -5,20 +5,25 @@ datain[2] => LPM_ADD_SUB:myADD.DATAA[2]
 datain[3] => LPM_ADD_SUB:myADD.DATAA[3]
 datain[4] => LPM_ADD_SUB:myADD.DATAA[4]
 clkin => LPM_FF:myFF.CLOCK
-clkin => clk_sync.DATAIN
-clkin => clk_sync.CLK
 clkin => LPM_FF:FF1.CLOCK
-clkin => LPM_FF:FF2.CLOCK
 clkin => LPMROM:MyROM.clock
-dataout[0] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[3] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[4] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[5] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[6] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[7] << dataout.DB_MAX_OUTPUT_PORT_TYPE
-testout[0] << LPM_FF:FF2.Q[0]
+dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
+testout1[0] <= LPMROM:MyROM.q[0]
+testout1[1] <= LPMROM:MyROM.q[1]
+testout1[2] <= LPMROM:MyROM.q[2]
+testout1[3] <= LPMROM:MyROM.q[3]
+testout1[4] <= LPMROM:MyROM.q[4]
+testout1[5] <= LPMROM:MyROM.q[5]
+testout1[6] <= LPMROM:MyROM.q[6]
+testout1[7] <= LPMROM:MyROM.q[7]
+testout[0] <= LPM_FF:myFF.Q[0]
 
 
 |DSS|LPM_ADD_SUB:myADD
@@ -95,7 +100,19 @@ q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
 
 |DSS|LPM_FF:FF1
 data[0] => dffs[0].DATAIN
+data[1] => dffs[1].DATAIN
+data[2] => dffs[2].DATAIN
+data[3] => dffs[3].DATAIN
+data[4] => dffs[4].DATAIN
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
 clock => dffs[0].CLK
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
 enable => dffs[0].ENA
 aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
@@ -104,19 +121,10 @@ sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sload => ~NO_FANOUT~
 q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|LPM_FF:FF2
-data[0] => dffs[0].DATAIN
-clock => dffs[0].CLK
-enable => dffs[0].ENA
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPMROM:MyROM

@@ -12,7 +12,7 @@ ENTITY DSS IS
 		clkin		:	IN	STD_LOGIC;
 		
 		dataout	: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		--testout	:	OUT	STD_LOGIC_VECTOR(4 downto 0)
+		testout1	:	OUT	STD_LOGIC_VECTOR(7 downto 0);
 		testout	:	OUT	STD_LOGIC_VECTOR(0 downto 0)
 	);
 	END ENTITY DSS;
@@ -20,8 +20,7 @@ ENTITY DSS IS
 	ARCHITECTURE mycomp OF DSS IS
 	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR (0 downto 0);
-	SIGNAL out_DFF2	:	STD_LOGIC_VECTOR (0 downto 0);
+	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL clkdata		:	STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL clk_sync	:	STD_LOGIC;
 	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
@@ -61,42 +60,28 @@ ENTITY DSS IS
 				Q => out_DFF
 			);
 		--testout<=out_DFF;
-		process(clkin)
-		begin
-			if rising_edge(clkin)then
-				clk_sync <=clkin;
-			end if;
-		end process;
+		
+		clk_sync <=clkin;
+
 		clkdata(0)<=clk_sync;
 		FF1:lpm_FF
 		GENERIC MAP
 		(
-			LPM_WIDTH =>1,
+			LPM_WIDTH =>5,
 			LPM_FFTYPE =>"DFF"
 		)
 		
 		PORT MAP
 		(
-			DATA=>clkdata,
+			DATA=>out_DFF,
 			CLOCK =>clkin,
 			Q=>out_DFF1
 		);
 	
-		FF2:lpm_FF
-			GENERIC MAP
-		(
-			LPM_WIDTH =>1,
-			LPM_FFTYPE =>"DFF"
-		)
 		
-		PORT MAP
-		(
-			DATA=>out_DFF1,
-			CLOCK =>clkin,
-			Q=>out_DFF2
-		);
+		
 	
-		testout<=out_DFF2;
+		testout(0)<=out_DFF(0);
 		MyROM : LPMROM
 			PORT MAP
 			(
@@ -104,8 +89,8 @@ ENTITY DSS IS
 			clock => clkin,
 			q =>ROM_OUT
 			);
-		
-		dataout<=ROM_OUT when out_DFF2="1"else"00000000";
+		testout1<=ROM_OUT;
+		dataout<=ROM_OUT when out_DFF1(1)='1'else"00000000";
 			
 	
 	END mycomp;
