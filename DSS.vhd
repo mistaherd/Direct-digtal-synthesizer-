@@ -78,9 +78,6 @@ ENTITY DSS IS
 			Q=>out_DFF1
 		);
 	
-		
-		
-	
 		testout(0)<=out_DFF(0);
 		MyROM : LPMROM
 			PORT MAP
