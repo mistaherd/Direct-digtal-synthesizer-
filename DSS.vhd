@@ -17,7 +17,7 @@ ENTITY DSS IS
 	);
 	END ENTITY DSS;
 	
-	ARCHITECTURE mycomp OF DSS IS
+ARCHITECTURE mycomp OF DSS IS
 	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR (4 downto 0);
@@ -32,9 +32,13 @@ ENTITY DSS IS
 				q       : out std_logic_vector(7 downto 0)  -- Adjust data width as needed
 				);
 	end COMPONENT;
-
-	BEGIN
-		myADD :lpm_ADD_SUB
+	COMPONENT  LFSR
+		PORT (
+					dataout	: 	OUT STD_LOGIC
+				);
+	end COMPONENT;
+	BEGIN 
+	myADD :lpm_ADD_SUB
 		GENERIC MAP
 			(
 				LPM_WIDTH =>5
@@ -86,9 +90,10 @@ ENTITY DSS IS
 			clock => clkin,
 			q =>ROM_OUT
 			);
+		
 		testout1<=ROM_OUT;
 		dataout<=ROM_OUT when out_DFF1(1)='1'else"00000000";
 			
 	
-	END mycomp;
+END mycomp;
  

@@ -1,5 +1,5 @@
 Flow report for DSS
-Wed Oct 30 18:21:13 2024
+Thu Oct 31 14:37:30 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 30 18:21:13 2024      ;
+; Flow Status                        ; Successful - Thu Oct 31 14:37:30 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; DSS                                        ;
 ; Top-level Entity Name              ; DSS                                        ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2024 18:20:46 ;
+; Start date & time ; 10/31/2024 14:37:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DSS                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +--------------------------------------+-----------------------------------------------------------------------------+-----------------------------+-------------+----------------+
 ; Assignment Name                      ; Value                                                                       ; Default Value               ; Entity Name ; Section Id     ;
 +--------------------------------------+-----------------------------------------------------------------------------+-----------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 88491852537674.173031244614488                                              ; --                          ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 88491852537674.173038542211340                                              ; --                          ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                          ; --                          ; --          ; DSS_tb         ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; On                                                                          ; --                          ; --          ; eda_simulation ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; DSS_tb                                                                      ; --                          ; --          ; eda_simulation ;
@@ -102,12 +102,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4672 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:08     ; 1.0                     ; 5144 MB             ; 00:00:08                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4577 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4643 MB             ; 00:00:03                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4672 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:09     ; 1.1                     ; 5134 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4577 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4656 MB             ; 00:00:03                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4547 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:17                           ;
+; Total                     ; 00:00:20     ; --                      ; --                  ; 00:00:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

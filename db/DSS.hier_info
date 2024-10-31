@@ -7,23 +7,23 @@ datain[4] => LPM_ADD_SUB:myADD.DATAA[4]
 clkin => LPM_FF:myFF.CLOCK
 clkin => LPM_FF:FF1.CLOCK
 clkin => LPMROM:MyROM.clock
-dataout[0] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[1] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[2] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[3] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[4] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[5] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[6] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-dataout[7] <= dataout.DB_MAX_OUTPUT_PORT_TYPE
-testout1[0] <= LPMROM:MyROM.q[0]
-testout1[1] <= LPMROM:MyROM.q[1]
-testout1[2] <= LPMROM:MyROM.q[2]
-testout1[3] <= LPMROM:MyROM.q[3]
-testout1[4] <= LPMROM:MyROM.q[4]
-testout1[5] <= LPMROM:MyROM.q[5]
-testout1[6] <= LPMROM:MyROM.q[6]
-testout1[7] <= LPMROM:MyROM.q[7]
-testout[0] <= LPM_FF:myFF.Q[0]
+dataout[0] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[1] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[2] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[3] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[4] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[5] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[6] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+dataout[7] << dataout.DB_MAX_OUTPUT_PORT_TYPE
+testout1[0] << LPMROM:MyROM.q[0]
+testout1[1] << LPMROM:MyROM.q[1]
+testout1[2] << LPMROM:MyROM.q[2]
+testout1[3] << LPMROM:MyROM.q[3]
+testout1[4] << LPMROM:MyROM.q[4]
+testout1[5] << LPMROM:MyROM.q[5]
+testout1[6] << LPMROM:MyROM.q[6]
+testout1[7] << LPMROM:MyROM.q[7]
+testout[0] << LPM_FF:myFF.Q[0]
 
 
 |DSS|LPM_ADD_SUB:myADD
