@@ -13,8 +13,8 @@ ENTITY LFSR IS
 	);
 END ENTITY LFSR;
 ARCHITECTURE comp OF LFSR IS
-SIGNAL reg	:	STD_LOGIC_VECTOR (9 downto 0);
-SIGNAL reg_q : STD_LOGIC_VECTOR (9 downto 0);
+SIGNAL reg		:	STD_LOGIC_VECTOR (9 downto 0);
+SIGNAL reg_q	:	STD_LOGIC_VECTOR (9 downto 0);
 COMPONENT xor_gate
 	PORT (
 			A	: in std_logic;  -- Adjust address width as needed
@@ -27,9 +27,8 @@ xo1:xor_gate
 PORT MAP (
 	A=>reg(9),
 	B=>reg(7),
-	Y=>reg(2)
+	Y=>reg(0)
 );
-reg(0)<=not(reg(0));
 shift_reg: LPM_SHIFTREG
 	GENERIC MAP
 		(
@@ -40,7 +39,7 @@ shift_reg: LPM_SHIFTREG
 	PORT MAP
 		(
 			DATA	=>	reg,
-			
+			clock =>	clock,
 			Q		=>	reg_q
 			
 		);

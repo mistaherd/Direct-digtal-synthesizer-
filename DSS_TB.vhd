@@ -11,29 +11,30 @@ ENTITY DSS_TB  IS
 END ; 
  
 ARCHITECTURE DSS_TB_arch OF DSS_TB IS
-  SIGNAL clkin		:  STD_LOGIC; 
-  SIGNAL datain	:  std_logic_vector (4 downto 0)  ; 
-  SIGNAL dataout	:  std_logic_vector (7 downto 0)  ; 
-  SIGNAL testout1	:	std_logic_vector(7 downto 0);
-  SIGNAL testout	:	std_logic_vector(0 downto 0);
+  SIGNAL clkin			:  STD_LOGIC; 
+  SIGNAL data_port_0	:  STD_LOGIC_VECTOR(4 downto 0);
+  SIGNAL data_port_1	:  STD_LOGIC_VECTOR(4 downto 0); 
+  SIGNAL FSK_OUT	:  std_logic_vector (7 downto 0)  ; 
+
   COMPONENT DSS  
     PORT ( 
-      clkin : in STD_LOGIC ; 
-      datain  : in std_logic_vector (4 downto 0) ; 
-      dataout : out std_logic_vector (7 downto 0);
-      testout1  : out std_logic_vector(7 downto 0);
-      testout	: out std_logic_vector(0 downto 0));
+				data_port_0	:	IN	STD_LOGIC_VECTOR(4 downto 0);
+				data_port_1	:	IN	STD_LOGIC_VECTOR(4 downto 0);
+				clkin			:	IN	STD_LOGIC;
+				
+				FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
+			);
       
   END COMPONENT ; 
-  constant clk_period : time :=5 ns;
+  constant clk_period : time :=4 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
-      clkin   => clkin ,
-      datain   => datain,
-      testout1 =>testout1,
-      testout => testout,
-      dataout   => dataout   ); 
+					clkin			=>	clkin,
+					data_port_0	=>	data_port_0,
+					data_port_1	=>	data_port_1,
+					FSK_OUT		=>	FSK_OUT
+				); 
  clk_process :process
    begin
 		clkin <= '0';
@@ -46,7 +47,8 @@ BEGIN
 -- Start Time = 0 ns, End Time = 1 us, Period = 0 ns
 	stimulus_process: Process
 		Begin
-			datain  <= "00010"  ;
+			data_port_0<=	"00010";
+			data_port_1<=	"00101";
 			wait for	clk_period ;
 
 			wait ;

@@ -9,28 +9,21 @@ data_port_1[1] => in_PA[1].DATAA
 data_port_1[2] => in_PA[2].DATAA
 data_port_1[3] => in_PA[3].DATAA
 data_port_1[4] => in_PA[4].DATAA
+clkin => LFSR:myLFSR.clock
 clkin => PhaseAccumulator:mypa.clock
-clkin => LPM_FF:FF1.CLOCK
 clkin => LPMROM:MyROM.clock
-FSK_OUT[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[1] << FSK_OUT[1].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[2] << FSK_OUT[2].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[3] << FSK_OUT[3].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[4] << FSK_OUT[4].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[5] << FSK_OUT[5].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[6] << FSK_OUT[6].DB_MAX_OUTPUT_PORT_TYPE
-FSK_OUT[7] << FSK_OUT[7].DB_MAX_OUTPUT_PORT_TYPE
-LUT_OUT[0] << LPMROM:MyROM.q[0]
-LUT_OUT[1] << LPMROM:MyROM.q[1]
-LUT_OUT[2] << LPMROM:MyROM.q[2]
-LUT_OUT[3] << LPMROM:MyROM.q[3]
-LUT_OUT[4] << LPMROM:MyROM.q[4]
-LUT_OUT[5] << LPMROM:MyROM.q[5]
-LUT_OUT[6] << LPMROM:MyROM.q[6]
-LUT_OUT[7] << LPMROM:MyROM.q[7]
+FSK_OUT[0] <= LPMROM:MyROM.q[0]
+FSK_OUT[1] <= LPMROM:MyROM.q[1]
+FSK_OUT[2] <= LPMROM:MyROM.q[2]
+FSK_OUT[3] <= LPMROM:MyROM.q[3]
+FSK_OUT[4] <= LPMROM:MyROM.q[4]
+FSK_OUT[5] <= LPMROM:MyROM.q[5]
+FSK_OUT[6] <= LPMROM:MyROM.q[6]
+FSK_OUT[7] <= LPMROM:MyROM.q[7]
 
 
 |DSS|LFSR:myLFSR
+clock => LPM_SHIFTREG:shift_reg.CLOCK
 dataout <= LPM_SHIFTREG:shift_reg.Q[9]
 
 
@@ -193,35 +186,6 @@ q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
 q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
 q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|LPM_FF:FF1
-data[0] => dffs[0].DATAIN
-data[1] => dffs[1].DATAIN
-data[2] => dffs[2].DATAIN
-data[3] => dffs[3].DATAIN
-data[4] => dffs[4].DATAIN
-clock => dffs[4].CLK
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[4].ENA
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-q[0] <= q[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= q[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= q[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= q[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPMROM:MyROM

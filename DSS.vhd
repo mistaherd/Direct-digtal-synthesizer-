@@ -12,12 +12,11 @@ ENTITY DSS IS
 		data_port_1	:	IN	STD_LOGIC_VECTOR(4 downto 0);
 		clkin			:	IN	STD_LOGIC;
 		
-		FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0);
+		FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 		--ASK_OUT		: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
+		--LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
 	);
-	END ENTITY DSS;
-	
+END ENTITY DSS;	
 ARCHITECTURE mycomp OF DSS IS
 	SIGNAL out_lfsr	:	STD_LOGIC;
 	SIGNAL in_PA		:	STD_LOGIC_VECTOR (4 downto 0);
@@ -36,7 +35,8 @@ ARCHITECTURE mycomp OF DSS IS
 	end COMPONENT;
 	COMPONENT  LFSR
 		PORT (
-					dataout	: 	OUT STD_LOGIC
+					clock		:	IN		STD_LOGIC;
+					dataout	: 	OUT	STD_LOGIC
 				);
 	end COMPONENT ;
 	COMPONENT PhaseAccumulator
@@ -49,6 +49,7 @@ ARCHITECTURE mycomp OF DSS IS
 	BEGIN 
 		myLFSR	:	LFSR
 			PORT MAP (
+							clock=>clkin,
 							dataout=>out_lfsr
 						);
 		in_PA<=data_port_0 when out_lfsr='1'else data_port_1;
@@ -60,33 +61,33 @@ ARCHITECTURE mycomp OF DSS IS
 						);
 			
 			
-			clk_sync <=clkin;
+			--clk_sync <=clkin;
 
-			clkdata(0)<=clk_sync;
-			FF1:lpm_FF
-			GENERIC MAP
-			(
-				LPM_WIDTH =>5,
-				LPM_FFTYPE =>"DFF"
-			)
+			--clkdata(0)<=clk_sync;
+		--FF1		:	lpm_FF
+			--GENERIC MAP
+			--(
+				--LPM_WIDTH =>5,
+				--LPM_FFTYPE =>"DFF"
+			--)
 			
-			PORT MAP
-			(
-				DATA=>out_PA,
-				CLOCK =>clkin,
-				Q=>out_DFF1
-			);
+			--PORT MAP
+			--(
+				--DATA=>out_PA,
+				--CLOCK =>clkin,
+				--Q=>out_DFF1
+			--);
 		
 			
 			MyROM : LPMROM
 				PORT MAP
 				(
-				address => out_PA,
-				clock => clkin,
-				q =>ROM_OUT
+					address => out_PA,
+					clock => clkin,
+					q =>FSK_OUT
 				);
 			
-			LUT_OUT<=ROM_OUT;
+			--LUT_OUT<=ROM_OUT;
 		
 			--ASK_OUT<=ROM_OUT when out_DFF1(1)='1'else"00000000";
 END mycomp;

@@ -9,5 +9,5 @@ end entity xor_gate;
 
 architecture Behavioral of xor_gate is
 begin
-    Y <= A xor B;
+    Y <= not(A xor B);
 end architecture Behavioral;
