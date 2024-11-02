@@ -2,6 +2,6 @@
 <LOG_ROOT>
 	<PROJECT NAME="DSS">
 		<CBX_INST_ENTRY INSTANCE_NAME="|DSS|LPMROM:MyROM|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_jp91.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DSS|LPM_ADD_SUB:myADD" CBX_FILE_NAME="add_sub_kge.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|DSS|PhaseAccumulator:mypa|LPM_ADD_SUB:myADD" CBX_FILE_NAME="add_sub_kge.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

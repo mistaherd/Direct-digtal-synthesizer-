@@ -8,7 +8,8 @@ USE lpm.lpm_components.std_logic_2D;
 ENTITY LFSR IS
 	PORT
 	(
-		dataout	: 	OUT STD_LOGIC
+		clock		: 	IN		STD_LOGIC;
+		dataout	: 	OUT	STD_LOGIC
 	);
 END ENTITY LFSR;
 ARCHITECTURE comp OF LFSR IS
@@ -26,7 +27,7 @@ xo1:xor_gate
 PORT MAP (
 	A=>reg(9),
 	B=>reg(7),
-	Y=>reg(0)
+	Y=>reg(2)
 );
 reg(0)<=not(reg(0));
 shift_reg: LPM_SHIFTREG
@@ -39,6 +40,7 @@ shift_reg: LPM_SHIFTREG
 	PORT MAP
 		(
 			DATA	=>	reg,
+			
 			Q		=>	reg_q
 			
 		);

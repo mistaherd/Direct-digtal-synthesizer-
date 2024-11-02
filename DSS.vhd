@@ -8,18 +8,20 @@ USE lpm.lpm_components.std_logic_2D;
 ENTITY DSS IS
 	PORT
 	(
-		datain	:	IN	STD_LOGIC_VECTOR(4 downto 0);
-		clkin		:	IN	STD_LOGIC;
+		data_port_0	:	IN	STD_LOGIC_VECTOR(4 downto 0);
+		data_port_1	:	IN	STD_LOGIC_VECTOR(4 downto 0);
+		clkin			:	IN	STD_LOGIC;
 		
-		dataout	: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		testout1	:	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		testout	:	OUT	STD_LOGIC_VECTOR(0 downto 0)
+		FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0);
+		--ASK_OUT		: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
+		LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
 	);
 	END ENTITY DSS;
 	
 ARCHITECTURE mycomp OF DSS IS
-	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_lfsr	:	STD_LOGIC;
+	SIGNAL in_PA		:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_PA		:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR (4 downto 0);
 	SIGNAL clkdata		:	STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL clk_sync	:	STD_LOGIC;
@@ -36,64 +38,56 @@ ARCHITECTURE mycomp OF DSS IS
 		PORT (
 					dataout	: 	OUT STD_LOGIC
 				);
+	end COMPONENT ;
+	COMPONENT PhaseAccumulator
+	PORT (
+				FSW		:	IN	STD_LOGIC_VECTOR(4 downto 0);
+				clock		:	IN	STD_LOGIC;
+				PA_out	: 	OUT	STD_LOGIC_VECTOR(4 downto 0)
+			);
 	end COMPONENT;
 	BEGIN 
-	myADD :lpm_ADD_SUB
-		GENERIC MAP
-			(
-				LPM_WIDTH =>5
-			)
-		PORT MAP
-			(
-				dataa => datain,
-				datab => out_DFF,
-				result=> out_ADD
-			);
-	
-		myFF : lpm_FF
-		GENERIC MAP
+		myLFSR	:	LFSR
+			PORT MAP (
+							dataout=>out_lfsr
+						);
+		in_PA<=data_port_0 when out_lfsr='1'else data_port_1;
+		mypa		: PhaseAccumulator
+			PORT MAP (
+							FSW =>in_PA,
+							clock=>clkin,
+							PA_out=>out_PA
+						);
+			
+			
+			clk_sync <=clkin;
+
+			clkdata(0)<=clk_sync;
+			FF1:lpm_FF
+			GENERIC MAP
 			(
 				LPM_WIDTH =>5,
-				LPM_FFTYPE => "DFF"
+				LPM_FFTYPE =>"DFF"
 			)
-		
-		PORT MAP
-			(
-				DATA => out_ADD,
-				CLOCK => clkin,
-				Q => out_DFF
-			);
-		--testout<=out_DFF;
-		
-		clk_sync <=clkin;
-
-		clkdata(0)<=clk_sync;
-		FF1:lpm_FF
-		GENERIC MAP
-		(
-			LPM_WIDTH =>5,
-			LPM_FFTYPE =>"DFF"
-		)
-		
-		PORT MAP
-		(
-			DATA=>out_DFF,
-			CLOCK =>clkin,
-			Q=>out_DFF1
-		);
-	
-		testout(0)<=out_DFF(0);
-		MyROM : LPMROM
+			
 			PORT MAP
 			(
-			address => out_DFF,
-			clock => clkin,
-			q =>ROM_OUT
+				DATA=>out_PA,
+				CLOCK =>clkin,
+				Q=>out_DFF1
 			);
 		
-		testout1<=ROM_OUT;
-		dataout<=ROM_OUT when out_DFF1(1)='1'else"00000000";
 			
-	
+			MyROM : LPMROM
+				PORT MAP
+				(
+				address => out_PA,
+				clock => clkin,
+				q =>ROM_OUT
+				);
+			
+			LUT_OUT<=ROM_OUT;
+		
+			--ASK_OUT<=ROM_OUT when out_DFF1(1)='1'else"00000000";
 END mycomp;
  

@@ -4,39 +4,43 @@ USE ieee.std_logic_arith.all;
 
 LIBRARY lpm;
 USE lpm.lpm_components.all;
-ENTITY PhasAccumulator is
+ENTITY PhaseAccumulator is
 	PORT
 	(
-		datain	:	IN	STD_LOGIC_VECTOR(4 downto 0);
-		clkin		:	IN	STD_LOGIC;
+		FSW	:	IN	STD_LOGIC_VECTOR(4 downto 0);
+		clock	:	IN	STD_LOGIC;
 		
-		PA_out	: 	OUT	STD_LOGIC_VECTOR(4 downto 0);
+		PA_out	: 	OUT	STD_LOGIC_VECTOR(4 downto 0)
 	);
-END ENTITY PhasAccumulator;
-ARCHITECTURE mycomp1 OF DSS IS
-begin
-myADD :lpm_ADD_SUB
+END ENTITY PhaseAccumulator;
+ARCHITECTURE mycomp OF PhaseAccumulator IS
+	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
+	begin
+	myADD :lpm_ADD_SUB
 		GENERIC MAP
 			(
 				LPM_WIDTH =>5
 			)
 		PORT MAP
 			(
-				dataa => datain,
+				dataa => FSW,
 				datab => out_DFF,
 				result=> out_ADD
 			);
-	
-		myFF : lpm_FF
+		
+	myFF : lpm_FF
 		GENERIC MAP
 			(
 				LPM_WIDTH =>5,
 				LPM_FFTYPE => "DFF"
 			)
-		
+			
 		PORT MAP
 			(
 				DATA => out_ADD,
-				CLOCK => clkin,
+				CLOCK => clock,
 				Q => out_DFF
 			);
+	PA_out<=out_DFF;
+end mycomp ;

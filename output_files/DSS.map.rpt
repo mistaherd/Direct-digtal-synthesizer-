@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSS
-Thu Oct 31 14:37:06 2024
+Sat Nov 02 02:46:10 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -10,20 +10,15 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Source assignments for LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated
- 12. Parameter Settings for User Entity Instance: LPM_ADD_SUB:myADD
- 13. Parameter Settings for User Entity Instance: LPM_FF:myFF
- 14. Parameter Settings for User Entity Instance: LPM_FF:FF1
- 15. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+  5. Analysis & Synthesis IP Cores Summary
+  6. Source assignments for LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated
+  7. Parameter Settings for User Entity Instance: LFSR:myLFSR|LPM_SHIFTREG:shift_reg
+  8. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_ADD_SUB:myADD
+  9. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_FF:myFF
+ 10. Parameter Settings for User Entity Instance: LPM_FF:FF1
+ 11. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
+ 12. Port Connectivity Checks: "LFSR:myLFSR|xor_gate:xo1"
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -49,20 +44,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 31 14:37:06 2024      ;
+; Analysis & Synthesis Status        ; Failed - Sat Nov 02 02:46:10 2024          ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; DSS                                        ;
 ; Top-level Entity Name              ; DSS                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 14                                         ;
-;     Total combinational functions  ; 13                                         ;
-;     Dedicated logic registers      ; 6                                          ;
-; Total registers                    ; 6                                          ;
-; Total pins                         ; 23                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 256                                        ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -169,91 +164,6 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-; DSS.vhd                          ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd                ;         ;
-; LPMROM.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd             ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                    ;         ;
-; addcore.inc                      ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/addcore.inc                        ;         ;
-; look_add.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/look_add.inc                       ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc                       ;         ;
-; altshift.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altshift.inc                       ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc            ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                     ;         ;
-; db/add_sub_kge.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/db/add_sub_kge.tdf     ;         ;
-; lpm_ff.tdf                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_ff.tdf                         ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_constant.inc                   ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altrom.inc                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altram.inc                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.1/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
-; db/altsyncram_jp91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/db/altsyncram_jp91.tdf ;         ;
-; coswavesoted.mif                 ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/coswavesoted.mif       ;         ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 14          ;
-;                                             ;             ;
-; Total combinational functions               ; 13          ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
-;     -- 3 input functions                    ; 4           ;
-;     -- <=2 input functions                  ; 9           ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 9           ;
-;     -- arithmetic mode                      ; 4           ;
-;                                             ;             ;
-; Total registers                             ; 6           ;
-;     -- Dedicated logic registers            ; 6           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 23          ;
-; Total memory bits                           ; 256         ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-; Maximum fan-out node                        ; clkin~input ;
-; Maximum fan-out                             ; 14          ;
-; Total fan-out                               ; 130         ;
-; Average fan-out                             ; 1.78        ;
-+---------------------------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |DSS                                      ; 13 (8)            ; 6 (0)        ; 256         ; 0            ; 0       ; 0         ; 23   ; 0            ; |DSS                                                                             ; work         ;
-;    |LPMROM:MyROM|                         ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM                                                                ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component                                ; work         ;
-;          |altsyncram_jp91:auto_generated| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated ; work         ;
-;    |lpm_ff:FF1|                           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:FF1                                                                  ; work         ;
-;    |lpm_ff:myFF|                          ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:myFF                                                                 ; work         ;
-+-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                           ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
-; Name                                                                                   ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF              ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
-; LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32           ; 8            ; --           ; --           ; 256  ; coswavesoted.mif ;
-+----------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                                                     ;
 +--------+--------------+---------+--------------+--------------+-------------------+-----------------------------------------------------------------------+
@@ -261,21 +171,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------+-----------------------------------------------------------------------+
 ; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |DSS|LPMROM:MyROM ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd ;
 +--------+--------------+---------+--------------+--------------+-------------------+-----------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 6     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -287,50 +182,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+--------------------------------------+
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_ADD_SUB:myADD ;
-+------------------------+-------------+-------------------------+
-; Parameter Name         ; Value       ; Type                    ;
-+------------------------+-------------+-------------------------+
-; LPM_WIDTH              ; 5           ; Signed Integer          ;
-; LPM_REPRESENTATION     ; SIGNED      ; Untyped                 ;
-; LPM_DIRECTION          ; DEFAULT     ; Untyped                 ;
-; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                 ;
-; LPM_PIPELINE           ; 0           ; Signed Integer          ;
-; MAXIMIZE_SPEED         ; 5           ; Untyped                 ;
-; REGISTERED_AT_END      ; 0           ; Untyped                 ;
-; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                 ;
-; USE_CS_BUFFERS         ; 1           ; Untyped                 ;
-; CARRY_CHAIN            ; MANUAL      ; Untyped                 ;
-; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH      ;
-; DEVICE_FAMILY          ; Cyclone III ; Untyped                 ;
-; USE_WYS                ; OFF         ; Untyped                 ;
-; STYLE                  ; FAST        ; Untyped                 ;
-; CBXI_PARAMETER         ; add_sub_kge ; Untyped                 ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY              ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY            ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE            ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE          ;
-+------------------------+-------------+-------------------------+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LFSR:myLFSR|LPM_SHIFTREG:shift_reg ;
++------------------------+-------------+------------------------------------------+
+; Parameter Name         ; Value       ; Type                                     ;
++------------------------+-------------+------------------------------------------+
+; LPM_WIDTH              ; 10          ; Signed Integer                           ;
+; LPM_DIRECTION          ; RIGHT       ; Untyped                                  ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                  ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                  ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                           ;
++------------------------+-------------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_FF:myFF ;
-+------------------------+-------------+-------------------+
-; Parameter Name         ; Value       ; Type              ;
-+------------------------+-------------+-------------------+
-; LPM_WIDTH              ; 5           ; Signed Integer    ;
-; LPM_AVALUE             ; UNUSED      ; Untyped           ;
-; LPM_SVALUE             ; UNUSED      ; Untyped           ;
-; LPM_FFTYPE             ; DFF         ; Untyped           ;
-; DEVICE_FAMILY          ; Cyclone III ; Untyped           ;
-; CBXI_PARAMETER         ; NOTHING     ; Untyped           ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY        ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY      ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE      ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE    ;
-+------------------------+-------------+-------------------+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_ADD_SUB:myADD ;
++------------------------+-------------+-----------------------------------------------+
+; Parameter Name         ; Value       ; Type                                          ;
++------------------------+-------------+-----------------------------------------------+
+; LPM_WIDTH              ; 5           ; Signed Integer                                ;
+; LPM_REPRESENTATION     ; SIGNED      ; Untyped                                       ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                                       ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                                       ;
+; LPM_PIPELINE           ; 0           ; Signed Integer                                ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                       ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                       ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                       ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                            ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                       ;
+; USE_WYS                ; OFF         ; Untyped                                       ;
+; STYLE                  ; FAST        ; Untyped                                       ;
+; CBXI_PARAMETER         ; add_sub_kge ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                ;
++------------------------+-------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_FF:myFF ;
++------------------------+-------------+-----------------------------------------+
+; Parameter Name         ; Value       ; Type                                    ;
++------------------------+-------------+-----------------------------------------+
+; LPM_WIDTH              ; 5           ; Signed Integer                          ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                 ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                 ;
+; LPM_FFTYPE             ; DFF         ; Untyped                                 ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                 ;
+; CBXI_PARAMETER         ; NOTHING     ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                          ;
++------------------------+-------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -414,33 +327,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                         ;
-+-------------------------------------------+----------------------------------------------+
-; Name                                      ; Value                                        ;
-+-------------------------------------------+----------------------------------------------+
-; Number of entity instances                ; 1                                            ;
-; Entity Instance                           ; LPMROM:MyROM|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                                          ;
-;     -- WIDTH_A                            ; 8                                            ;
-;     -- NUMWORDS_A                         ; 32                                           ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                                       ;
-;     -- WIDTH_B                            ; 1                                            ;
-;     -- NUMWORDS_B                         ; 1                                            ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                       ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                 ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                         ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ;
-+-------------------------------------------+----------------------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
++------------------------------------------------------+
+; Port Connectivity Checks: "LFSR:myLFSR|xor_gate:xo1" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; a    ; Input ; Info     ; Stuck at GND               ;
+; b    ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
 
 
 +-------------------------------+
@@ -449,7 +343,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu Oct 31 14:37:01 2024
+    Info: Processing started: Sat Nov 02 02:46:01 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSS -c DSS
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file dss.vhd
@@ -467,11 +361,31 @@ Info (12021): Found 2 design units, including 1 entities, in source file lfsr.vh
 Info (12021): Found 2 design units, including 1 entities, in source file xor_gate.vhd
     Info (12022): Found design unit 1: xor_gate-Behavioral
     Info (12023): Found entity 1: xor_gate
+Info (12021): Found 2 design units, including 1 entities, in source file phaseaccumulator.vhd
+    Info (12022): Found design unit 1: PhaseAccumulator-mycomp
+    Info (12023): Found entity 1: PhaseAccumulator
 Info (12127): Elaborating entity "DSS" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DSS.vhd(24): object "clkdata" assigned a value but never read
-Info (12128): Elaborating entity "LPM_ADD_SUB" for hierarchy "LPM_ADD_SUB:myADD"
-Info (12130): Elaborated megafunction instantiation "LPM_ADD_SUB:myADD"
-Info (12133): Instantiated megafunction "LPM_ADD_SUB:myADD" with the following parameter:
+Warning (10541): VHDL Signal Declaration warning at DSS.vhd(15): used implicit default value for signal "FSK_OUT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at DSS.vhd(25): object "out_DFF1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DSS.vhd(26): object "clkdata" assigned a value but never read
+Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:myLFSR"
+Warning (10873): Using initial value X (don't care) for net "reg[9..3]" at LFSR.vhd(15)
+Warning (10873): Using initial value X (don't care) for net "reg[1]" at LFSR.vhd(15)
+Info (12128): Elaborating entity "xor_gate" for hierarchy "LFSR:myLFSR|xor_gate:xo1"
+Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "LFSR:myLFSR|LPM_SHIFTREG:shift_reg"
+Info (12130): Elaborated megafunction instantiation "LFSR:myLFSR|LPM_SHIFTREG:shift_reg"
+Info (12133): Instantiated megafunction "LFSR:myLFSR|LPM_SHIFTREG:shift_reg" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "10"
+    Info (12134): Parameter "LPM_AVALUE" = "UNUSED"
+    Info (12134): Parameter "LPM_SVALUE" = "UNUSED"
+    Info (12134): Parameter "LPM_PVALUE" = "UNUSED"
+    Info (12134): Parameter "LPM_DIRECTION" = "RIGHT"
+    Info (12134): Parameter "LPM_TYPE" = "L_SHIFTREG"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12128): Elaborating entity "PhaseAccumulator" for hierarchy "PhaseAccumulator:mypa"
+Info (12128): Elaborating entity "LPM_ADD_SUB" for hierarchy "PhaseAccumulator:mypa|LPM_ADD_SUB:myADD"
+Info (12130): Elaborated megafunction instantiation "PhaseAccumulator:mypa|LPM_ADD_SUB:myADD"
+Info (12133): Instantiated megafunction "PhaseAccumulator:mypa|LPM_ADD_SUB:myADD" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "5"
     Info (12134): Parameter "LPM_DIRECTION" = "UNUSED"
     Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
@@ -480,10 +394,10 @@ Info (12133): Instantiated megafunction "LPM_ADD_SUB:myADD" with the following p
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kge.tdf
     Info (12023): Found entity 1: add_sub_kge
-Info (12128): Elaborating entity "add_sub_kge" for hierarchy "LPM_ADD_SUB:myADD|add_sub_kge:auto_generated"
-Info (12128): Elaborating entity "LPM_FF" for hierarchy "LPM_FF:myFF"
-Info (12130): Elaborated megafunction instantiation "LPM_FF:myFF"
-Info (12133): Instantiated megafunction "LPM_FF:myFF" with the following parameter:
+Info (12128): Elaborating entity "add_sub_kge" for hierarchy "PhaseAccumulator:mypa|LPM_ADD_SUB:myADD|add_sub_kge:auto_generated"
+Info (12128): Elaborating entity "LPM_FF" for hierarchy "PhaseAccumulator:mypa|LPM_FF:myFF"
+Info (12130): Elaborated megafunction instantiation "PhaseAccumulator:mypa|LPM_FF:myFF"
+Info (12133): Instantiated megafunction "PhaseAccumulator:mypa|LPM_FF:myFF" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "5"
     Info (12134): Parameter "LPM_AVALUE" = "UNUSED"
     Info (12134): Parameter "LPM_SVALUE" = "UNUSED"
@@ -522,18 +436,11 @@ Info (12133): Instantiated megafunction "LPMROM:MyROM|altsyncram:altsyncram_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jp91.tdf
     Info (12023): Found entity 1: altsyncram_jp91
 Info (12128): Elaborating entity "altsyncram_jp91" for hierarchy "LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated"
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 14 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4672 megabytes
-    Info: Processing ended: Thu Oct 31 14:37:06 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+Error (12009): Node "LFSR:myLFSR|lpm_shiftreg:shift_reg|clock" is missing source File: c:/altera/13.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf Line: 42
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 5 warnings
+    Error: Peak virtual memory: 4670 megabytes
+    Error: Processing ended: Sat Nov 02 02:46:10 2024
+    Error: Elapsed time: 00:00:09
+    Error: Total CPU time (on all processors): 00:00:04
 
 
