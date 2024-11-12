@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DSS
-Sat Nov 09 23:11:42 2024
+Tue Nov 12 13:47:37 2024
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -18,20 +18,16 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
  10. Registers Removed During Synthesis
  11. General Register Statistics
  12. Source assignments for LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated
- 13. Parameter Settings for User Entity Instance: LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg
- 14. Parameter Settings for User Entity Instance: LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg
- 15. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_ADD_SUB:myADD
- 16. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_FF:myFF
- 17. Parameter Settings for User Entity Instance: LPM_FF:FF1
- 18. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
- 19. lpm_shiftreg Parameter Settings by Entity Instance
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Port Connectivity Checks: "mux:ASK_MUX"
- 22. Port Connectivity Checks: "LFSR1:ASK_LFSR|xor_gate:xo1"
- 23. Port Connectivity Checks: "LFSR:FSKLFSR|xor_gate:xo1"
- 24. Port Connectivity Checks: "LFSR:FSKLFSR"
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 13. Parameter Settings for User Entity Instance: LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg
+ 14. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_ADD_SUB:myADD
+ 15. Parameter Settings for User Entity Instance: PhaseAccumulator:mypa|LPM_FF:myFF
+ 16. Parameter Settings for User Entity Instance: LPM_FF:FF1
+ 17. Parameter Settings for User Entity Instance: LPMROM:MyROM|altsyncram:altsyncram_component
+ 18. lpm_shiftreg Parameter Settings by Entity Instance
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "mux:ASK_MUX"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +53,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 09 23:11:42 2024      ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 13:47:37 2024      ;
 ; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; DSS                                        ;
 ; Top-level Entity Name              ; DSS                                        ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 15                                         ;
-;     Total combinational functions  ; 15                                         ;
-;     Dedicated logic registers      ; 5                                          ;
-; Total registers                    ; 5                                          ;
-; Total pins                         ; 27                                         ;
+; Total logic elements               ; 18                                         ;
+;     Total combinational functions  ; 10                                         ;
+;     Dedicated logic registers      ; 10                                         ;
+; Total registers                    ; 10                                         ;
+; Total pins                         ; 32                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 256                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -184,7 +180,6 @@ applicable agreement for further details.
 +----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------+---------+
 ; DSS.vhd                          ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd                ;         ;
 ; LPMROM.vhd                       ; yes             ; User Wizard-Generated File             ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd             ;         ;
-; LFSR.vhd                         ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LFSR.vhd               ;         ;
 ; xor_gate.vhd                     ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/xor_gate.vhd           ;         ;
 ; PhaseAccumulator.vhd             ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/PhaseAccumulator.vhd   ;         ;
 ; mux.vhd                          ; yes             ; User VHDL File                         ; C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/mux.vhd                ;         ;
@@ -219,29 +214,29 @@ applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 15          ;
+; Estimated Total logic elements              ; 18          ;
 ;                                             ;             ;
-; Total combinational functions               ; 15          ;
+; Total combinational functions               ; 10          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 0           ;
+;     -- 4 input functions                    ; 1           ;
 ;     -- 3 input functions                    ; 0           ;
-;     -- <=2 input functions                  ; 15          ;
+;     -- <=2 input functions                  ; 9           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 11          ;
-;     -- arithmetic mode                      ; 4           ;
+;     -- normal mode                          ; 10          ;
+;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
-; Total registers                             ; 5           ;
-;     -- Dedicated logic registers            ; 5           ;
+; Total registers                             ; 10          ;
+;     -- Dedicated logic registers            ; 10          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 27          ;
+; I/O pins                                    ; 32          ;
 ; Total memory bits                           ; 256         ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ; Maximum fan-out node                        ; clkin~input ;
-; Maximum fan-out                             ; 13          ;
-; Total fan-out                               ; 128         ;
-; Average fan-out                             ; 1.56        ;
+; Maximum fan-out                             ; 18          ;
+; Total fan-out                               ; 143         ;
+; Average fan-out                             ; 1.55        ;
 +---------------------------------------------+-------------+
 
 
@@ -250,13 +245,16 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
-; |DSS                                      ; 15 (0)            ; 5 (0)        ; 256         ; 0            ; 0       ; 0         ; 27   ; 0            ; |DSS                                                                             ; work         ;
+; |DSS                                      ; 10 (0)            ; 10 (0)       ; 256         ; 0            ; 0       ; 0         ; 32   ; 0            ; |DSS                                                                             ; work         ;
+;    |LFSR1:ASK_LFSR|                       ; 1 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LFSR1:ASK_LFSR                                                              ; work         ;
+;       |lpm_shiftreg:shift_reg|            ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LFSR1:ASK_LFSR|lpm_shiftreg:shift_reg                                       ; work         ;
+;       |xor_gate:xo3|                      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LFSR1:ASK_LFSR|xor_gate:xo3                                                 ; work         ;
 ;    |LPMROM:MyROM|                         ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component                                ; work         ;
 ;          |altsyncram_jp91:auto_generated| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated ; work         ;
-;    |PhaseAccumulator:mypa|                ; 5 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|PhaseAccumulator:mypa                                                       ; work         ;
-;       |lpm_ff:myFF|                       ; 5 (5)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|PhaseAccumulator:mypa|lpm_ff:myFF                                           ; work         ;
-;    |lpm_ff:FF1|                           ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:FF1                                                                  ; work         ;
+;    |PhaseAccumulator:mypa|                ; 1 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|PhaseAccumulator:mypa                                                       ; work         ;
+;       |lpm_ff:myFF|                       ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|PhaseAccumulator:mypa|lpm_ff:myFF                                           ; work         ;
+;    |lpm_ff:FF1|                           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|lpm_ff:FF1                                                                  ; work         ;
 ;    |mux:ASK_MUX|                          ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DSS|mux:ASK_MUX                                                                 ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -280,15 +278,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------+-----------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                        ;
-+--------------------------------------------------+----------------------------------------+
-; Register name                                    ; Reason for Removal                     ;
-+--------------------------------------------------+----------------------------------------+
-; LFSR1:ASK_LFSR|lpm_shiftreg:shift_reg|dffs[5..9] ; Stuck at VCC due to stuck port data_in ;
-; PhaseAccumulator:mypa|lpm_ff:myFF|dffs[0]        ; Merged with lpm_ff:FF1|dffs[0]         ;
-; Total Number of Removed Registers = 6            ;                                        ;
-+--------------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------+
+; Registers Removed During Synthesis                                ;
++----------------------------------------------+--------------------+
+; Register name                                ; Reason for Removal ;
++----------------------------------------------+--------------------+
+; PhaseAccumulator:mypa|lpm_ff:myFF|dffs[1..4] ; Lost fanout        ;
+; Total Number of Removed Registers = 4        ;                    ;
++----------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -296,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 5     ;
+; Total registers                              ; 10    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -315,31 +312,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+--------------------------------------+
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg ;
-+------------------------+-------------+-------------------------------------------+
-; Parameter Name         ; Value       ; Type                                      ;
-+------------------------+-------------+-------------------------------------------+
-; LPM_WIDTH              ; 10          ; Signed Integer                            ;
-; LPM_DIRECTION          ; RIGHT       ; Untyped                                   ;
-; LPM_AVALUE             ; UNUSED      ; Untyped                                   ;
-; LPM_SVALUE             ; UNUSED      ; Untyped                                   ;
-; DEVICE_FAMILY          ; Cyclone III ; Untyped                                   ;
-; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                ;
-; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                              ;
-; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                              ;
-; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                            ;
-+------------------------+-------------+-------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg ;
 +------------------------+-------------+---------------------------------------------+
 ; Parameter Name         ; Value       ; Type                                        ;
 +------------------------+-------------+---------------------------------------------+
 ; LPM_WIDTH              ; 10          ; Signed Integer                              ;
-; LPM_DIRECTION          ; RIGHT       ; Untyped                                     ;
+; LPM_DIRECTION          ; LEFT        ; Untyped                                     ;
 ; LPM_AVALUE             ; UNUSED      ; Untyped                                     ;
 ; LPM_SVALUE             ; UNUSED      ; Untyped                                     ;
 ; DEVICE_FAMILY          ; Cyclone III ; Untyped                                     ;
@@ -483,13 +462,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+---------------------------------------+
 ; Name                       ; Value                                 ;
 +----------------------------+---------------------------------------+
-; Number of entity instances ; 2                                     ;
-; Entity Instance            ; LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg   ;
-;     -- LPM_WIDTH           ; 10                                    ;
-;     -- LPM_DIRECTION       ; RIGHT                                 ;
+; Number of entity instances ; 1                                     ;
 ; Entity Instance            ; LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg ;
 ;     -- LPM_WIDTH           ; 10                                    ;
-;     -- LPM_DIRECTION       ; RIGHT                                 ;
+;     -- LPM_DIRECTION       ; LEFT                                  ;
 +----------------------------+---------------------------------------+
 
 
@@ -522,35 +498,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+--------------+
 
 
-+---------------------------------------------------------+
-; Port Connectivity Checks: "LFSR1:ASK_LFSR|xor_gate:xo1" ;
-+------+-------+----------+-------------------------------+
-; Port ; Type  ; Severity ; Details                       ;
-+------+-------+----------+-------------------------------+
-; a    ; Input ; Info     ; Stuck at GND                  ;
-; b    ; Input ; Info     ; Stuck at GND                  ;
-+------+-------+----------+-------------------------------+
-
-
-+-------------------------------------------------------+
-; Port Connectivity Checks: "LFSR:FSKLFSR|xor_gate:xo1" ;
-+------+-------+----------+-----------------------------+
-; Port ; Type  ; Severity ; Details                     ;
-+------+-------+----------+-----------------------------+
-; a    ; Input ; Info     ; Stuck at GND                ;
-; b    ; Input ; Info     ; Stuck at GND                ;
-+------+-------+----------+-----------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "LFSR:FSKLFSR"                                                                          ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; dataout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -566,7 +513,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Nov 09 23:11:39 2024
+    Info: Processing started: Tue Nov 12 13:47:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSS -c DSS
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file dss.vhd
@@ -598,30 +545,16 @@ Info (12021): Found 2 design units, including 1 entities, in source file lfsr1.v
     Info (12022): Found design unit 1: LFSR1-comp
     Info (12023): Found entity 1: LFSR1
 Info (12127): Elaborating entity "DSS" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DSS.vhd(21): object "out_lfsr" assigned a value but never read
-Info (12128): Elaborating entity "LFSR" for hierarchy "LFSR:FSKLFSR"
-Warning (10873): Using initial value X (don't care) for net "reg[9..1]" at LFSR.vhd(16)
-Info (12128): Elaborating entity "xor_gate" for hierarchy "LFSR:FSKLFSR|xor_gate:xo1"
-Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg"
-Info (12130): Elaborated megafunction instantiation "LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg"
-Info (12133): Instantiated megafunction "LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "10"
-    Info (12134): Parameter "LPM_AVALUE" = "UNUSED"
-    Info (12134): Parameter "LPM_SVALUE" = "UNUSED"
-    Info (12134): Parameter "LPM_PVALUE" = "UNUSED"
-    Info (12134): Parameter "LPM_DIRECTION" = "RIGHT"
-    Info (12134): Parameter "LPM_TYPE" = "L_SHIFTREG"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "LFSR1" for hierarchy "LFSR1:ASK_LFSR"
-Warning (10873): Using initial value X (don't care) for net "reg[9..1]" at LFSR1.vhd(16)
+Info (12128): Elaborating entity "xor_gate" for hierarchy "LFSR1:ASK_LFSR|xor_gate:xo1"
 Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg"
 Info (12130): Elaborated megafunction instantiation "LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg"
 Info (12133): Instantiated megafunction "LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "10"
     Info (12134): Parameter "LPM_AVALUE" = "UNUSED"
     Info (12134): Parameter "LPM_SVALUE" = "UNUSED"
-    Info (12134): Parameter "LPM_PVALUE" = "UNUSED"
-    Info (12134): Parameter "LPM_DIRECTION" = "RIGHT"
+    Info (12134): Parameter "LPM_PVALUE" = "1010110111"
+    Info (12134): Parameter "LPM_DIRECTION" = "LEFT"
     Info (12134): Parameter "LPM_TYPE" = "L_SHIFTREG"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "PhaseAccumulator" for hierarchy "PhaseAccumulator:mypa"
@@ -680,27 +613,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
 Info (12128): Elaborating entity "altsyncram_jp91" for hierarchy "LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated"
 Info (12128): Elaborating entity "mux" for hierarchy "mux:ASK_MUX"
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data_port_0[0]"
-    Warning (15610): No output dependent on input pin "data_port_0[1]"
-    Warning (15610): No output dependent on input pin "data_port_0[2]"
-    Warning (15610): No output dependent on input pin "data_port_0[3]"
-    Warning (15610): No output dependent on input pin "data_port_0[4]"
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "data_port_1[0]"
     Warning (15610): No output dependent on input pin "data_port_1[1]"
     Warning (15610): No output dependent on input pin "data_port_1[2]"
     Warning (15610): No output dependent on input pin "data_port_1[3]"
     Warning (15610): No output dependent on input pin "data_port_1[4]"
-Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "data_port_0[4]"
+    Warning (15610): No output dependent on input pin "data_port_0[3]"
+    Warning (15610): No output dependent on input pin "data_port_0[2]"
+    Warning (15610): No output dependent on input pin "data_port_0[1]"
+Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 15 logic cells
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 18 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 4685 megabytes
-    Info: Processing ended: Sat Nov 09 23:11:42 2024
+    Info: Processing ended: Tue Nov 12 13:47:37 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

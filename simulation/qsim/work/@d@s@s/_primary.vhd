@@ -5,6 +5,8 @@ entity DSS is
         data_port_0     : in     vl_logic_vector(4 downto 0);
         data_port_1     : in     vl_logic_vector(4 downto 0);
         clkin           : in     vl_logic;
-        FSK_OUT         : out    vl_logic_vector(7 downto 0)
+        ASK_OUT         : out    vl_logic_vector(7 downto 0);
+        LFSR_ASK        : out    vl_logic_vector(4 downto 0);
+        LUT_OUT         : out    vl_logic_vector(7 downto 0)
     );
 end DSS;

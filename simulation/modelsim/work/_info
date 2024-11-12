@@ -4,7 +4,7 @@ K3
 cModel Technology
 dC:\altera\13.0sp1
 Edss
-Z0 w1730559580
+Z0 w1731418070
 Z1 DPx3 lpm 14 lpm_components 0 22 Wog`[CL=7N916SZzK3:hL2
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
@@ -14,26 +14,26 @@ Z6 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd
 Z7 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd
 l0
 L8
-V0?YDlf6cFSz=mOlQD9Bb`0
+VZ7=FYJ5i::m9QZSjMRIOK2
 Z8 OV;C;10.1d;51
 32
-Z9 !s108 1730574698.106000
+Z9 !s108 1731419364.230000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd|
 Z11 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd|
 Z12 o-work work -2002 -explicit -O0
 Z13 tExplicit 1
-!s100 0A6>=MAkI75f_l84G5h3o3
+!s100 Vn<ZzeBh>?7LEL8>4X=@[0
 !i10b 1
 Amycomp
 R1
 R2
 R3
 R4
-DEx4 work 3 dss 0 22 0?YDlf6cFSz=mOlQD9Bb`0
-l49
-L20
-VnKLCI>Zg:>_Y[XRbn@=TS3
-!s100 TW5GX5<=UV9>eKCZb6KVe2
+DEx4 work 3 dss 0 22 Z7=FYJ5i::m9QZSjMRIOK2
+l75
+L21
+Vj;LXEfzJ^Mj>llPYM>d4]2
+!s100 S[En<h9]:>7GZz=hQo>UQ2
 R8
 32
 R9
@@ -43,7 +43,7 @@ R12
 R13
 !i10b 1
 Edss_tb
-Z14 w1730574689
+Z14 w1731418142
 R1
 Z15 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z16 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
@@ -51,16 +51,16 @@ R2
 R3
 R4
 R5
-Z17 8C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
-Z18 FC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
+Z17 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd
+Z18 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd
 l0
 L10
 VM6m58n4fc=0h>AGZO_ElQ1
 R8
 32
-Z19 !s108 1730574697.957000
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
-Z21 !s107 C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
+Z19 !s108 1731419364.040000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd|
+Z21 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd|
 R12
 R13
 !s100 ScKQoW2D1Yn_CmEaoi`b=2
@@ -73,9 +73,9 @@ R2
 R3
 R4
 DEx4 work 6 dss_tb 0 22 M6m58n4fc=0h>AGZO_ElQ1
-l30
+l34
 L13
-V;Jf<f:RJ[_0YT<U1AVX4^1
+Vgggl@B;oEQKG<jBjHFfSH2
 R8
 32
 R19
@@ -83,7 +83,7 @@ R20
 R21
 R12
 R13
-!s100 og8<gPdN4HNI66S3D6dT83
+!s100 BozQ@Aa;0F8b:g@jb2_n=1
 !i10b 1
 Elpmrom
 Z22 w1728136163
@@ -99,7 +99,7 @@ V:FoR]JN]E[z@=YiCUi@C:0
 R8
 32
 !i10b 1
-Z25 !s108 1730574698.239000
+Z25 !s108 1731419364.353000
 Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
 Z27 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
 R12

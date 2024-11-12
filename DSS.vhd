@@ -14,14 +14,17 @@ ENTITY DSS IS
 		
 		--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 		ASK_OUT		: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
+		LFSR_ASK		:	OUT	STD_LOGIC_VECTOR(4 downto 0);
 		LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
 	);
 END ENTITY DSS;	
 ARCHITECTURE mycomp OF DSS IS
 	SIGNAL out_lfsr	:	STD_LOGIC;
-	SIGNAL in_PA		:	STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_PA		:	STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_lfsr1	:	STD_LOGIC_VECTOR(4 downto 0);
+	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR(4 downto 0);
+	
+	SIGNAL in_PA		:	STD_LOGIC_VECTOR(4 downto 0);
+	SIGNAL out_PA		:	STD_LOGIC_VECTOR(4 downto 0);
 	SIGNAL clkdata		:	STD_LOGIC_VECTOR(0 downto 0);
 	SIGNAL clk_sync	:	STD_LOGIC;
 	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
@@ -70,11 +73,11 @@ ARCHITECTURE mycomp OF DSS IS
 			);
 	end COMPONENT;
 	BEGIN 
-		FSKLFSR	:	LFSR
-			PORT MAP (
-							clock		=>	clkin,
-							dataout	=>	out_lfsr
-						);
+		--FSK_LFSR	:	LFSR
+			--PORT MAP (
+							--clock		=>	clkin,
+							--dataout	=>	out_lfsr
+						--);
 		--FSK_MUX	:	mux
 			--PORT MAP(
 				--data_port0	=> data_port_0;
@@ -86,11 +89,13 @@ ARCHITECTURE mycomp OF DSS IS
 		ASK_LFSR	:	LFSR1
 		PORT MAP(
 						clock		=>	clkin,
-						dataout	=>	in_PA
+						dataout	=>	out_lfsr1
 					);
+		LFSR_ASK<=out_lfsr1;
 		mypa	:	PhaseAccumulator
 			PORT MAP (
-							FSW		=>	in_PA,
+							--FSW		=>	in_PA,
+							FSW		=>	data_port_0,
 							clock		=>	clkin,
 							PA_out	=>	out_PA
 						);
@@ -109,11 +114,11 @@ ARCHITECTURE mycomp OF DSS IS
 					Q=>out_DFF1
 				);
 		
-			
+
 		MyROM : LPMROM
 			PORT MAP
 				(
-					address => out_PA,
+					address => out_lfsr1,
 					clock => clkin,
 					q =>ROM_OUT
 				);

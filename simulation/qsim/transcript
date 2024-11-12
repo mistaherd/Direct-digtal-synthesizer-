@@ -30,5 +30,5 @@
 # Loading work.DSS_vlg_check_tst
 # Loading altera_ver.PRIM_GDFF_LOW
 # Simulation passed !
-# ** Note: $finish    : romtest.vwf.vt(277)
+# ** Note: $finish    : romtest.vwf.vt(527)
 #    Time: 30 ns  Iteration: 0  Instance: /DSS_vlg_vec_tst/tb_out

@@ -1,127 +1,63 @@
 |DSS
-data_port_0[0] => ~NO_FANOUT~
-data_port_0[1] => ~NO_FANOUT~
-data_port_0[2] => ~NO_FANOUT~
-data_port_0[3] => ~NO_FANOUT~
-data_port_0[4] => ~NO_FANOUT~
+data_port_0[0] => PhaseAccumulator:mypa.FSW[0]
+data_port_0[1] => PhaseAccumulator:mypa.FSW[1]
+data_port_0[2] => PhaseAccumulator:mypa.FSW[2]
+data_port_0[3] => PhaseAccumulator:mypa.FSW[3]
+data_port_0[4] => PhaseAccumulator:mypa.FSW[4]
 data_port_1[0] => ~NO_FANOUT~
 data_port_1[1] => ~NO_FANOUT~
 data_port_1[2] => ~NO_FANOUT~
 data_port_1[3] => ~NO_FANOUT~
 data_port_1[4] => ~NO_FANOUT~
-clkin => LFSR:FSKLFSR.clock
 clkin => LFSR1:ASK_LFSR.clock
 clkin => PhaseAccumulator:mypa.clock
 clkin => LPM_FF:FF1.CLOCK
 clkin => LPMROM:MyROM.clock
-ASK_OUT[0] <= mux:ASK_MUX.out_port[0]
-ASK_OUT[1] <= mux:ASK_MUX.out_port[1]
-ASK_OUT[2] <= mux:ASK_MUX.out_port[2]
-ASK_OUT[3] <= mux:ASK_MUX.out_port[3]
-ASK_OUT[4] <= mux:ASK_MUX.out_port[4]
-ASK_OUT[5] <= mux:ASK_MUX.out_port[5]
-ASK_OUT[6] <= mux:ASK_MUX.out_port[6]
-ASK_OUT[7] <= mux:ASK_MUX.out_port[7]
-LUT_OUT[0] <= LPMROM:MyROM.q[0]
-LUT_OUT[1] <= LPMROM:MyROM.q[1]
-LUT_OUT[2] <= LPMROM:MyROM.q[2]
-LUT_OUT[3] <= LPMROM:MyROM.q[3]
-LUT_OUT[4] <= LPMROM:MyROM.q[4]
-LUT_OUT[5] <= LPMROM:MyROM.q[5]
-LUT_OUT[6] <= LPMROM:MyROM.q[6]
-LUT_OUT[7] <= LPMROM:MyROM.q[7]
+ASK_OUT[0] << mux:ASK_MUX.out_port[0]
+ASK_OUT[1] << mux:ASK_MUX.out_port[1]
+ASK_OUT[2] << mux:ASK_MUX.out_port[2]
+ASK_OUT[3] << mux:ASK_MUX.out_port[3]
+ASK_OUT[4] << mux:ASK_MUX.out_port[4]
+ASK_OUT[5] << mux:ASK_MUX.out_port[5]
+ASK_OUT[6] << mux:ASK_MUX.out_port[6]
+ASK_OUT[7] << mux:ASK_MUX.out_port[7]
+LFSR_ASK[0] << LFSR1:ASK_LFSR.dataout[0]
+LFSR_ASK[1] << LFSR1:ASK_LFSR.dataout[1]
+LFSR_ASK[2] << LFSR1:ASK_LFSR.dataout[2]
+LFSR_ASK[3] << LFSR1:ASK_LFSR.dataout[3]
+LFSR_ASK[4] << LFSR1:ASK_LFSR.dataout[4]
+LUT_OUT[0] << LPMROM:MyROM.q[0]
+LUT_OUT[1] << LPMROM:MyROM.q[1]
+LUT_OUT[2] << LPMROM:MyROM.q[2]
+LUT_OUT[3] << LPMROM:MyROM.q[3]
+LUT_OUT[4] << LPMROM:MyROM.q[4]
+LUT_OUT[5] << LPMROM:MyROM.q[5]
+LUT_OUT[6] << LPMROM:MyROM.q[6]
+LUT_OUT[7] << LPMROM:MyROM.q[7]
 
 
-|DSS|LFSR:FSKLFSR
+|DSS|LFSR1:ASK_LFSR
 clock => LPM_SHIFTREG:shift_reg.CLOCK
-dataout <= LPM_SHIFTREG:shift_reg.Q[9]
+dataout[0] <= LPM_SHIFTREG:shift_reg.Q[1]
+dataout[1] <= LPM_SHIFTREG:shift_reg.Q[2]
+dataout[2] <= LPM_SHIFTREG:shift_reg.Q[3]
+dataout[3] <= LPM_SHIFTREG:shift_reg.Q[4]
+dataout[4] <= LPM_SHIFTREG:shift_reg.Q[5]
 
 
-|DSS|LFSR:FSKLFSR|xor_gate:xo1
+|DSS|LFSR1:ASK_LFSR|xor_gate:xo1
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DSS|LFSR:FSKLFSR|LPM_SHIFTREG:shift_reg
-data[0] => _.IN1
-data[1] => _.IN1
-data[2] => _.IN1
-data[3] => _.IN1
-data[4] => _.IN1
-data[5] => _.IN1
-data[6] => _.IN1
-data[7] => _.IN1
-data[8] => _.IN1
-data[9] => _.IN1
-clock => dffs[9].CLK
-clock => dffs[8].CLK
-clock => dffs[7].CLK
-clock => dffs[6].CLK
-clock => dffs[5].CLK
-clock => dffs[4].CLK
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[9].ENA
-enable => dffs[8].ENA
-enable => dffs[7].ENA
-enable => dffs[6].ENA
-enable => dffs[5].ENA
-enable => dffs[4].ENA
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-shiftin => _.IN1
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-load => _.IN0
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-sclr => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-sset => _.IN0
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= dffs[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= dffs[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
+|DSS|LFSR1:ASK_LFSR|xor_gate:xo2
+A => Y.IN0
+B => Y.IN1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DSS|LFSR1:ASK_LFSR
-clock => LPM_SHIFTREG:shift_reg.CLOCK
-dataout[0] <= LPM_SHIFTREG:shift_reg.Q[5]
-dataout[1] <= LPM_SHIFTREG:shift_reg.Q[6]
-dataout[2] <= LPM_SHIFTREG:shift_reg.Q[7]
-dataout[3] <= LPM_SHIFTREG:shift_reg.Q[8]
-dataout[4] <= LPM_SHIFTREG:shift_reg.Q[9]
-
-
-|DSS|LFSR1:ASK_LFSR|xor_gate:xo1
+|DSS|LFSR1:ASK_LFSR|xor_gate:xo3
 A => Y.IN0
 B => Y.IN1
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
