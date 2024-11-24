@@ -4,52 +4,27 @@ USE ieee.std_logic_arith.all;
 
 LIBRARY lpm;
 USE lpm.lpm_components.all;
-USE lpm.lpm_components.std_logic_2D;
 ENTITY DSS IS
 	PORT
 	(
-		data_port_0	:	IN	STD_LOGIC_VECTOR(4 downto 0);
-		data_port_1	:	IN	STD_LOGIC_VECTOR(4 downto 0);
-		clkin			:	IN	STD_LOGIC;
-		
+		data_port_A	:	IN		STD_LOGIC_VECTOR(4 downto 0);
+		--data_port_B	:	IN		STD_LOGIC_VECTOR(4 downto 0);
+		clkin			:	IN		STD_LOGIC;
 		--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 		ASK_OUT		: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		LFSR_ASK		:	OUT	STD_LOGIC_VECTOR(4 downto 0);
+		LFSR_OUTPUT		:	OUT	STD_LOGIC;
 		LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
 	);
 END ENTITY DSS;	
 ARCHITECTURE mycomp OF DSS IS
-	SIGNAL out_lfsr	:	STD_LOGIC;
-	SIGNAL out_lfsr1	:	STD_LOGIC_VECTOR(4 downto 0);
-	SIGNAL out_DFF1	:	STD_LOGIC_VECTOR(4 downto 0);
-	
-	SIGNAL in_PA		:	STD_LOGIC_VECTOR(4 downto 0);
-	SIGNAL out_PA		:	STD_LOGIC_VECTOR(4 downto 0);
-	SIGNAL clkdata		:	STD_LOGIC_VECTOR(0 downto 0);
-	SIGNAL clk_sync	:	STD_LOGIC;
-	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
-	
-	COMPONENT LPMROM
+	COMPONENT LPMROM is
 	  PORT (
-				address : in std_logic_vector(4 downto 0);  -- Adjust address width as needed
-				clock   : in std_logic;
-				q       : out std_logic_vector(7 downto 0)  -- Adjust data width as needed
+				address :	in		std_logic_vector(4 downto 0);  -- Adjust address width as needed
+				clock   :	in		std_logic;
+				q       :	out	std_logic_vector(7 downto 0)  -- Adjust data width as needed
 				);
 	end COMPONENT;
-	COMPONENT  LFSR
-		PORT (
-					clock		:	IN		STD_LOGIC;
-					dataout	: 	OUT	STD_LOGIC
-				);
-	end COMPONENT ;
-	COMPONENT PhaseAccumulator
-	PORT (
-				FSW		:	IN	STD_LOGIC_VECTOR(4 downto 0);
-				clock		:	IN	STD_LOGIC;
-				PA_out	: 	OUT	STD_LOGIC_VECTOR(4 downto 0)
-			);
-	end COMPONENT;
-	COMPONENT mux
+	COMPONENT mux is
 		PORT
 		(
 			data_port0	:	In STD_LOGIC_VECTOR(7 downto 0);
@@ -58,79 +33,84 @@ ARCHITECTURE mycomp OF DSS IS
 			out_port		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 		);
 	end COMPONENT;
-	COMPONENT LFSR1
-		PORT
-		(
-			clock		: 	IN		STD_LOGIC;
-			dataout	: 	OUT	STD_LOGIC_VECTOR(4 downto 0)
-		);
-	end COMPONENT;
-	COMPONENT NC0
-		PORT
-			(
-				clock		:	IN		STD_LOGIC;
-				output	:	OUT	STD_LOGIC_VECTOR(4 downto 0)
-			);
-	end COMPONENT;
+
+	SIGNAL clk_lfsrin	:	STD_LOGIC_VECTOR(7 downto 0);
+	SIGNAL shiftreg_out	:	STD_LOGIC_VECTOR(9 downto 0);
+	SIGNAL LFSR_in			:	STD_LOGIC;
+	SIGNAL LFSR_out		:	STD_LOGIC;
+	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
+	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
 	BEGIN 
-		--FSK_LFSR	:	LFSR
-			--PORT MAP (
-							--clock		=>	clkin,
-							--dataout	=>	out_lfsr
-						--);
-		--FSK_MUX	:	mux
-			--PORT MAP(
-				--data_port0	=> data_port_0;
-				--sel			=>	out_lfsr;
-				--data_port1	=> data_port_1;
-				--out_port		=> in_PA
-			--);
-		-- uncomment this below for ask 
-		ASK_LFSR	:	LFSR1
-		PORT MAP(
-						clock		=>	clkin,
-						dataout	=>	out_lfsr1
-					);
-		LFSR_ASK<=out_lfsr1;
-		mypa	:	PhaseAccumulator
-			PORT MAP (
-							--FSW		=>	in_PA,
-							FSW		=>	data_port_0,
-							clock		=>	clkin,
-							PA_out	=>	out_PA
+	--PA
+		myADD :lpm_ADD_SUB
+			GENERIC MAP(
+								LPM_WIDTH =>5
+							)
+			PORT MAP(
+					dataa 	=>	data_port_A	,
+					datab 	=> out_DFF,
+					result	=> out_ADD
 						);
-			
-		FF1		:	lpm_FF
+		
+		myFF : lpm_FF
 			GENERIC MAP
 				(
 					LPM_WIDTH =>5,
-					LPM_FFTYPE =>"DFF"
+					LPM_FFTYPE => "DFF"
 				)
-			
+				
 			PORT MAP
 				(
-					DATA=>out_PA,
-					CLOCK =>clkin,
-					Q=>out_DFF1
+					DATA => out_ADD,
+					CLOCK => clkin,
+					Q => out_DFF
 				);
-		
-
+	
+		--lut
 		MyROM : LPMROM
-			PORT MAP
-				(
-					address => out_lfsr1,
-					clock => clkin,
-					q =>ROM_OUT
-				);
+		PORT MAP(
+						address	=>out_DFF,
+						clock		=>	clkin,
+						q			=>	ROM_OUT
+					);
 			
-			LUT_OUT<=ROM_OUT;
-			ASK_MUX	:	mux
-			PORT MAP(
-							data_port0	=> ROM_OUT,
-							sel			=>	out_DFF1(0),
-							data_port1	=> "00000000",
-							out_port		=> ASK_OUT
-						);
-			
+		LUT_OUT<=ROM_OUT;
+		
+		-- clock divider
+		counter: LPM_COUNTER
+		GENERIC MAP(
+							LPM_WIDTH	=>	8	
+						)
+		PORT MAP(
+						clock	=>	clkin,
+						q		=>	clk_lfsrin
+					);
+		--LFSR
+		LFSR_in<=not(shiftreg_out(6)xor shiftreg_out(3)xor shiftreg_out(1) xor shiftreg_out(0));
+		shift_reg: LPM_SHIFTREG
+		GENERIC MAP
+			(
+				LPM_WIDTH=>10,
+				LPM_DIRECTION =>"LEFT"
+			)
+		PORT MAP
+			(	
+				clock 	=>	clk_lfsrin(2),
+				Q			=>	shiftreg_out,
+				shiftin	=>	LFSR_in,
+				shiftout	=>	LFSR_out
+			);
+	
+		
+		LFSR_OUTPUT<=LFSR_out;
+		ASK_MUX	:MUX
+		PORT MAP(
+						data_port0	=>	ROM_OUT,
+						sel			=>	LFSR_out,
+						data_port1	=> "00000000",
+						out_port		=>	ASK_OUT
+					);
+		--ASK_OUT<=ROM_OUT when out_lfsr0='1'else"00000000";
 END mycomp;
  

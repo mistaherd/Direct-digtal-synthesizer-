@@ -4,7 +4,6 @@ USE ieee.std_logic_arith.all;
 
 LIBRARY lpm;
 USE lpm.lpm_components.all;
-USE lpm.lpm_components.std_logic_2D;
 ENTITY LFSR IS
 	PORT
 	(
@@ -13,35 +12,26 @@ ENTITY LFSR IS
 	);
 END ENTITY LFSR;
 ARCHITECTURE comp OF LFSR IS
-SIGNAL reg		:	STD_LOGIC_VECTOR (9 downto 0);
-SIGNAL reg_q	:	STD_LOGIC_VECTOR (9 downto 0);
-COMPONENT xor_gate
-	PORT (
-			A	: in std_logic;  -- Adjust address width as needed
-			B	: in std_logic;
-			Y	: out std_logic-- Adjust data width as needed
-			);
-end COMPONENT;
+SIGNAL shiftreg_out	:	STD_LOGIC_VECTOR(9 downto 0);
+SIGNAL LFSR_in			:	STD_LOGIC;
+SIGNAL LFSR_out		:	STD_LOGIC;
+
 BEGIN
-xo1:xor_gate
-PORT MAP (
-	A=>reg(9),
-	B=>reg(7),
-	Y=>reg(0)
-);
+
+
+LFSR_in<=not(shiftreg_out(6)xor shiftreg_out(3)xor shiftreg_out(1) xor shiftreg_out(0));
 shift_reg: LPM_SHIFTREG
 	GENERIC MAP
 		(
 			LPM_WIDTH=>10,
-			LPM_DIRECTION =>"RIGHT",
-			LPM_TYPE=>"L_SHIFTREG"
+			LPM_DIRECTION =>"LEFT"
 		)
 	PORT MAP
-		(
-			DATA	=>	reg,
-			clock =>	clock,
-			Q		=>	reg_q
-			
+		(	
+			clock 	=>	clock,
+			Q			=>	shiftreg_out,
+			shiftin	=>	LFSR_in,
+			shiftout	=>	LFSR_out
 		);
-dataout<=reg_q(9);
+dataout<=LFSR_out;
 END comp;

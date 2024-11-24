@@ -7,6 +7,11 @@ vmap work rtl_work
 
 vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd}
 vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LFSR.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/xor_gate.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/PhaseAccumulator.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/mux.vhd}
+vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/nclkdlivder.vhd}
 
 vcom -93 -work work {C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd}
 

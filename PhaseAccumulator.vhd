@@ -7,8 +7,8 @@ USE lpm.lpm_components.all;
 ENTITY PhaseAccumulator is
 	PORT
 	(
-		FSW	:	IN	STD_LOGIC_VECTOR(4 downto 0);
-		clock	:	IN	STD_LOGIC;
+		FSW		:	IN		STD_LOGIC_VECTOR(4 downto 0);
+		clock		:	IN		STD_LOGIC;
 		
 		PA_out	: 	OUT	STD_LOGIC_VECTOR(4 downto 0)
 	);
@@ -24,9 +24,9 @@ ARCHITECTURE mycomp OF PhaseAccumulator IS
 			)
 		PORT MAP
 			(
-				dataa => FSW,
-				datab => out_DFF,
-				result=> out_ADD
+				dataa 	=>	FSW,
+				datab 	=> out_DFF,
+				result	=> out_ADD
 			);
 		
 	myFF : lpm_FF

@@ -4,7 +4,7 @@ K3
 cModel Technology
 dC:\altera\13.0sp1
 Edss
-Z0 w1731418070
+Z0 w1732374481
 Z1 DPx3 lpm 14 lpm_components 0 22 Wog`[CL=7N916SZzK3:hL2
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
@@ -13,27 +13,27 @@ Z5 dC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\models
 Z6 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd
 Z7 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd
 l0
-L8
-VZ7=FYJ5i::m9QZSjMRIOK2
+L7
+V?L@QFE_:>^Mnb63RM7W1?0
 Z8 OV;C;10.1d;51
 32
-Z9 !s108 1731419364.230000
+Z9 !s108 1732390747.005000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd|
 Z11 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/DSS.vhd|
 Z12 o-work work -2002 -explicit -O0
 Z13 tExplicit 1
-!s100 Vn<ZzeBh>?7LEL8>4X=@[0
+!s100 C2FUS3]h<e8i6ZPe^FTP@0
 !i10b 1
 Amycomp
 R1
 R2
 R3
 R4
-DEx4 work 3 dss 0 22 Z7=FYJ5i::m9QZSjMRIOK2
-l75
-L21
-Vj;LXEfzJ^Mj>llPYM>d4]2
-!s100 S[En<h9]:>7GZz=hQo>UQ2
+DEx4 work 3 dss 0 22 ?L@QFE_:>^Mnb63RM7W1?0
+l62
+L19
+V1Q0^G05DROVVggR[^AO=00
+!s100 Gm^G?5Zl;4z[0eYGjcbaZ0
 R8
 32
 R9
@@ -43,7 +43,7 @@ R12
 R13
 !i10b 1
 Edss_tb
-Z14 w1731418142
+Z14 w1732390737
 R1
 Z15 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z16 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
@@ -51,16 +51,16 @@ R2
 R3
 R4
 R5
-Z17 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd
-Z18 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd
+Z17 8C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
+Z18 FC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
 l0
 L10
 VM6m58n4fc=0h>AGZO_ElQ1
 R8
 32
-Z19 !s108 1731419364.040000
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd|
-Z21 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/simulation/modelsim/DSS_TB.vhd|
+Z19 !s108 1732390746.869000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
+Z21 !s107 C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
 R12
 R13
 !s100 ScKQoW2D1Yn_CmEaoi`b=2
@@ -73,9 +73,9 @@ R2
 R3
 R4
 DEx4 work 6 dss_tb 0 22 M6m58n4fc=0h>AGZO_ElQ1
-l34
+l33
 L13
-Vgggl@B;oEQKG<jBjHFfSH2
+V_3XXh[_o1U5eQ_ZIeYSVa0
 R8
 32
 R19
@@ -83,40 +83,42 @@ R20
 R21
 R12
 R13
-!s100 BozQ@Aa;0F8b:g@jb2_n=1
+!s100 jNVk[@C;f`9SPk@57e1D_0
 !i10b 1
 Elpmrom
-Z22 w1728136163
+Z22 w1732061359
+Z23 DPx9 altera_mf 20 altera_mf_components 0 22 zh;bE09gCIPDVLK?MN49L3
 R3
 R4
 R5
-Z23 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
-Z24 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
+Z24 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
+Z25 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
 l0
 L42
-V:FoR]JN]E[z@=YiCUi@C:0
-!s100 ]H^fHKD^mCT50i_@8>HCm1
+VL7]]ej^_kBl5W6JGgKhD53
+!s100 RAg]]KWH<_LJ;9RcL3fK62
 R8
 32
 !i10b 1
-Z25 !s108 1731419364.353000
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
-Z27 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
+Z26 !s108 1732390747.140000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
+Z28 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
 R12
 R13
 Asyn
+R23
 R3
 R4
-Z28 DEx4 work 6 lpmrom 0 22 :FoR]JN]E[z@=YiCUi@C:0
-l82
+Z29 DEx4 work 6 lpmrom 0 22 L7]]ej^_kBl5W6JGgKhD53
+l56
 L52
-Z29 Vzlm4FJQX@o^6GDTI84HLY1
-Z30 !s100 e?LTQP;gKDHeMlGC=QfkJ3
+Z30 V:ZD8fJD25PlKGA2?h;SXl2
+Z31 !s100 cSVYg70:16]P`>RhC`OMd3
 R8
 32
 !i10b 1
-R25
 R26
 R27
+R28
 R12
 R13

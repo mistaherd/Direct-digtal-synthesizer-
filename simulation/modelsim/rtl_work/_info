@@ -2,48 +2,48 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\MWT2\DSS\simulation\modelsim
+Z0 dC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim
 Edss
-Z1 w1719928801
-Z2 DPx3 lpm 14 lpm_components 0 22 aHRA3clF>2DcWDhgFTAbM3
+Z1 w1732402427
+Z2 DPx3 lpm 14 lpm_components 0 22 Wog`[CL=7N916SZzK3:hL2
 Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z6 dC:\MWT2\DSS\simulation\modelsim
-Z7 8C:/MWT2/DSS/DSS.vhd
-Z8 FC:/MWT2/DSS/DSS.vhd
+Z6 dC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim
+Z7 8C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\DSS.vhd
+Z8 FC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\DSS.vhd
 l0
-L8
-VJFIlP97J3If:9b]1FJlo:1
+L7
+Vm`G?zbK>YBUo[g19n=4_P3
 Z9 OV;C;10.1d;51
-31
-Z10 !s108 1719929138.506000
-Z11 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/DSS.vhd|
-Z12 !s107 C:/MWT2/DSS/DSS.vhd|
-Z13 o-93 -work work -O0
+32
+Z10 !s108 1732402962.626000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\DSS.vhd|
+Z12 !s107 C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\DSS.vhd|
+Z13 o-work work -2002 -explicit -O0
 Z14 tExplicit 1
-!s100 >oTZ00_Xc[`?D:c;I2JDU0
+!s100 PNJE_Qn8Y_L1eID?mIYZL1
 !i10b 1
 Amycomp
 R2
 R3
 R4
 R5
-DEx4 work 3 dss 0 22 JFIlP97J3If:9b]1FJlo:1
-l48
-L20
-VjdCHl[oSf?RNJHXYX4lLg3
+DEx4 work 3 dss 0 22 m`G?zbK>YBUo[g19n=4_P3
+l47
+L19
+V]dYIQ_zf`U;2>S<S7VBU`0
+!s100 @[:eHj;Z3:JniGN6MaNd`3
 R9
-31
+32
 R10
 R11
 R12
 R13
 R14
-!s100 Fa=jS;3mAjPcUP7Oh5hnV1
 !i10b 1
 Edss_tb
-Z15 w1718909673
+Z15 w1732402950
 R2
 Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
 Z17 DPx4 ieee 16 std_logic_textio 0 22 ?Il0a149GV276[?[UMDWh2
@@ -51,20 +51,20 @@ R3
 R4
 R5
 R6
-Z18 8C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
-Z19 FC:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd
+Z18 8C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
+Z19 FC:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd
 l0
 L10
-VO<<6:_Y6XhkonNZ?67`=m0
-!s100 ScKQoW2D1Yn_CmEaoi`b=2
+VM6m58n4fc=0h>AGZO_ElQ1
 R9
 32
-!i10b 1
-Z20 !s108 1719929285.134000
-Z21 !s90 -reportprogress|300|-work|work|C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd|
-Z22 !s107 C:/MWT2/DSS/simulation/modelsim/DSS_TB.vhd|
-Z23 o-work work -O0
+Z20 !s108 1732402962.485000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
+Z22 !s107 C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\simulation\modelsim\DSS_TB.vhd|
+R13
 R14
+!s100 ScKQoW2D1Yn_CmEaoi`b=2
+!i10b 1
 Adss_tb_arch
 R2
 R16
@@ -72,86 +72,53 @@ R17
 R3
 R4
 R5
-Z24 DEx4 work 6 dss_tb 0 22 O<<6:_Y6XhkonNZ?67`=m0
-l26
+DEx4 work 6 dss_tb 0 22 M6m58n4fc=0h>AGZO_ElQ1
+l33
 L13
-Z25 V3IUNA?@SR;6n=G:b2JWS11
-Z26 !s100 TR98WecAEzAAZdFR<JT:d0
+V__fKD9Dnz6MgGN0LK_;;E2
 R9
 32
-!i10b 1
 R20
 R21
 R22
-R23
+R13
 R14
+!s100 EXT:5J<e[>6H1WaelT9Fg1
+!i10b 1
 Elpmrom
-Z27 w1718805113
+Z23 w1732061359
+Z24 DPx9 altera_mf 20 altera_mf_components 0 22 zh;bE09gCIPDVLK?MN49L3
 R4
 R5
 R6
-Z28 8C:/MWT2/DSS/LPMROM.vhd
-Z29 FC:/MWT2/DSS/LPMROM.vhd
+Z25 8C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
+Z26 FC:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd
 l0
 L42
-VAVBfB_>o_2b^dCDE;o3Lo2
+VL7]]ej^_kBl5W6JGgKhD53
+!s100 RAg]]KWH<_LJ;9RcL3fK62
 R9
-31
-Z30 !s108 1719929138.636000
-Z31 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/LPMROM.vhd|
-Z32 !s107 C:/MWT2/DSS/LPMROM.vhd|
+32
+!i10b 1
+Z27 !s108 1732402962.758000
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
+Z29 !s107 C:/Users/lanzb/Documents/Github/Direct-digtal-synthesizer-/LPMROM.vhd|
 R13
 R14
-!s100 ]H^fHKD^mCT50i_@8>HCm1
-!i10b 1
 Asyn
+R24
 R4
 R5
-DEx4 work 6 lpmrom 0 22 AVBfB_>o_2b^dCDE;o3Lo2
-l82
+Z30 DEx4 work 6 lpmrom 0 22 L7]]ej^_kBl5W6JGgKhD53
+l56
 L52
-Vi6XK`cB4JNXTQSMA<E`4l0
+Z31 V:ZD8fJD25PlKGA2?h;SXl2
+Z32 !s100 cSVYg70:16]P`>RhC`OMd3
 R9
-31
-R30
-R31
-R32
+32
+!i10b 1
+R27
+R28
+R29
 R13
 R14
-!s100 e?LTQP;gKDHeMlGC=QfkJ3
-!i10b 1
-Emux
-Z33 w1719866389
-R4
-R5
-R6
-Z34 8C:/MWT2/DSS/MUX.vhd
-Z35 FC:/MWT2/DSS/MUX.vhd
-l0
-L4
-VEdVmj54kE2;[W3ZHz1@fU2
-R9
-31
-Z36 !s108 1719929138.759000
-Z37 !s90 -reportprogress|300|-93|-work|work|C:/MWT2/DSS/MUX.vhd|
-Z38 !s107 C:/MWT2/DSS/MUX.vhd|
-R13
-R14
-!s100 <YCEg]bjH7gSPTn;KK5Th1
-!i10b 1
-Artl
-R4
-R5
-DEx4 work 3 mux 0 22 EdVmj54kE2;[W3ZHz1@fU2
-l14
-L12
-VMaemV@_LFARzN;hS5RVX[2
-R9
-31
-R36
-R37
-R38
-R13
-R14
-!s100 BCc;F1fiK@h7g4QV0gG1M3
-!i10b 1

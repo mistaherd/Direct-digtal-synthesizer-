@@ -11,56 +11,56 @@ ENTITY DSS_TB  IS
 END ; 
  
 ARCHITECTURE DSS_TB_arch OF DSS_TB IS
-  SIGNAL  clkin			:   STD_LOGIC; 
-  SIGNAL  data_port_0	:   STD_LOGIC_VECTOR(4 downto 0);
-  SIGNAL  data_port_1	:   STD_LOGIC_VECTOR(4 downto 0);
-  SIGNAL  LFSR_ASK	:   STD_LOGIC_VECTOR(4 downto 0);
-  --SIGNAL FSK_OUT      :  STD_LOGIC_VECTOR(7 downto 0); 
-  SIGNAL  ASK_OUT      	:  STD_LOGIC_VECTOR(7 downto 0);
-  SIGNAL  LUT_OUT      	:  STD_LOGIC_VECTOR(7 downto 0);
+  SIGNAL  clkin         :   STD_LOGIC; 
+  SIGNAL  data_port_A   :   STD_LOGIC_VECTOR(4 downto 0);
+  --SIGNAL  data_port_B	:   STD_LOGIC_VECTOR(4 downto 0); 
+  SIGNAL  LFSR_out      :   STD_LOGIC;
+  SIGNAL  ASK_OUT      	:   STD_LOGIC_VECTOR(7 downto 0);
+  SIGNAL  LUT_OUT      	:   STD_LOGIC_VECTOR(7 downto 0);
   COMPONENT DSS  
     PORT ( 
-				data_port_0		: 	IN  	STD_LOGIC_VECTOR(4 downto 0);
-				data_port_1		: 	IN  	STD_LOGIC_VECTOR(4 downto 0);
-				clkin			   :	IN  	STD_LOGIC;
-				ASK_OUT		   :	OUT 	STD_LOGIC_VECTOR(7 downto 0);
-				LUT_OUT		   :	OUT 	STD_LOGIC_VECTOR(7 downto 0);
-				LFSR_ASK			:	OUT	STD_LOGIC_VECTOR(4 downto 0)
+				data_port_A : IN  STD_LOGIC_VECTOR(4 downto 0);
+				--data_port_B	: IN  STD_LOGIC_VECTOR(4 downto 0);
+				clkin			    : IN   STD_LOGIC;
+			  LFSR_out    : OUT  STD_LOGIC; 
+				ASK_OUT		   :	OUT  STD_LOGIC_VECTOR(7 downto 0);
+				LUT_OUT		   :	OUT  STD_LOGIC_VECTOR(7 downto 0)
 				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 			);
       
   END COMPONENT ; 
-  constant clk_period : time :=2 ns;
+  constant clk_period : time :=1 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
-					clkin			=>	clkin,
-					data_port_0	=>	data_port_0,
-					data_port_1	=>	data_port_1,
-					--FSK_OUT		=>	FSK_OUT
-					ASK_OUT  =>  ASK_OUT,
-					LUT_OUT  => LUT_OUT,
-					LFSR_ASK => LFSR_ASK
+					clkin        =>  clkin,
+					data_port_A  =>  data_port_A,
+					--data_port_1	=>	data_port_1,
+					--FSK_OUT		=>	FSK_OUT,
+					LFSR_out     =>  LFSR_out,
+					ASK_OUT      =>  ASK_OUT,
+					LUT_OUT      =>  LUT_OUT
 				); 
  clk_process :process
    begin
-		clkin <= '0';
-		wait for clk_period/2;
-		clkin <= '1';
-		wait for clk_period/2;
+		clkin <=  '0';
+		wait for clk_period;
+		clkin <=  '1';
+		wait for clk_period;
    end process;
  
 -- "Constant Pattern"
--- Start Time = 0 ns, End Time = 1 us, Period = 0 ns
-	stimulus_process: Process
-		Begin
-		  wait	for clk_period ;
-		    data_port_0<=	"00010";
-		    data_port_1<=	"00101";
-			
-
-		  wait ;
-		End Process;
+ --Start Time = 0 ns, End Time = 30 ns, Period = 0 ns
+stimulus_process: Process
+	Begin
+	  
+			data_port_A<=	"00010";
+		--data_port_B<=	"00101";
+		wait	for clk_period ;
+		wait ;
+	End Process;
 END;
+
+
 
 

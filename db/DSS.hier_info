@@ -1,18 +1,12 @@
 |DSS
-data_port_0[0] => PhaseAccumulator:mypa.FSW[0]
-data_port_0[1] => PhaseAccumulator:mypa.FSW[1]
-data_port_0[2] => PhaseAccumulator:mypa.FSW[2]
-data_port_0[3] => PhaseAccumulator:mypa.FSW[3]
-data_port_0[4] => PhaseAccumulator:mypa.FSW[4]
-data_port_1[0] => ~NO_FANOUT~
-data_port_1[1] => ~NO_FANOUT~
-data_port_1[2] => ~NO_FANOUT~
-data_port_1[3] => ~NO_FANOUT~
-data_port_1[4] => ~NO_FANOUT~
-clkin => LFSR1:ASK_LFSR.clock
-clkin => PhaseAccumulator:mypa.clock
-clkin => LPM_FF:FF1.CLOCK
+data_port_A[0] => LPM_ADD_SUB:myADD.DATAA[0]
+data_port_A[1] => LPM_ADD_SUB:myADD.DATAA[1]
+data_port_A[2] => LPM_ADD_SUB:myADD.DATAA[2]
+data_port_A[3] => LPM_ADD_SUB:myADD.DATAA[3]
+data_port_A[4] => LPM_ADD_SUB:myADD.DATAA[4]
+clkin => LPM_FF:myFF.CLOCK
 clkin => LPMROM:MyROM.clock
+clkin => LPM_COUNTER:counter.CLOCK
 ASK_OUT[0] << mux:ASK_MUX.out_port[0]
 ASK_OUT[1] << mux:ASK_MUX.out_port[1]
 ASK_OUT[2] << mux:ASK_MUX.out_port[2]
@@ -21,11 +15,7 @@ ASK_OUT[4] << mux:ASK_MUX.out_port[4]
 ASK_OUT[5] << mux:ASK_MUX.out_port[5]
 ASK_OUT[6] << mux:ASK_MUX.out_port[6]
 ASK_OUT[7] << mux:ASK_MUX.out_port[7]
-LFSR_ASK[0] << LFSR1:ASK_LFSR.dataout[0]
-LFSR_ASK[1] << LFSR1:ASK_LFSR.dataout[1]
-LFSR_ASK[2] << LFSR1:ASK_LFSR.dataout[2]
-LFSR_ASK[3] << LFSR1:ASK_LFSR.dataout[3]
-LFSR_ASK[4] << LFSR1:ASK_LFSR.dataout[4]
+LFSR_OUTPUT << LPM_SHIFTREG:shift_reg.SHIFTOUT
 LUT_OUT[0] << LPMROM:MyROM.q[0]
 LUT_OUT[1] << LPMROM:MyROM.q[1]
 LUT_OUT[2] << LPMROM:MyROM.q[2]
@@ -36,34 +26,269 @@ LUT_OUT[6] << LPMROM:MyROM.q[6]
 LUT_OUT[7] << LPMROM:MyROM.q[7]
 
 
-|DSS|LFSR1:ASK_LFSR
-clock => LPM_SHIFTREG:shift_reg.CLOCK
-dataout[0] <= LPM_SHIFTREG:shift_reg.Q[1]
-dataout[1] <= LPM_SHIFTREG:shift_reg.Q[2]
-dataout[2] <= LPM_SHIFTREG:shift_reg.Q[3]
-dataout[3] <= LPM_SHIFTREG:shift_reg.Q[4]
-dataout[4] <= LPM_SHIFTREG:shift_reg.Q[5]
+|DSS|LPM_ADD_SUB:myADD
+dataa[0] => add_sub_kge:auto_generated.dataa[0]
+dataa[1] => add_sub_kge:auto_generated.dataa[1]
+dataa[2] => add_sub_kge:auto_generated.dataa[2]
+dataa[3] => add_sub_kge:auto_generated.dataa[3]
+dataa[4] => add_sub_kge:auto_generated.dataa[4]
+datab[0] => add_sub_kge:auto_generated.datab[0]
+datab[1] => add_sub_kge:auto_generated.datab[1]
+datab[2] => add_sub_kge:auto_generated.datab[2]
+datab[3] => add_sub_kge:auto_generated.datab[3]
+datab[4] => add_sub_kge:auto_generated.datab[4]
+cin => ~NO_FANOUT~
+add_sub => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= add_sub_kge:auto_generated.result[0]
+result[1] <= add_sub_kge:auto_generated.result[1]
+result[2] <= add_sub_kge:auto_generated.result[2]
+result[3] <= add_sub_kge:auto_generated.result[3]
+result[4] <= add_sub_kge:auto_generated.result[4]
+cout <= <GND>
+overflow <= <GND>
 
 
-|DSS|LFSR1:ASK_LFSR|xor_gate:xo1
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+|DSS|LPM_ADD_SUB:myADD|add_sub_kge:auto_generated
+dataa[0] => op_1.IN8
+dataa[1] => op_1.IN6
+dataa[2] => op_1.IN4
+dataa[3] => op_1.IN2
+dataa[4] => op_1.IN0
+datab[0] => op_1.IN9
+datab[1] => op_1.IN7
+datab[2] => op_1.IN5
+datab[3] => op_1.IN3
+datab[4] => op_1.IN1
+result[0] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DSS|LFSR1:ASK_LFSR|xor_gate:xo2
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+|DSS|LPM_FF:myFF
+data[0] => dffs[0].DATAIN
+data[1] => dffs[1].DATAIN
+data[2] => dffs[2].DATAIN
+data[3] => dffs[3].DATAIN
+data[4] => dffs[4].DATAIN
+clock => dffs[4].CLK
+clock => dffs[3].CLK
+clock => dffs[2].CLK
+clock => dffs[1].CLK
+clock => dffs[0].CLK
+enable => dffs[4].ENA
+enable => dffs[3].ENA
+enable => dffs[2].ENA
+enable => dffs[1].ENA
+enable => dffs[0].ENA
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DSS|LFSR1:ASK_LFSR|xor_gate:xo3
-A => Y.IN0
-B => Y.IN1
-Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+|DSS|LPMROM:MyROM
+address[0] => altsyncram:altsyncram_component.address_a[0]
+address[1] => altsyncram:altsyncram_component.address_a[1]
+address[2] => altsyncram:altsyncram_component.address_a[2]
+address[3] => altsyncram:altsyncram_component.address_a[3]
+address[4] => altsyncram:altsyncram_component.address_a[4]
+clock => altsyncram:altsyncram_component.clock0
+q[0] <= altsyncram:altsyncram_component.q_a[0]
+q[1] <= altsyncram:altsyncram_component.q_a[1]
+q[2] <= altsyncram:altsyncram_component.q_a[2]
+q[3] <= altsyncram:altsyncram_component.q_a[3]
+q[4] <= altsyncram:altsyncram_component.q_a[4]
+q[5] <= altsyncram:altsyncram_component.q_a[5]
+q[6] <= altsyncram:altsyncram_component.q_a[6]
+q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|DSS|LFSR1:ASK_LFSR|LPM_SHIFTREG:shift_reg
+|DSS|LPMROM:MyROM|altsyncram:altsyncram_component
+wren_a => ~NO_FANOUT~
+rden_a => ~NO_FANOUT~
+wren_b => ~NO_FANOUT~
+rden_b => ~NO_FANOUT~
+data_a[0] => ~NO_FANOUT~
+data_a[1] => ~NO_FANOUT~
+data_a[2] => ~NO_FANOUT~
+data_a[3] => ~NO_FANOUT~
+data_a[4] => ~NO_FANOUT~
+data_a[5] => ~NO_FANOUT~
+data_a[6] => ~NO_FANOUT~
+data_a[7] => ~NO_FANOUT~
+data_b[0] => ~NO_FANOUT~
+address_a[0] => altsyncram_6or3:auto_generated.address_a[0]
+address_a[1] => altsyncram_6or3:auto_generated.address_a[1]
+address_a[2] => altsyncram_6or3:auto_generated.address_a[2]
+address_a[3] => altsyncram_6or3:auto_generated.address_a[3]
+address_a[4] => altsyncram_6or3:auto_generated.address_a[4]
+address_b[0] => ~NO_FANOUT~
+addressstall_a => ~NO_FANOUT~
+addressstall_b => ~NO_FANOUT~
+clock0 => altsyncram_6or3:auto_generated.clock0
+clock1 => ~NO_FANOUT~
+clocken0 => ~NO_FANOUT~
+clocken1 => ~NO_FANOUT~
+clocken2 => ~NO_FANOUT~
+clocken3 => ~NO_FANOUT~
+aclr0 => ~NO_FANOUT~
+aclr1 => ~NO_FANOUT~
+byteena_a[0] => ~NO_FANOUT~
+byteena_b[0] => ~NO_FANOUT~
+q_a[0] <= altsyncram_6or3:auto_generated.q_a[0]
+q_a[1] <= altsyncram_6or3:auto_generated.q_a[1]
+q_a[2] <= altsyncram_6or3:auto_generated.q_a[2]
+q_a[3] <= altsyncram_6or3:auto_generated.q_a[3]
+q_a[4] <= altsyncram_6or3:auto_generated.q_a[4]
+q_a[5] <= altsyncram_6or3:auto_generated.q_a[5]
+q_a[6] <= altsyncram_6or3:auto_generated.q_a[6]
+q_a[7] <= altsyncram_6or3:auto_generated.q_a[7]
+q_b[0] <= <GND>
+eccstatus[0] <= <GND>
+eccstatus[1] <= <GND>
+eccstatus[2] <= <GND>
+
+
+|DSS|LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_6or3:auto_generated
+address_a[0] => ram_block1a0.PORTAADDR
+address_a[0] => ram_block1a1.PORTAADDR
+address_a[0] => ram_block1a2.PORTAADDR
+address_a[0] => ram_block1a3.PORTAADDR
+address_a[0] => ram_block1a4.PORTAADDR
+address_a[0] => ram_block1a5.PORTAADDR
+address_a[0] => ram_block1a6.PORTAADDR
+address_a[0] => ram_block1a7.PORTAADDR
+address_a[1] => ram_block1a0.PORTAADDR1
+address_a[1] => ram_block1a1.PORTAADDR1
+address_a[1] => ram_block1a2.PORTAADDR1
+address_a[1] => ram_block1a3.PORTAADDR1
+address_a[1] => ram_block1a4.PORTAADDR1
+address_a[1] => ram_block1a5.PORTAADDR1
+address_a[1] => ram_block1a6.PORTAADDR1
+address_a[1] => ram_block1a7.PORTAADDR1
+address_a[2] => ram_block1a0.PORTAADDR2
+address_a[2] => ram_block1a1.PORTAADDR2
+address_a[2] => ram_block1a2.PORTAADDR2
+address_a[2] => ram_block1a3.PORTAADDR2
+address_a[2] => ram_block1a4.PORTAADDR2
+address_a[2] => ram_block1a5.PORTAADDR2
+address_a[2] => ram_block1a6.PORTAADDR2
+address_a[2] => ram_block1a7.PORTAADDR2
+address_a[3] => ram_block1a0.PORTAADDR3
+address_a[3] => ram_block1a1.PORTAADDR3
+address_a[3] => ram_block1a2.PORTAADDR3
+address_a[3] => ram_block1a3.PORTAADDR3
+address_a[3] => ram_block1a4.PORTAADDR3
+address_a[3] => ram_block1a5.PORTAADDR3
+address_a[3] => ram_block1a6.PORTAADDR3
+address_a[3] => ram_block1a7.PORTAADDR3
+address_a[4] => ram_block1a0.PORTAADDR4
+address_a[4] => ram_block1a1.PORTAADDR4
+address_a[4] => ram_block1a2.PORTAADDR4
+address_a[4] => ram_block1a3.PORTAADDR4
+address_a[4] => ram_block1a4.PORTAADDR4
+address_a[4] => ram_block1a5.PORTAADDR4
+address_a[4] => ram_block1a6.PORTAADDR4
+address_a[4] => ram_block1a7.PORTAADDR4
+clock0 => ram_block1a0.CLK0
+clock0 => ram_block1a1.CLK0
+clock0 => ram_block1a2.CLK0
+clock0 => ram_block1a3.CLK0
+clock0 => ram_block1a4.CLK0
+clock0 => ram_block1a5.CLK0
+clock0 => ram_block1a6.CLK0
+clock0 => ram_block1a7.CLK0
+q_a[0] <= ram_block1a0.PORTADATAOUT
+q_a[1] <= ram_block1a1.PORTADATAOUT
+q_a[2] <= ram_block1a2.PORTADATAOUT
+q_a[3] <= ram_block1a3.PORTADATAOUT
+q_a[4] <= ram_block1a4.PORTADATAOUT
+q_a[5] <= ram_block1a5.PORTADATAOUT
+q_a[6] <= ram_block1a6.PORTADATAOUT
+q_a[7] <= ram_block1a7.PORTADATAOUT
+
+
+|DSS|LPM_COUNTER:counter
+clock => cntr_vuh:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+data[3] => ~NO_FANOUT~
+data[4] => ~NO_FANOUT~
+data[5] => ~NO_FANOUT~
+data[6] => ~NO_FANOUT~
+data[7] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_vuh:auto_generated.q[0]
+q[1] <= cntr_vuh:auto_generated.q[1]
+q[2] <= cntr_vuh:auto_generated.q[2]
+q[3] <= cntr_vuh:auto_generated.q[3]
+q[4] <= cntr_vuh:auto_generated.q[4]
+q[5] <= cntr_vuh:auto_generated.q[5]
+q[6] <= cntr_vuh:auto_generated.q[6]
+q[7] <= cntr_vuh:auto_generated.q[7]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|DSS|LPM_COUNTER:counter|cntr_vuh:auto_generated
+clock => counter_reg_bit[7].CLK
+clock => counter_reg_bit[6].CLK
+clock => counter_reg_bit[5].CLK
+clock => counter_reg_bit[4].CLK
+clock => counter_reg_bit[3].CLK
+clock => counter_reg_bit[2].CLK
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= counter_reg_bit[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= counter_reg_bit[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DSS|LPM_SHIFTREG:shift_reg
 data[0] => _.IN1
 data[1] => _.IN1
 data[2] => _.IN1
@@ -129,244 +354,7 @@ q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffs[8].DB_MAX_OUTPUT_PORT_TYPE
 q[9] <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|PhaseAccumulator:mypa
-FSW[0] => LPM_ADD_SUB:myADD.DATAA[0]
-FSW[1] => LPM_ADD_SUB:myADD.DATAA[1]
-FSW[2] => LPM_ADD_SUB:myADD.DATAA[2]
-FSW[3] => LPM_ADD_SUB:myADD.DATAA[3]
-FSW[4] => LPM_ADD_SUB:myADD.DATAA[4]
-clock => LPM_FF:myFF.CLOCK
-PA_out[0] <= LPM_FF:myFF.Q[0]
-PA_out[1] <= LPM_FF:myFF.Q[1]
-PA_out[2] <= LPM_FF:myFF.Q[2]
-PA_out[3] <= LPM_FF:myFF.Q[3]
-PA_out[4] <= LPM_FF:myFF.Q[4]
-
-
-|DSS|PhaseAccumulator:mypa|LPM_ADD_SUB:myADD
-dataa[0] => add_sub_kge:auto_generated.dataa[0]
-dataa[1] => add_sub_kge:auto_generated.dataa[1]
-dataa[2] => add_sub_kge:auto_generated.dataa[2]
-dataa[3] => add_sub_kge:auto_generated.dataa[3]
-dataa[4] => add_sub_kge:auto_generated.dataa[4]
-datab[0] => add_sub_kge:auto_generated.datab[0]
-datab[1] => add_sub_kge:auto_generated.datab[1]
-datab[2] => add_sub_kge:auto_generated.datab[2]
-datab[3] => add_sub_kge:auto_generated.datab[3]
-datab[4] => add_sub_kge:auto_generated.datab[4]
-cin => ~NO_FANOUT~
-add_sub => ~NO_FANOUT~
-clock => ~NO_FANOUT~
-aclr => ~NO_FANOUT~
-clken => ~NO_FANOUT~
-result[0] <= add_sub_kge:auto_generated.result[0]
-result[1] <= add_sub_kge:auto_generated.result[1]
-result[2] <= add_sub_kge:auto_generated.result[2]
-result[3] <= add_sub_kge:auto_generated.result[3]
-result[4] <= add_sub_kge:auto_generated.result[4]
-cout <= <GND>
-overflow <= <GND>
-
-
-|DSS|PhaseAccumulator:mypa|LPM_ADD_SUB:myADD|add_sub_kge:auto_generated
-dataa[0] => op_1.IN8
-dataa[1] => op_1.IN6
-dataa[2] => op_1.IN4
-dataa[3] => op_1.IN2
-dataa[4] => op_1.IN0
-datab[0] => op_1.IN9
-datab[1] => op_1.IN7
-datab[2] => op_1.IN5
-datab[3] => op_1.IN3
-datab[4] => op_1.IN1
-result[0] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
-result[4] <= op_1.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|PhaseAccumulator:mypa|LPM_FF:myFF
-data[0] => dffs[0].DATAIN
-data[1] => dffs[1].DATAIN
-data[2] => dffs[2].DATAIN
-data[3] => dffs[3].DATAIN
-data[4] => dffs[4].DATAIN
-clock => dffs[4].CLK
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[4].ENA
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|LPM_FF:FF1
-data[0] => dffs[0].DATAIN
-data[1] => dffs[1].DATAIN
-data[2] => dffs[2].DATAIN
-data[3] => dffs[3].DATAIN
-data[4] => dffs[4].DATAIN
-clock => dffs[4].CLK
-clock => dffs[3].CLK
-clock => dffs[2].CLK
-clock => dffs[1].CLK
-clock => dffs[0].CLK
-enable => dffs[4].ENA
-enable => dffs[3].ENA
-enable => dffs[2].ENA
-enable => dffs[1].ENA
-enable => dffs[0].ENA
-aclr => ~NO_FANOUT~
-aset => ~NO_FANOUT~
-aload => ~NO_FANOUT~
-sclr => ~NO_FANOUT~
-sset => ~NO_FANOUT~
-sload => ~NO_FANOUT~
-q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= dffs[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= dffs[4].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|LPMROM:MyROM
-address[0] => altsyncram:altsyncram_component.address_a[0]
-address[1] => altsyncram:altsyncram_component.address_a[1]
-address[2] => altsyncram:altsyncram_component.address_a[2]
-address[3] => altsyncram:altsyncram_component.address_a[3]
-address[4] => altsyncram:altsyncram_component.address_a[4]
-clock => altsyncram:altsyncram_component.clock0
-q[0] <= altsyncram:altsyncram_component.q_a[0]
-q[1] <= altsyncram:altsyncram_component.q_a[1]
-q[2] <= altsyncram:altsyncram_component.q_a[2]
-q[3] <= altsyncram:altsyncram_component.q_a[3]
-q[4] <= altsyncram:altsyncram_component.q_a[4]
-q[5] <= altsyncram:altsyncram_component.q_a[5]
-q[6] <= altsyncram:altsyncram_component.q_a[6]
-q[7] <= altsyncram:altsyncram_component.q_a[7]
-
-
-|DSS|LPMROM:MyROM|altsyncram:altsyncram_component
-wren_a => ~NO_FANOUT~
-rden_a => ~NO_FANOUT~
-wren_b => ~NO_FANOUT~
-rden_b => ~NO_FANOUT~
-data_a[0] => ~NO_FANOUT~
-data_a[1] => ~NO_FANOUT~
-data_a[2] => ~NO_FANOUT~
-data_a[3] => ~NO_FANOUT~
-data_a[4] => ~NO_FANOUT~
-data_a[5] => ~NO_FANOUT~
-data_a[6] => ~NO_FANOUT~
-data_a[7] => ~NO_FANOUT~
-data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_jp91:auto_generated.address_a[0]
-address_a[1] => altsyncram_jp91:auto_generated.address_a[1]
-address_a[2] => altsyncram_jp91:auto_generated.address_a[2]
-address_a[3] => altsyncram_jp91:auto_generated.address_a[3]
-address_a[4] => altsyncram_jp91:auto_generated.address_a[4]
-address_b[0] => ~NO_FANOUT~
-addressstall_a => ~NO_FANOUT~
-addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_jp91:auto_generated.clock0
-clock1 => ~NO_FANOUT~
-clocken0 => ~NO_FANOUT~
-clocken1 => ~NO_FANOUT~
-clocken2 => ~NO_FANOUT~
-clocken3 => ~NO_FANOUT~
-aclr0 => ~NO_FANOUT~
-aclr1 => ~NO_FANOUT~
-byteena_a[0] => ~NO_FANOUT~
-byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_jp91:auto_generated.q_a[0]
-q_a[1] <= altsyncram_jp91:auto_generated.q_a[1]
-q_a[2] <= altsyncram_jp91:auto_generated.q_a[2]
-q_a[3] <= altsyncram_jp91:auto_generated.q_a[3]
-q_a[4] <= altsyncram_jp91:auto_generated.q_a[4]
-q_a[5] <= altsyncram_jp91:auto_generated.q_a[5]
-q_a[6] <= altsyncram_jp91:auto_generated.q_a[6]
-q_a[7] <= altsyncram_jp91:auto_generated.q_a[7]
-q_b[0] <= <GND>
-eccstatus[0] <= <GND>
-eccstatus[1] <= <GND>
-eccstatus[2] <= <GND>
-
-
-|DSS|LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_jp91:auto_generated
-address_a[0] => ram_block1a0.PORTAADDR
-address_a[0] => ram_block1a1.PORTAADDR
-address_a[0] => ram_block1a2.PORTAADDR
-address_a[0] => ram_block1a3.PORTAADDR
-address_a[0] => ram_block1a4.PORTAADDR
-address_a[0] => ram_block1a5.PORTAADDR
-address_a[0] => ram_block1a6.PORTAADDR
-address_a[0] => ram_block1a7.PORTAADDR
-address_a[1] => ram_block1a0.PORTAADDR1
-address_a[1] => ram_block1a1.PORTAADDR1
-address_a[1] => ram_block1a2.PORTAADDR1
-address_a[1] => ram_block1a3.PORTAADDR1
-address_a[1] => ram_block1a4.PORTAADDR1
-address_a[1] => ram_block1a5.PORTAADDR1
-address_a[1] => ram_block1a6.PORTAADDR1
-address_a[1] => ram_block1a7.PORTAADDR1
-address_a[2] => ram_block1a0.PORTAADDR2
-address_a[2] => ram_block1a1.PORTAADDR2
-address_a[2] => ram_block1a2.PORTAADDR2
-address_a[2] => ram_block1a3.PORTAADDR2
-address_a[2] => ram_block1a4.PORTAADDR2
-address_a[2] => ram_block1a5.PORTAADDR2
-address_a[2] => ram_block1a6.PORTAADDR2
-address_a[2] => ram_block1a7.PORTAADDR2
-address_a[3] => ram_block1a0.PORTAADDR3
-address_a[3] => ram_block1a1.PORTAADDR3
-address_a[3] => ram_block1a2.PORTAADDR3
-address_a[3] => ram_block1a3.PORTAADDR3
-address_a[3] => ram_block1a4.PORTAADDR3
-address_a[3] => ram_block1a5.PORTAADDR3
-address_a[3] => ram_block1a6.PORTAADDR3
-address_a[3] => ram_block1a7.PORTAADDR3
-address_a[4] => ram_block1a0.PORTAADDR4
-address_a[4] => ram_block1a1.PORTAADDR4
-address_a[4] => ram_block1a2.PORTAADDR4
-address_a[4] => ram_block1a3.PORTAADDR4
-address_a[4] => ram_block1a4.PORTAADDR4
-address_a[4] => ram_block1a5.PORTAADDR4
-address_a[4] => ram_block1a6.PORTAADDR4
-address_a[4] => ram_block1a7.PORTAADDR4
-clock0 => ram_block1a0.CLK0
-clock0 => ram_block1a1.CLK0
-clock0 => ram_block1a2.CLK0
-clock0 => ram_block1a3.CLK0
-clock0 => ram_block1a4.CLK0
-clock0 => ram_block1a5.CLK0
-clock0 => ram_block1a6.CLK0
-clock0 => ram_block1a7.CLK0
-q_a[0] <= ram_block1a0.PORTADATAOUT
-q_a[1] <= ram_block1a1.PORTADATAOUT
-q_a[2] <= ram_block1a2.PORTADATAOUT
-q_a[3] <= ram_block1a3.PORTADATAOUT
-q_a[4] <= ram_block1a4.PORTADATAOUT
-q_a[5] <= ram_block1a5.PORTADATAOUT
-q_a[6] <= ram_block1a6.PORTADATAOUT
-q_a[7] <= ram_block1a7.PORTADATAOUT
+shiftout <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|mux:ASK_MUX
