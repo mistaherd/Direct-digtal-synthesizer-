@@ -7,23 +7,37 @@ data_port_A[4] => LPM_ADD_SUB:myADD.DATAA[4]
 clkin => LPM_FF:myFF.CLOCK
 clkin => LPMROM:MyROM.clock
 clkin => LPM_COUNTER:counter.CLOCK
-ASK_OUT[0] << mux:ASK_MUX.out_port[0]
-ASK_OUT[1] << mux:ASK_MUX.out_port[1]
-ASK_OUT[2] << mux:ASK_MUX.out_port[2]
-ASK_OUT[3] << mux:ASK_MUX.out_port[3]
-ASK_OUT[4] << mux:ASK_MUX.out_port[4]
-ASK_OUT[5] << mux:ASK_MUX.out_port[5]
-ASK_OUT[6] << mux:ASK_MUX.out_port[6]
-ASK_OUT[7] << mux:ASK_MUX.out_port[7]
-LFSR_OUTPUT << LPM_SHIFTREG:shift_reg.SHIFTOUT
-LUT_OUT[0] << LPMROM:MyROM.q[0]
-LUT_OUT[1] << LPMROM:MyROM.q[1]
-LUT_OUT[2] << LPMROM:MyROM.q[2]
-LUT_OUT[3] << LPMROM:MyROM.q[3]
-LUT_OUT[4] << LPMROM:MyROM.q[4]
-LUT_OUT[5] << LPMROM:MyROM.q[5]
-LUT_OUT[6] << LPMROM:MyROM.q[6]
-LUT_OUT[7] << LPMROM:MyROM.q[7]
+ASK_OUT[0] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[1] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[2] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[3] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[4] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[5] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[6] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+ASK_OUT[7] <= ASK_OUT.DB_MAX_OUTPUT_PORT_TYPE
+PA_out[0] <= LPM_FF:myFF.Q[0]
+PA_out[1] <= LPM_FF:myFF.Q[1]
+PA_out[2] <= LPM_FF:myFF.Q[2]
+PA_out[3] <= LPM_FF:myFF.Q[3]
+PA_out[4] <= LPM_FF:myFF.Q[4]
+LFSR_OUTPUT <= LPM_SHIFTREG:shift_reg.SHIFTOUT
+LFSR_BUS[0] <= LPM_SHIFTREG:shift_reg.Q[0]
+LFSR_BUS[1] <= LPM_SHIFTREG:shift_reg.Q[1]
+LFSR_BUS[2] <= LPM_SHIFTREG:shift_reg.Q[2]
+LFSR_BUS[3] <= LPM_SHIFTREG:shift_reg.Q[3]
+LFSR_BUS[4] <= LPM_SHIFTREG:shift_reg.Q[4]
+LFSR_BUS[5] <= LPM_SHIFTREG:shift_reg.Q[5]
+LFSR_BUS[6] <= LPM_SHIFTREG:shift_reg.Q[6]
+LFSR_BUS[7] <= LPM_SHIFTREG:shift_reg.Q[7]
+LFSR_BUS[8] <= LPM_SHIFTREG:shift_reg.Q[8]
+LUT_OUT[0] <= LPMROM:MyROM.q[0]
+LUT_OUT[1] <= LPMROM:MyROM.q[1]
+LUT_OUT[2] <= LPMROM:MyROM.q[2]
+LUT_OUT[3] <= LPMROM:MyROM.q[3]
+LUT_OUT[4] <= LPMROM:MyROM.q[4]
+LUT_OUT[5] <= LPMROM:MyROM.q[5]
+LUT_OUT[6] <= LPMROM:MyROM.q[6]
+LUT_OUT[7] <= LPMROM:MyROM.q[7]
 
 
 |DSS|LPM_ADD_SUB:myADD
@@ -221,7 +235,7 @@ q_a[7] <= ram_block1a7.PORTADATAOUT
 
 
 |DSS|LPM_COUNTER:counter
-clock => cntr_vuh:auto_generated.clock
+clock => cntr_0vh:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -241,15 +255,17 @@ data[4] => ~NO_FANOUT~
 data[5] => ~NO_FANOUT~
 data[6] => ~NO_FANOUT~
 data[7] => ~NO_FANOUT~
+data[8] => ~NO_FANOUT~
 cin => ~NO_FANOUT~
-q[0] <= cntr_vuh:auto_generated.q[0]
-q[1] <= cntr_vuh:auto_generated.q[1]
-q[2] <= cntr_vuh:auto_generated.q[2]
-q[3] <= cntr_vuh:auto_generated.q[3]
-q[4] <= cntr_vuh:auto_generated.q[4]
-q[5] <= cntr_vuh:auto_generated.q[5]
-q[6] <= cntr_vuh:auto_generated.q[6]
-q[7] <= cntr_vuh:auto_generated.q[7]
+q[0] <= cntr_0vh:auto_generated.q[0]
+q[1] <= cntr_0vh:auto_generated.q[1]
+q[2] <= cntr_0vh:auto_generated.q[2]
+q[3] <= cntr_0vh:auto_generated.q[3]
+q[4] <= cntr_0vh:auto_generated.q[4]
+q[5] <= cntr_0vh:auto_generated.q[5]
+q[6] <= cntr_0vh:auto_generated.q[6]
+q[7] <= cntr_0vh:auto_generated.q[7]
+q[8] <= cntr_0vh:auto_generated.q[8]
 cout <= <GND>
 eq[0] <= <GND>
 eq[1] <= <GND>
@@ -269,7 +285,8 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|DSS|LPM_COUNTER:counter|cntr_vuh:auto_generated
+|DSS|LPM_COUNTER:counter|cntr_0vh:auto_generated
+clock => counter_reg_bit[8].CLK
 clock => counter_reg_bit[7].CLK
 clock => counter_reg_bit[6].CLK
 clock => counter_reg_bit[5].CLK
@@ -286,6 +303,7 @@ q[4] <= counter_reg_bit[4].DB_MAX_OUTPUT_PORT_TYPE
 q[5] <= counter_reg_bit[5].DB_MAX_OUTPUT_PORT_TYPE
 q[6] <= counter_reg_bit[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= counter_reg_bit[7].DB_MAX_OUTPUT_PORT_TYPE
+q[8] <= counter_reg_bit[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DSS|LPM_SHIFTREG:shift_reg
@@ -298,8 +316,6 @@ data[5] => _.IN1
 data[6] => _.IN1
 data[7] => _.IN1
 data[8] => _.IN1
-data[9] => _.IN1
-clock => dffs[9].CLK
 clock => dffs[8].CLK
 clock => dffs[7].CLK
 clock => dffs[6].CLK
@@ -309,7 +325,6 @@ clock => dffs[3].CLK
 clock => dffs[2].CLK
 clock => dffs[1].CLK
 clock => dffs[0].CLK
-enable => dffs[9].ENA
 enable => dffs[8].ENA
 enable => dffs[7].ENA
 enable => dffs[6].ENA
@@ -320,7 +335,6 @@ enable => dffs[2].ENA
 enable => dffs[1].ENA
 enable => dffs[0].ENA
 shiftin => _.IN1
-load => _.IN0
 load => _.IN0
 load => _.IN0
 load => _.IN0
@@ -343,7 +357,6 @@ sset => _.IN0
 sset => _.IN0
 sset => _.IN0
 sset => _.IN0
-sset => _.IN0
 q[0] <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= dffs[1].DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= dffs[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -353,42 +366,6 @@ q[5] <= dffs[5].DB_MAX_OUTPUT_PORT_TYPE
 q[6] <= dffs[6].DB_MAX_OUTPUT_PORT_TYPE
 q[7] <= dffs[7].DB_MAX_OUTPUT_PORT_TYPE
 q[8] <= dffs[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
-shiftout <= dffs[9].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|DSS|mux:ASK_MUX
-data_port0[0] => out_port.DATAB
-data_port0[1] => out_port.DATAB
-data_port0[2] => out_port.DATAB
-data_port0[3] => out_port.DATAB
-data_port0[4] => out_port.DATAB
-data_port0[5] => out_port.DATAB
-data_port0[6] => out_port.DATAB
-data_port0[7] => out_port.DATAB
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-sel => out_port.OUTPUTSELECT
-data_port1[0] => out_port.DATAA
-data_port1[1] => out_port.DATAA
-data_port1[2] => out_port.DATAA
-data_port1[3] => out_port.DATAA
-data_port1[4] => out_port.DATAA
-data_port1[5] => out_port.DATAA
-data_port1[6] => out_port.DATAA
-data_port1[7] => out_port.DATAA
-out_port[0] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[1] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[2] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[3] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[4] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[5] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[6] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
-out_port[7] <= out_port.DB_MAX_OUTPUT_PORT_TYPE
+shiftout <= dffs[0].DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -7,13 +7,17 @@ USE lpm.lpm_components.all;
 ENTITY DSS IS
 	PORT
 	(
+		--- we dont want 2^n<2^p of lut
 		data_port_A	:	IN		STD_LOGIC_VECTOR(4 downto 0);
 		--data_port_B	:	IN		STD_LOGIC_VECTOR(4 downto 0);
 		clkin			:	IN		STD_LOGIC;
 		--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
 		ASK_OUT		: 	OUT	STD_LOGIC_VECTOR(7 downto 0);
-		LFSR_OUTPUT		:	OUT	STD_LOGIC;
+		PA_out		:	OUT	STD_LOGIC_VECTOR(4 downto 0);
+		LFSR_OUTPUT	:	OUT	STD_LOGIC;
+		LFSR_BUS		:	OUT	STD_LOGIC_VECTOR(8 downto 0);
 		LUT_OUT		:	OUT	STD_LOGIC_VECTOR(7 downto 0)
+		
 	);
 END ENTITY DSS;	
 ARCHITECTURE mycomp OF DSS IS
@@ -24,18 +28,9 @@ ARCHITECTURE mycomp OF DSS IS
 				q       :	out	std_logic_vector(7 downto 0)  -- Adjust data width as needed
 				);
 	end COMPONENT;
-	COMPONENT mux is
-		PORT
-		(
-			data_port0	:	In STD_LOGIC_VECTOR(7 downto 0);
-			sel			:	In STD_LOGIC;
-			data_port1	:	In STD_LOGIC_VECTOR(7 downto 0);
-			out_port		:	OUT STD_LOGIC_VECTOR(7 downto 0)
-		);
-	end COMPONENT;
 
-	SIGNAL clk_lfsrin	:	STD_LOGIC_VECTOR(7 downto 0);
-	SIGNAL shiftreg_out	:	STD_LOGIC_VECTOR(9 downto 0);
+	SIGNAL clk_lfsrin	:	STD_LOGIC_VECTOR(8 downto 0);
+	SIGNAL shiftreg_out	:	STD_LOGIC_VECTOR(8 downto 0);
 	SIGNAL LFSR_in			:	STD_LOGIC;
 	SIGNAL LFSR_out		:	STD_LOGIC;
 	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
@@ -66,7 +61,7 @@ ARCHITECTURE mycomp OF DSS IS
 					CLOCK => clkin,
 					Q => out_DFF
 				);
-	
+		Pa_out<=out_DFF;
 		--lut
 		MyROM : LPMROM
 		PORT MAP(
@@ -80,37 +75,37 @@ ARCHITECTURE mycomp OF DSS IS
 		-- clock divider
 		counter: LPM_COUNTER
 		GENERIC MAP(
-							LPM_WIDTH	=>	8	
+							LPM_WIDTH	=>	9	
 						)
 		PORT MAP(
 						clock	=>	clkin,
 						q		=>	clk_lfsrin
 					);
 		--LFSR
-		LFSR_in<=not(shiftreg_out(6)xor shiftreg_out(3)xor shiftreg_out(1) xor shiftreg_out(0));
+		LFSR_in<=not(shiftreg_out(8) xor shiftreg_out(4)xor shiftreg_out(0));
 		shift_reg: LPM_SHIFTREG
 		GENERIC MAP
 			(
-				LPM_WIDTH=>10,
-				LPM_DIRECTION =>"LEFT"
+				LPM_WIDTH=>9,
+				LPM_DIRECTION =>"RIGHT"
 			)
 		PORT MAP
 			(	
-				clock 	=>	clk_lfsrin(2),
+				clock 	=>	clk_lfsrin(4),
 				Q			=>	shiftreg_out,
 				shiftin	=>	LFSR_in,
 				shiftout	=>	LFSR_out
 			);
-	
-		
+		LFSR_BUS<=shiftreg_out;
+		--LFSR_OUTPUT<=LFSR_in;
 		LFSR_OUTPUT<=LFSR_out;
-		ASK_MUX	:MUX
-		PORT MAP(
-						data_port0	=>	ROM_OUT,
-						sel			=>	LFSR_out,
-						data_port1	=> "00000000",
-						out_port		=>	ASK_OUT
-					);
-		--ASK_OUT<=ROM_OUT when out_lfsr0='1'else"00000000";
+		process(LFSR_out)
+		begin
+		if (LFSR_out= '1') then
+			ASK_OUT	<=	ROM_OUT;
+		else
+			ASK_OUT	<=	"00000000";
+		end if;
+		end process;
 END mycomp;
  
