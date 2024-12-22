@@ -17,6 +17,7 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
   SIGNAL  LFSR_OUTPUT   :   STD_LOGIC;
   SIGNAL  LFSR_BUS		    :   STD_LOGIC_VECTOR(8 downto 0);
   SIGNAL  ASK_OUT      	:   STD_LOGIC_VECTOR(9 downto 0);
+  SIGNAL  PA_out        :   STD_LOGIC_VECTOR(4 downto 0);
   SIGNAL  LUT_OUT      	:   STD_LOGIC_VECTOR(9 downto 0);
   COMPONENT DSS  
     PORT ( 
@@ -26,12 +27,15 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
 			  LFSR_OUTPUT : OUT  STD_LOGIC; 
 				ASK_OUT		   :	OUT  STD_LOGIC_VECTOR(9 downto 0);
 				LFSR_BUS    :	OUT  STD_LOGIC_VECTOR(8 downto 0);
+				PA_out		    :	OUT  STD_LOGIC_VECTOR(4 downto 0);
+				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0);
 				LUT_OUT		   :	OUT  STD_LOGIC_VECTOR(9 downto 0)
-				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
+				
+				
 			);
       
   END COMPONENT ; 
-  constant clk_period : time :=2 ns;
+  constant clk_period : time :=4 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
@@ -39,7 +43,8 @@ BEGIN
 					data_port_A  =>  data_port_A,
 					--data_port_1	=>	data_port_1,
 					--FSK_OUT		=>	FSK_OUT,
-					LFSR_OUTPUT     =>  LFSR_OUTPUT,
+					PA_out       =>  PA_out,     
+					LFSR_OUTPUT  =>  LFSR_OUTPUT,
 					LFSR_BUS     =>  LFSR_BUS,
 					ASK_OUT      =>  ASK_OUT,
 					LUT_OUT      =>  LUT_OUT

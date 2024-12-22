@@ -1,41 +1,7 @@
 --This has been generated from python
 DEPTH = 32; -- The size of memory in words 
-WIDTH = 10; -- The size of data in bits 
+WIDTH =10; -- The size of data in bits 
 ADDRESS_RADIX = HEX; -- The radix for address values 
 DATA_RADIX = BIN; -- The radix for data values 
 CONTENT -- start of (address : data pairs) 
 BEGIN
-
-00 : 0000001100;
-01 : 0000001100;
-02 : 0000001100;
-03 : 0000001101;
-04 : 0000001101;
-05 : 0000001101;
-06 : 0000001101;
-07 : 0000001101;
-08 : 0000001101;
-09 : 0000001101;
-0a : 0000001101;
-0b : 0000001101;
-0c : 0000001101;
-0d : 0000001100;
-0e : 0000001100;
-0f : 0000001100;
-10 : 0000001100;
-11 : 0000001100;
-12 : 0000001100;
-13 : 0000001011;
-14 : 0000001011;
-15 : 0000001011;
-16 : 0000001011;
-17 : 0000001011;
-18 : 0000001011;
-19 : 0000001011;
-1a : 0000001011;
-1b : 0000001011;
-1c : 0000001011;
-1d : 0000001100;
-1e : 0000001100;
-1f : 0000001100;
-End;

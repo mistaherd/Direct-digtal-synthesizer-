@@ -6,6 +6,7 @@ def sine_wave_cycle_logic(choice:int,fs=1,Number_of_bits=8,amount_ofmem=32):
         t=np.linspace(0,N,amount_ofmem)
 
         output= np.sin(2*np.pi*fs*t)*255
+        output=output.astype(np.uint8)
     elif choice==1:
         N=2**Number_of_bits
         t=np.linspace(0,N,amount_ofmem*2)
@@ -23,26 +24,19 @@ def sine_wave_cycle_logic(choice:int,fs=1,Number_of_bits=8,amount_ofmem=32):
 
     return output
 def complement_2s(data):
-    ones="".join(0 if data[i]==1 else 1 for i in range(len(data)):
+    ones="".join('0' if data[i]=='1' else '1' for i in range(len(data)))
     j=False
     i=0
-    twos=list(ones)
-    while(j!=True):
-        if twos[len(twos)-i]+1>=1:
-            twos[len(twos)-i]=0
-            i+=1
-        else:
-            twos[len(twos)-i]=1
-            j=True
+    twos=bin(int(ones,2)+1)
 
     return twos
 
 output=sine_wave_cycle_logic(0)
 
-def write_mif(fname=None,amountofbits=10,size_ofmem=32):
+def write_mif(fname=None,amountofbits=8,size_ofmem=32):
     with open(r"C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\coswavesoted.mif",'w') as file:
         file.write("--This has been generated from python\n")
-    
+        #change_string
         file.write("DEPTH = 32; -- The size of memory in words \nWIDTH =10; -- The size of data in bits \nADDRESS_RADIX = HEX; -- The radix for address values \nDATA_RADIX = BIN; -- The radix for data values \nCONTENT -- start of (address : data pairs) ")
         file.write("\nBEGIN\n")
         for i in range(0,len(output)):

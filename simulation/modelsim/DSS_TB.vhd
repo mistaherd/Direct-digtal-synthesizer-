@@ -16,18 +16,22 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
   --SIGNAL  data_port_B	:   STD_LOGIC_VECTOR(4 downto 0); 
   SIGNAL  LFSR_OUTPUT   :   STD_LOGIC;
   SIGNAL  LFSR_BUS		    :   STD_LOGIC_VECTOR(8 downto 0);
-  SIGNAL  ASK_OUT      	:   STD_LOGIC_VECTOR(9 downto 0);
-  SIGNAL  LUT_OUT      	:   STD_LOGIC_VECTOR(9 downto 0);
+  SIGNAL  ASK_OUT      	:   STD_LOGIC_VECTOR(7 downto 0);
+  SIGNAL  PA_out        :   STD_LOGIC_VECTOR(4 downto 0);
+  SIGNAL  LUT_OUT      	:   STD_LOGIC_VECTOR(7 downto 0);
   COMPONENT DSS  
     PORT ( 
 				data_port_A : IN  STD_LOGIC_VECTOR(4 downto 0);
 				--data_port_B	: IN  STD_LOGIC_VECTOR(4 downto 0);
 				clkin			    : IN   STD_LOGIC;
 			  LFSR_OUTPUT : OUT  STD_LOGIC; 
-				ASK_OUT		   :	OUT  STD_LOGIC_VECTOR(9 downto 0);
+				ASK_OUT		   :	OUT  STD_LOGIC_VECTOR(7 downto 0);
 				LFSR_BUS    :	OUT  STD_LOGIC_VECTOR(8 downto 0);
-				LUT_OUT		   :	OUT  STD_LOGIC_VECTOR(9 downto 0)
-				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0)
+				PA_out		    :	OUT  STD_LOGIC_VECTOR(4 downto 0);
+				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0);
+				LUT_OUT		   :	OUT  STD_LOGIC_VECTOR(7 downto 0)
+				
+				
 			);
       
   END COMPONENT ; 
@@ -39,7 +43,8 @@ BEGIN
 					data_port_A  =>  data_port_A,
 					--data_port_1	=>	data_port_1,
 					--FSK_OUT		=>	FSK_OUT,
-					LFSR_OUTPUT     =>  LFSR_OUTPUT,
+					PA_out       =>  PA_out,     
+					LFSR_OUTPUT  =>  LFSR_OUTPUT,
 					LFSR_BUS     =>  LFSR_BUS,
 					ASK_OUT      =>  ASK_OUT,
 					LUT_OUT      =>  LUT_OUT
