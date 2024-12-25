@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "11/19/2024 23:54:56"
+// Generated on "12/23/2024 01:40:44"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    DSS
 // 
@@ -58,37 +58,43 @@ endmodule
 
 module DSS_vlg_check_tst (
 	ASK_OUT,
+	LFSR_BUS,
+	LFSR_OUTPUT,
 	LUT_OUT,
-	PA,
+	PA_out,
 	sampler_rx
 );
 input [7:0] ASK_OUT;
+input [8:0] LFSR_BUS;
+input  LFSR_OUTPUT;
 input [7:0] LUT_OUT;
-input [4:0] PA;
+input [4:0] PA_out;
 input sampler_rx;
 
 reg [7:0] ASK_OUT_expected;
+reg [8:0] LFSR_BUS_expected;
+reg  LFSR_OUTPUT_expected;
 reg [7:0] LUT_OUT_expected;
-reg [4:0] PA_expected;
+reg [4:0] PA_out_expected;
 
 reg [7:0] ASK_OUT_prev;
+reg [8:0] LFSR_BUS_prev;
+reg  LFSR_OUTPUT_prev;
 reg [7:0] LUT_OUT_prev;
-reg [4:0] PA_prev;
+reg [4:0] PA_out_prev;
 
 reg [7:0] ASK_OUT_expected_prev;
 reg [7:0] LUT_OUT_expected_prev;
-reg [4:0] PA_expected_prev;
 
 reg [7:0] last_ASK_OUT_exp;
 reg [7:0] last_LUT_OUT_exp;
-reg [4:0] last_PA_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:3] on_first_change ;
+reg [1:5] on_first_change ;
 
 
 initial
@@ -96,7 +102,7 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 3'b1;
+on_first_change = 5'b1;
 end
 
 // update real /o prevs
@@ -104,8 +110,10 @@ end
 always @(trigger)
 begin
 	ASK_OUT_prev = ASK_OUT;
+	LFSR_BUS_prev = LFSR_BUS;
+	LFSR_OUTPUT_prev = LFSR_OUTPUT;
 	LUT_OUT_prev = LUT_OUT;
-	PA_prev = PA;
+	PA_out_prev = PA_out;
 end
 
 // update expected /o prevs
@@ -114,7 +122,6 @@ always @(trigger)
 begin
 	ASK_OUT_expected_prev = ASK_OUT_expected;
 	LUT_OUT_expected_prev = LUT_OUT_expected;
-	PA_expected_prev = PA_expected;
 end
 
 
@@ -198,33 +205,8 @@ initial
 begin
 	LUT_OUT_expected[0] = 1'bX;
 end 
-// expected PA[ 4 ]
-initial
-begin
-	PA_expected[4] = 1'bX;
-end 
-// expected PA[ 3 ]
-initial
-begin
-	PA_expected[3] = 1'bX;
-end 
-// expected PA[ 2 ]
-initial
-begin
-	PA_expected[2] = 1'bX;
-end 
-// expected PA[ 1 ]
-initial
-begin
-	PA_expected[1] = 1'bX;
-end 
-// expected PA[ 0 ]
-initial
-begin
-	PA_expected[0] = 1'bX;
-end 
 // generate trigger
-always @(ASK_OUT_expected or ASK_OUT or LUT_OUT_expected or LUT_OUT or PA_expected or PA)
+always @(ASK_OUT_expected or ASK_OUT or LFSR_BUS_expected or LFSR_BUS or LFSR_OUTPUT_expected or LFSR_OUTPUT or LUT_OUT_expected or LUT_OUT or PA_out_expected or PA_out)
 begin
 	trigger <= ~trigger;
 end
@@ -234,8 +216,8 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected ASK_OUT = %b | expected LUT_OUT = %b | expected PA = %b | ",ASK_OUT_expected_prev,LUT_OUT_expected_prev,PA_expected_prev);
-	$display("| real ASK_OUT = %b | real LUT_OUT = %b | real PA = %b | ",ASK_OUT_prev,LUT_OUT_prev,PA_prev);
+	$display("| expected ASK_OUT = %b | expected LFSR_BUS = %b | expected LFSR_OUTPUT = %b | expected LUT_OUT = %b | expected PA_out = %b | ",ASK_OUT_expected_prev,LFSR_BUS_expected_prev,LFSR_OUTPUT_expected_prev,LUT_OUT_expected_prev,PA_out_expected_prev);
+	$display("| real ASK_OUT = %b | real LFSR_BUS = %b | real LFSR_OUTPUT = %b | real LUT_OUT = %b | real PA_out = %b | ",ASK_OUT_prev,LFSR_BUS_prev,LFSR_OUTPUT_prev,LUT_OUT_prev,PA_out_prev);
 `endif
 	if (
 		( ASK_OUT_expected_prev[0] !== 1'bx ) && ( ASK_OUT_prev[0] !== ASK_OUT_expected_prev[0] )
@@ -344,171 +326,106 @@ begin
 	if (
 		( LUT_OUT_expected_prev[0] !== 1'bx ) && ( LUT_OUT_prev[0] !== LUT_OUT_expected_prev[0] )
 		&& ((LUT_OUT_expected_prev[0] !== last_LUT_OUT_exp[0]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[0] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[0] = LUT_OUT_expected_prev[0];
 	end
 	if (
 		( LUT_OUT_expected_prev[1] !== 1'bx ) && ( LUT_OUT_prev[1] !== LUT_OUT_expected_prev[1] )
 		&& ((LUT_OUT_expected_prev[1] !== last_LUT_OUT_exp[1]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[1] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[1] = LUT_OUT_expected_prev[1];
 	end
 	if (
 		( LUT_OUT_expected_prev[2] !== 1'bx ) && ( LUT_OUT_prev[2] !== LUT_OUT_expected_prev[2] )
 		&& ((LUT_OUT_expected_prev[2] !== last_LUT_OUT_exp[2]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[2] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[2] = LUT_OUT_expected_prev[2];
 	end
 	if (
 		( LUT_OUT_expected_prev[3] !== 1'bx ) && ( LUT_OUT_prev[3] !== LUT_OUT_expected_prev[3] )
 		&& ((LUT_OUT_expected_prev[3] !== last_LUT_OUT_exp[3]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[3] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[3] = LUT_OUT_expected_prev[3];
 	end
 	if (
 		( LUT_OUT_expected_prev[4] !== 1'bx ) && ( LUT_OUT_prev[4] !== LUT_OUT_expected_prev[4] )
 		&& ((LUT_OUT_expected_prev[4] !== last_LUT_OUT_exp[4]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[4] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[4] = LUT_OUT_expected_prev[4];
 	end
 	if (
 		( LUT_OUT_expected_prev[5] !== 1'bx ) && ( LUT_OUT_prev[5] !== LUT_OUT_expected_prev[5] )
 		&& ((LUT_OUT_expected_prev[5] !== last_LUT_OUT_exp[5]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[5] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[5] = LUT_OUT_expected_prev[5];
 	end
 	if (
 		( LUT_OUT_expected_prev[6] !== 1'bx ) && ( LUT_OUT_prev[6] !== LUT_OUT_expected_prev[6] )
 		&& ((LUT_OUT_expected_prev[6] !== last_LUT_OUT_exp[6]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[6] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[6] = LUT_OUT_expected_prev[6];
 	end
 	if (
 		( LUT_OUT_expected_prev[7] !== 1'bx ) && ( LUT_OUT_prev[7] !== LUT_OUT_expected_prev[7] )
 		&& ((LUT_OUT_expected_prev[7] !== last_LUT_OUT_exp[7]) ||
-			on_first_change[2])
+			on_first_change[4])
 	)
 	begin
 		$display ("ERROR! Vector Mismatch for output port LUT_OUT[7] :: @time = %t",  $realtime);
 		$display ("     Expected value = %b", LUT_OUT_expected_prev);
 		$display ("     Real value = %b", LUT_OUT_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
+		on_first_change[4] = 1'b0;
 		last_LUT_OUT_exp[7] = LUT_OUT_expected_prev[7];
-	end
-	if (
-		( PA_expected_prev[0] !== 1'bx ) && ( PA_prev[0] !== PA_expected_prev[0] )
-		&& ((PA_expected_prev[0] !== last_PA_exp[0]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port PA[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", PA_expected_prev);
-		$display ("     Real value = %b", PA_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_PA_exp[0] = PA_expected_prev[0];
-	end
-	if (
-		( PA_expected_prev[1] !== 1'bx ) && ( PA_prev[1] !== PA_expected_prev[1] )
-		&& ((PA_expected_prev[1] !== last_PA_exp[1]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port PA[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", PA_expected_prev);
-		$display ("     Real value = %b", PA_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_PA_exp[1] = PA_expected_prev[1];
-	end
-	if (
-		( PA_expected_prev[2] !== 1'bx ) && ( PA_prev[2] !== PA_expected_prev[2] )
-		&& ((PA_expected_prev[2] !== last_PA_exp[2]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port PA[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", PA_expected_prev);
-		$display ("     Real value = %b", PA_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_PA_exp[2] = PA_expected_prev[2];
-	end
-	if (
-		( PA_expected_prev[3] !== 1'bx ) && ( PA_prev[3] !== PA_expected_prev[3] )
-		&& ((PA_expected_prev[3] !== last_PA_exp[3]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port PA[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", PA_expected_prev);
-		$display ("     Real value = %b", PA_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_PA_exp[3] = PA_expected_prev[3];
-	end
-	if (
-		( PA_expected_prev[4] !== 1'bx ) && ( PA_prev[4] !== PA_expected_prev[4] )
-		&& ((PA_expected_prev[4] !== last_PA_exp[4]) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port PA[4] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", PA_expected_prev);
-		$display ("     Real value = %b", PA_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_PA_exp[4] = PA_expected_prev[4];
 	end
 
 	trigger <= ~trigger;
@@ -533,8 +450,10 @@ reg clkin;
 reg [4:0] data_port_A;
 // wires                                               
 wire [7:0] ASK_OUT;
+wire [8:0] LFSR_BUS;
+wire LFSR_OUTPUT;
 wire [7:0] LUT_OUT;
-wire [4:0] PA;
+wire [4:0] PA_out;
 
 wire sampler;                             
 
@@ -544,8 +463,10 @@ DSS i1 (
 	.ASK_OUT(ASK_OUT),
 	.clkin(clkin),
 	.data_port_A(data_port_A),
+	.LFSR_BUS(LFSR_BUS),
+	.LFSR_OUTPUT(LFSR_OUTPUT),
 	.LUT_OUT(LUT_OUT),
-	.PA(PA)
+	.PA_out(PA_out)
 );
 
 // clkin
@@ -589,8 +510,10 @@ DSS_vlg_sample_tst tb_sample (
 
 DSS_vlg_check_tst tb_out(
 	.ASK_OUT(ASK_OUT),
+	.LFSR_BUS(LFSR_BUS),
+	.LFSR_OUTPUT(LFSR_OUTPUT),
 	.LUT_OUT(LUT_OUT),
-	.PA(PA),
+	.PA_out(PA_out),
 	.sampler_rx(sampler)
 );
 endmodule

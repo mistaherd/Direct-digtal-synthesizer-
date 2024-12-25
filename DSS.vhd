@@ -29,13 +29,13 @@ ARCHITECTURE mycomp OF DSS IS
 				);
 	end COMPONENT;
 
-	SIGNAL clk_lfsrin	:	STD_LOGIC_VECTOR(8 downto 0);
+	SIGNAL clk_lfsrin		:	STD_LOGIC_VECTOR(8 downto 0);
 	SIGNAL shiftreg_out	:	STD_LOGIC_VECTOR(8 downto 0);
 	SIGNAL LFSR_in			:	STD_LOGIC;
 	SIGNAL LFSR_out		:	STD_LOGIC;
-	SIGNAL ROM_OUT 	:	STD_LOGIC_VECTOR(7 downto 0);
-	SIGNAL out_ADD		:	STD_LOGIC_VECTOR (4 downto 0);
-	SIGNAL out_DFF		:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL ROM_OUT 		:	STD_LOGIC_VECTOR(7 downto 0);
+	SIGNAL out_ADD			:	STD_LOGIC_VECTOR (4 downto 0);
+	SIGNAL out_DFF			:	STD_LOGIC_VECTOR (4 downto 0);
 	BEGIN 
 	--PA
 		myADD :lpm_ADD_SUB

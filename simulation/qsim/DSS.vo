@@ -16,7 +16,7 @@
 // PROGRAM "Quartus II 64-Bit"
 // VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
-// DATE "11/28/2024 14:16:16"
+// DATE "12/24/2024 18:42:08"
 
 // 
 // Device: Altera EP3C5F256C6 Package FBGA256
@@ -1400,9 +1400,9 @@ cycloneiii_ram_block \MyROM|altsyncram_component|auto_generated|ram_block1a0 (
 // synopsys translate_off
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
-defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .init_file = "coswavesoted.mif";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .init_file = "rommemoryex1.mif";
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .init_file_layout = "port_a";
-defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_6or3:auto_generated|ALTSYNCRAM";
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .logical_ram_name = "LPMROM:MyROM|altsyncram:altsyncram_component|altsyncram_4nr3:auto_generated|ALTSYNCRAM";
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .operation_mode = "rom";
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_clear = "none";
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_address_width = 5;
@@ -1420,7 +1420,7 @@ defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_a_write_e
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 5;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 18;
 defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M9K";
-defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h00030000C00030000B0002C000B0002C000B0002C000B0002C000B0002C000C00030000C00030000C00030000D00034000D00034000D00034000D00034000D00034000C00030000C;
+defparam \MyROM|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = 576'h001D80000000000000000000000000000000000000000000000000000000000000000000003B0006C00230000C0002C000A0002400080001C00060001400240000C0002000040000;
 // synopsys translate_on
 
 // Location: LCCOMB_X30_Y4_N0

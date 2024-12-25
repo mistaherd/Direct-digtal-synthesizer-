@@ -402,8 +402,7 @@ TRANSITION_LIST("ASK_OUT[3]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 9.0;
-			LEVEL 1 FOR 21.0;
+			LEVEL 0 FOR 30.0;
 		}
 	}
 }
@@ -416,11 +415,7 @@ TRANSITION_LIST("ASK_OUT[2]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 7.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 14.0;
-			LEVEL 0 FOR 3.0;
+			LEVEL 0 FOR 30.0;
 		}
 	}
 }
@@ -433,15 +428,7 @@ TRANSITION_LIST("ASK_OUT[1]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 10.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 1.0;
+			LEVEL 0 FOR 30.0;
 		}
 	}
 }
@@ -454,13 +441,7 @@ TRANSITION_LIST("ASK_OUT[0]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 6.0;
-			LEVEL 0 FOR 7.0;
+			LEVEL 0 FOR 30.0;
 		}
 	}
 }
@@ -528,7 +509,9 @@ TRANSITION_LIST("LUT_OUT[6]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 30.0;
+			LEVEL 0 FOR 17.0;
+			LEVEL 1 FOR 2.0;
+			LEVEL 0 FOR 11.0;
 		}
 	}
 }
@@ -541,7 +524,11 @@ TRANSITION_LIST("LUT_OUT[5]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 30.0;
+			LEVEL 0 FOR 7.0;
+			LEVEL 1 FOR 2.0;
+			LEVEL 0 FOR 8.0;
+			LEVEL 1 FOR 2.0;
+			LEVEL 0 FOR 11.0;
 		}
 	}
 }
@@ -567,8 +554,9 @@ TRANSITION_LIST("LUT_OUT[3]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 9.0;
-			LEVEL 1 FOR 21.0;
+			LEVEL 0 FOR 11.0;
+			LEVEL 1 FOR 8.0;
+			LEVEL 0 FOR 11.0;
 		}
 	}
 }
@@ -582,10 +570,10 @@ TRANSITION_LIST("LUT_OUT[2]")
 		{
 			REPEAT = 1;
 			LEVEL 0 FOR 7.0;
-			LEVEL 1 FOR 2.0;
+			LEVEL 1 FOR 4.0;
 			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 14.0;
-			LEVEL 0 FOR 3.0;
+			LEVEL 1 FOR 4.0;
+			LEVEL 0 FOR 11.0;
 		}
 	}
 }
@@ -599,14 +587,12 @@ TRANSITION_LIST("LUT_OUT[1]")
 		{
 			REPEAT = 1;
 			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 4.0;
+			LEVEL 1 FOR 2.0;
 			LEVEL 0 FOR 2.0;
 			LEVEL 1 FOR 2.0;
 			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 10.0;
-			LEVEL 0 FOR 2.0;
 			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 1.0;
+			LEVEL 0 FOR 15.0;
 		}
 	}
 }
@@ -619,13 +605,7 @@ TRANSITION_LIST("LUT_OUT[0]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 6.0;
-			LEVEL 0 FOR 7.0;
+			LEVEL 0 FOR 30.0;
 		}
 	}
 }
@@ -635,12 +615,7 @@ TRANSITION_LIST("PA[4]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 15.0;
-			LEVEL 1 FOR 15.0;
-		}
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -649,14 +624,7 @@ TRANSITION_LIST("PA[3]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 7.0;
-			LEVEL 1 FOR 8.0;
-			LEVEL 0 FOR 8.0;
-			LEVEL 1 FOR 7.0;
-		}
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -665,18 +633,7 @@ TRANSITION_LIST("PA[2]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 3.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 4.0;
-			LEVEL 0 FOR 4.0;
-			LEVEL 1 FOR 3.0;
-		}
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -685,26 +642,7 @@ TRANSITION_LIST("PA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 1.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 2.0;
-			LEVEL 0 FOR 2.0;
-			LEVEL 1 FOR 1.0;
-		}
+		LEVEL X FOR 30.0;
 	}
 }
 
@@ -713,11 +651,7 @@ TRANSITION_LIST("PA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 30.0;
-		}
+		LEVEL X FOR 30.0;
 	}
 }
 

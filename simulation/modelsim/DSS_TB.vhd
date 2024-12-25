@@ -30,12 +30,10 @@ ARCHITECTURE DSS_TB_arch OF DSS_TB IS
 				PA_out		    :	OUT  STD_LOGIC_VECTOR(4 downto 0);
 				--FSK_OUT		:	OUT STD_LOGIC_VECTOR(7 downto 0);
 				LUT_OUT		   :	OUT  STD_LOGIC_VECTOR(7 downto 0)
-				
-				
 			);
       
   END COMPONENT ; 
-  constant clk_period : time :=4 ns;
+  constant clk_period : time :=1 ns;
 BEGIN
   DUT  : DSS  
     PORT MAP ( 
@@ -52,9 +50,9 @@ BEGIN
  clk_process :process
    begin
 		clkin <=  '0';
-		wait for clk_period/2;
+		wait for clk_period;
 		clkin <=  '1';
-		wait for clk_period/2;
+		wait for clk_period;
    end process;
  
 -- "Constant Pattern"
