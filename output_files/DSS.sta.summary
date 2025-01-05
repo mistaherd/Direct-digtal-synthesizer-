@@ -4,74 +4,38 @@ TimeQuest Timing Analyzer Summary
 
 Type  : Slow 1200mV 85C Model Setup 'clkin'
 Slack : -1.756
-TNS   : -18.787
-
-Type  : Slow 1200mV 85C Model Setup 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : -0.067
-TNS   : -0.067
+TNS   : -18.769
 
 Type  : Slow 1200mV 85C Model Hold 'clkin'
-Slack : -0.090
-TNS   : -0.090
-
-Type  : Slow 1200mV 85C Model Hold 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : 0.358
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -32.566
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : -1.000
-TNS   : -9.000
+TNS   : -36.566
 
 Type  : Slow 1200mV 0C Model Setup 'clkin'
 Slack : -1.484
-TNS   : -15.082
-
-Type  : Slow 1200mV 0C Model Setup 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : 0.048
-TNS   : 0.000
+TNS   : -15.170
 
 Type  : Slow 1200mV 0C Model Hold 'clkin'
-Slack : -0.085
-TNS   : -0.085
-
-Type  : Slow 1200mV 0C Model Hold 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : 0.312
+Slack : 0.311
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -32.566
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : -1.000
-TNS   : -9.000
+TNS   : -36.566
 
 Type  : Fast 1200mV 0C Model Setup 'clkin'
 Slack : -0.324
-TNS   : -2.592
-
-Type  : Fast 1200mV 0C Model Setup 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : 0.401
-TNS   : 0.000
+TNS   : -2.936
 
 Type  : Fast 1200mV 0C Model Hold 'clkin'
-Slack : -0.078
-TNS   : -0.078
-
-Type  : Fast 1200mV 0C Model Hold 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : 0.187
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clkin'
 Slack : -3.000
-TNS   : -23.728
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lpm_counter:counter|cntr_0vh:auto_generated|counter_reg_bit[4]'
-Slack : -1.000
-TNS   : -9.000
+TNS   : -27.939
 
 ------------------------------------------------------------

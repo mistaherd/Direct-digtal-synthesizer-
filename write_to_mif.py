@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 def level_shift(data):
-    return np.round(abs(data)*255).astype(int)
+    return np.round(data*255).astype(int)
 def sine_wave_cycle_logic(choice:int,fs=1,Number_of_bits=8,amount_ofmem=32):
     if choice==0:
         N=2**Number_of_bits
@@ -26,11 +26,11 @@ def sine_wave_cycle_logic(choice:int,fs=1,Number_of_bits=8,amount_ofmem=32):
 
     return output
 def complement_2s(data,ammount_of_bits):
-    ones="".join('0' if data[i]=='1' else '1' for i in range(ammount_of_bits))
+    ones="".join('0' if data[i]=='1' else '1' for i in range(len(data)))
     max_val=(2**ammount_of_bits)-1
-    ones_dig=int(ones,2)
+    ones_dig=int(ones,2)+1
     if ones_dig>max_val:
-        ones_dig-=1
+        ones_dig=max_val
     twos=bin(ones_dig)
   
     return twos[2:]
@@ -47,21 +47,11 @@ def write_mif(output,fname=None,amountofbits=8,size_ofmem=32):
             message =hex(i)[2:]
             if len(message)<2:
                 message ='0'+message
-            b=bin(int(output[i]))[2:]
-            lenofb=len(b)
-           
-            half=round((2**amountofbits)-1)
-            if int(output[i])<128:
-                if lenofb<amountofbits:
-                    a="".join(["0" for j in range(amountofbits-lenofb)])
-                    b=a+b
-                b=complement_2s(b,amountofbits)
-                
-            else:
-                if lenofb<amountofbits:
-                    a="".join(["0" for j in range(amountofbits-lenofb)])
-                    b=a+b
-            
-            file.write(f"\n{message} : {b};")
+            bin_val=bin(output[i])[2:]
+            reminder="".join("0" for j in range(amountofbits-len(bin_val)))
+            bin_val=reminder+bin_val
+            if output[i]<0:
+                bin_val=complement_2s(bin_val,amountofbits)
+            file.write(f"\n{message} : {bin_val};")
         file.write("\nEND;")
 write_mif(output)
