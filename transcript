@@ -1,0 +1,6 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# vsim -gui work.dss_tb 
+# ** Error: (vsim-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# Error loading design
