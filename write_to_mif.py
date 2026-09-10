@@ -38,7 +38,7 @@ def complement_2s(data,ammount_of_bits):
 output=sine_wave_cycle_logic(0)
 
 def write_mif(output,fname=None,amountofbits=8,size_ofmem=32):
-    with open(r"C:\Users\lanzb\Documents\Github\Direct-digtal-synthesizer-\coswavesoted.mif",'w') as file:
+    with open(r"coswavesoted.mif",'w') as file:
         file.write("--This has been generated from python\n")
         change_string=f"DEPTH = {size_ofmem}; -- The size of memory in words \nWIDTH = {amountofbits}; -- The size of data in bits \nADDRESS_RADIX = HEX; -- The radix for address values \nDATA_RADIX = BIN; -- The radix for data values \nCONTENT -- start of (address : data pairs)\nBEGIN\n"
         file.write(change_string)
